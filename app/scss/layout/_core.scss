@@ -1,2 +1,6 @@
 .l-grid {
+    margin: auto;
+    max-width: $container;
+    padding: 0 gutter();
+    background: susy-svg-grid() no-repeat scroll;
 }

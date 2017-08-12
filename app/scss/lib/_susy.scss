@@ -1,1 +1,11 @@
 @import 'bower_components/susy/sass/susy';
+
+$susy: (
+    'columns': susy-repeat(12),
+    'gutters': ms(3),
+    'spread': 'narrow',
+    'container-spread': 'wider'
+);
+
+// Debug
+@import 'bower_components/susy/sass/plugins/svg-grid';

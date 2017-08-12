@@ -1,1 +1,6 @@
 @import 'bower_components/modular-scale/stylesheets/modularscale';
+
+$modularscale: (
+    base: 1em,
+    ratio: 1.333
+);

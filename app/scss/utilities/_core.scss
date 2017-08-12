@@ -1,0 +1,59 @@
+// margin & padding utilities
+
+$directions: right left top bottom;
+$steps: 5;
+
+@each $dir in $directions {
+
+    .u-margin-#{$dir} {
+        @for $i from -$steps through $steps {
+            &-#{$i} {
+                margin-#{$dir}: ms($i) !important;
+            }
+        }
+    }
+
+    .u-padding-#{$dir} {
+        @for $i from -$steps through $steps {
+            &-#{$i} {
+                padding-#{$dir}: ms($i) !important;
+            }
+        }
+    }
+
+    .u-margin-#{$dir}-none {
+        margin-#{$dir}: 0;
+    }
+
+    .u-padding-#{$dir}-none {
+        margin-#{$dir}: 0;
+    }
+}
+
+// float/clear
+
+.u-float-right {
+    float: right;
+}
+
+.u-float-left {
+    float: left;
+}
+
+.u-clear-right {
+    clear: right;
+}
+
+.u-clear-left {
+    clear: left;
+}
+
+// display
+
+.u-block {
+    display: block !important;
+}
+
+.u-inline-block, .u-block-inline {
+    display: inline-block !important;
+}
