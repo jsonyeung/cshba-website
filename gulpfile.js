@@ -5,6 +5,7 @@ var plumber       = require('gulp-plumber');
 var sass          = require('gulp-sass');
 var postcss       = require('gulp-postcss');
 var util          = require('gulp-util');
+var gulpif        = require('gulp-if');
 var imagemin      = require('gulp-imagemin');
 
 var in_production = util.env.production;
@@ -32,7 +33,7 @@ gulp.task('js', function() {
 
 gulp.task('images', function() {
     return gulp.src('app/images/**/*')
-           .pipe(imagemin())
+           .pipe(gulpif(in_production, imagemin()))
            .pipe(gulp.dest('dist/images'))
            .pipe(browserSync.stream());
 });
