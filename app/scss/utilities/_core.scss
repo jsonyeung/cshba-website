@@ -70,9 +70,15 @@ $steps: 5;
 // hide on breakpoints
 
 @each $key, $val in $bp {
+<<<<<<< HEAD
     .u-hide-on-#{$key} {
         @include breakpoint($val) {
             display: none !important;
+=======
+    .u-hide-#{$key} {
+        @include breakpoint($val) {
+            display: none;
+>>>>>>> 60a15f1af552b0d453dcb02aeada8db59e9a5cb8
         }
     }
 }

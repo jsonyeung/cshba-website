@@ -5,18 +5,26 @@
 :root {
     font-size: map-get($type-size, base);
 
+<<<<<<< HEAD
     @include breakpoint(map-get($bp, med)+100) {
         font-size: map-get($type-size, med);
     }
 
     @include breakpoint(map-get($bp, small)+100) {
         font-size: map-get($type-size, small);
+=======
+    @include breakpoint(map-get($bp, med)) {
+        font-size: 16px;
+>>>>>>> 60a15f1af552b0d453dcb02aeada8db59e9a5cb8
     }
 }
 
 body { 
     background: map-get($color, background);
+<<<<<<< HEAD
     height: 400vh;
+=======
+>>>>>>> 60a15f1af552b0d453dcb02aeada8db59e9a5cb8
 }
 
 p {
