@@ -8,14 +8,21 @@
     padding: 0;
 
     li {
-<<<<<<< HEAD
         margin-right: ms(1);
-=======
-        margin-right: ms(2);
->>>>>>> 60a15f1af552b0d453dcb02aeada8db59e9a5cb8
     }
 
     li:last-child {
+        margin: 0;
+    }
+}
+
+.m-menu--vertical {
+    flex-flow: column wrap;
+    justify-content: center;
+
+    width: 100%;
+
+    li {
         margin: 0;
     }
 }

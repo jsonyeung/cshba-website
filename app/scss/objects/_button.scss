@@ -6,3 +6,8 @@
     letter-spacing: 2px;
     border: 2px solid map-get($color, primary);
 }
+
+.o-button--white {
+    color: white;
+    border-color: white;
+}

@@ -1,21 +1,29 @@
 // margin & padding utilities
 
 $directions: right left top bottom;
-$steps: 5;
+$steps: 12;
 
 @each $dir in $directions {
 
-    .u-margin-#{$dir} {
-        @for $i from -$steps through $steps {
+    .u-margin {
+        @for $i from 0 through $steps {
             &-#{$i} {
+                margin: ms($i) !important;
+            }
+
+            &-#{$dir}-#{$i} {
                 margin-#{$dir}: ms($i) !important;
             }
         }
     }
 
-    .u-padding-#{$dir} {
-        @for $i from -$steps through $steps {
+    .u-padding {
+        @for $i from 0 through $steps {
             &-#{$i} {
+                padding: ms($i) !important;
+            }
+
+            &-#{$dir}-#{$i} {
                 padding-#{$dir}: ms($i) !important;
             }
         }
@@ -70,15 +78,9 @@ $steps: 5;
 // hide on breakpoints
 
 @each $key, $val in $bp {
-<<<<<<< HEAD
     .u-hide-on-#{$key} {
         @include breakpoint($val) {
             display: none !important;
-=======
-    .u-hide-#{$key} {
-        @include breakpoint($val) {
-            display: none;
->>>>>>> 60a15f1af552b0d453dcb02aeada8db59e9a5cb8
         }
     }
 }

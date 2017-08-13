@@ -5,41 +5,44 @@
 :root {
     font-size: map-get($type-size, base);
 
-<<<<<<< HEAD
     @include breakpoint(map-get($bp, med)+100) {
         font-size: map-get($type-size, med);
     }
 
     @include breakpoint(map-get($bp, small)+100) {
         font-size: map-get($type-size, small);
-=======
-    @include breakpoint(map-get($bp, med)) {
-        font-size: 16px;
->>>>>>> 60a15f1af552b0d453dcb02aeada8db59e9a5cb8
     }
 }
 
 body { 
     background: map-get($color, background);
-<<<<<<< HEAD
     height: 400vh;
-=======
->>>>>>> 60a15f1af552b0d453dcb02aeada8db59e9a5cb8
+    position: relative;
 }
 
 p {
     font-family: map-get($type, primary);
-    line-height: 1.333 * 1.333;
+
+    line-height: 1.6;
+    margin-bottom: ms(1);
+
+    color: map-get($color, body);
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: map-get($type, primary);
     font-weight: bold;
-    line-height: 1.333;
+
+    line-height: 1.2;
+    margin: ms(0) 0 ms(-2);
+
+    color: map-get($color, heading);
 }
 
-h1 { font-size: ms(4);
-}
+h1 { font-size: ms(4); }
+h2 { font-size: ms(3); }
+h3 { font-size: ms(2); }
+h4 { font-size: ms(1); }
 
 a {
     @extend p;

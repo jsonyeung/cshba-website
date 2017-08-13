@@ -1,5 +1,12 @@
 .m-nav {
     padding: ms(2) 0;
+    background: map-get($color, background);
+
+    width: 100%;
+    position: absolute;
+    z-index: 100;
+
+    margin-top: ms(1);
 
     @include breakpoint(map-get($bp, med)) {
         padding: ms(1) 0;
@@ -12,12 +19,6 @@
         justify-content: space-between;
         align-items: center;
     }
-
-    &__breadcrumb {
-        border: 2px solid #E8E8E8;
-        background: #FCFCFB;
-    }
-<<<<<<< HEAD
 
     &__hamburger {
         display: none;
@@ -33,19 +34,63 @@
     }
 }
 
-.m-nav--full {
+
+
+
+
+.m-nav__menu--mobile {
     position: absolute;
+    top: 100%;
+    right: 0;
+    width: 340px;
+    height: 100vh;
+
+    background: map-get($color, background);
+
+    @include breakpoint(map-get($bp, small)) { width: 100vw; }
+    
+    li { 
+        width: 100%; 
+        padding: 0 ms(2);
+    }
+
+    li > a { 
+        display:block; 
+        padding: ms(0) 0; 
+    }
+}
+
+.m-nav__overlay {
+    position: absolute;
+    top: 100%;
+
     width: 100vw;
+    height: 100vh;
+
+    background: rgba(black, 0.5);
+    z-index: -1;
+}
+
+.m-nav__menu--mobile, .m-nav__overlay {
+    display: none !important;
+}
+
+
+
+
+.m-nav--inverse {
+    background: none;
+
+    * { color: white !important; }
+    .o-button { @extend .o-button--white; }
 }
 
 .m-nav--sticky {
     position: fixed;
     width: 100vw; 
+    z-index: 100;
 
     margin: 0 !important;
-
     border-bottom: 1px solid #e8e8e8;  
     padding: ms(0) 0;
-=======
->>>>>>> 60a15f1af552b0d453dcb02aeada8db59e9a5cb8
 }

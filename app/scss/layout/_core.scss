@@ -3,6 +3,7 @@
     padding: 0 gutter();
     // background: susy-svg-grid() no-repeat scroll;
 
+    width: 100%;
     max-width: map-get($container, large);
     
     @include breakpoint(map-get($bp, med)) {
@@ -10,5 +11,34 @@
     }
     @include breakpoint(map-get($bp, small)) {
         max-width: map-get($container, small);
+    }
+}
+
+.l-section, .l-header {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+
+    &__content {
+        @extend .l-grid;
+    }
+
+    &__bg {
+        position: absolute;
+        top: 0; bottom: 0;
+        left: 0; right: 0;
+
+        z-index: -10;
+    }
+
+    &__bg-intro {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    
+    &__bg-content {
+        padding-top: ms(10);
     }
 }
