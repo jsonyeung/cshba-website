@@ -1,1 +1,3 @@
 @import 'bower_components/breakpoint-sass/stylesheets/breakpoint';
+
+@include breakpoint-set('default feature', max-width);

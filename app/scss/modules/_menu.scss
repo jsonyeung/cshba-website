@@ -1,0 +1,17 @@
+.m-menu {
+    list-style: none;
+
+    display: flex;
+    align-items: center;
+
+    margin: 0;
+    padding: 0;
+
+    li {
+        margin-right: ms(2);
+    }
+
+    li:last-child {
+        margin: 0;
+    }
+}

@@ -1,1 +1,11 @@
-$container: 1580px;
+$container: (
+    small: 95%,
+    med: 95%,
+    large: 98%
+);
+
+$bp: (
+    small: 400px,
+    med: 800px,
+    large: 1280px
+);

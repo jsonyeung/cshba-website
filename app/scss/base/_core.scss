@@ -3,15 +3,35 @@
 }
 
 :root {
-    font-size: $type-size;
+    font-size: map-get($type-size, base);
+
+    @include breakpoint(map-get($bp, med)) {
+        font-size: 16px;
+    }
+}
+
+body { 
+    background: map-get($color, background);
 }
 
 p {
-    font-family: $type-body;
+    font-family: map-get($type, primary);
     line-height: 1.333 * 1.333;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: $type-heading;
+    font-family: map-get($type, primary);
+    font-weight: bold;
+    line-height: 1.333;
+}
+
+h1 { font-size: ms(4);
+}
+
+a {
+    @extend p;
+
+    color: map-get($color, primary);
+    text-decoration: none;
 }
 

@@ -1,11 +1,11 @@
-$type-primary: 'Freight';
-$type-secondary: 'Proba Pro';
-$type-tertiary: 'Bebas Neue';
+$type: (
+    primary: 'Freight Text',
+    secondary: 'Proba Pro',
+    tertiary: 'Bebas Neue',
+);
 
-$type-heading: $type-primary;
-$type-body: $type-primary;
-
-$type-size: 20px;
-$type-size-small: $type-size;
-
+$type-size: (
+    base: 20px,
+    small: 20px
+);
 

@@ -1,0 +1,20 @@
+.m-nav {
+    padding: ms(2) 0;
+
+    @include breakpoint(map-get($bp, med)) {
+        padding: ms(1) 0;
+    }
+
+    &__menu {
+        @extend .l-grid;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__breadcrumb {
+        border: 2px solid #E8E8E8;
+        background: #FCFCFB;
+    }
+}
