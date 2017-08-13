@@ -4,8 +4,10 @@ $modularscale: (
     base: 1em,
     ratio: 1.333,
 
-    800px: (
-        base: 1em,
+    20em: (
         ratio: 1.2
-    ) 
-);  
+    ),
+    80em: (
+        ratio: 1.333
+    )
+);    

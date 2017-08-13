@@ -21,6 +21,7 @@ body {
 }
 
 p {
+    @include ms-respond(font-size, 0);
     font-family: map-get($type, primary);
 
     line-height: 1.6;
@@ -39,10 +40,10 @@ h1, h2, h3, h4, h5, h6 {
     color: map-get($color, heading);
 }
 
-h1 { font-size: ms(4); }
-h2 { font-size: ms(3); }
-h3 { font-size: ms(2); }
-h4 { font-size: ms(1); }
+h1 { @include ms-respond(font-size, 4); }
+h2 { @include ms-respond(font-size, 3); }
+h3 { @include ms-respond(font-size, 2); }
+h4 { @include ms-respond(font-size, 1); }
 
 a {
     @extend p;
