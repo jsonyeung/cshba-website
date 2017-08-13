@@ -1,0 +1,10 @@
+.o-label {
+    color: map-get($color, subtle);
+
+    font-family: map-get($type, secondary);
+    font-size: ms(-1);
+    font-weight: 400;
+    
+    text-transform: uppercase;
+    letter-spacing: 2.5px; 
+}

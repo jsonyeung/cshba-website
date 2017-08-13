@@ -1,0 +1,8 @@
+.o-button {
+    padding: ms(-4) ms(2);
+
+    font-family: map-get($type, tertiary);
+    font-weight: bold;
+    letter-spacing: 2px;
+    border: 2px solid map-get($color, primary);
+}

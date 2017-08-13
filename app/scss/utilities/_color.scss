@@ -1,0 +1,9 @@
+@each $key, $value in $color {
+    .u-color-#{$key} {
+        color: $value !important;
+    }
+
+    .u-color-background-#{$key} {
+        background-color: $value !important;
+    }
+}

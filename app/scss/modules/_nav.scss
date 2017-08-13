@@ -1,0 +1,48 @@
+.m-nav {
+    padding: ms(2) 0;
+
+    @include breakpoint(map-get($bp, med)) {
+        padding: ms(1) 0;
+    }
+
+    &__menu {
+        @extend .l-grid;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__breadcrumb {
+        border: 2px solid #E8E8E8;
+        background: #FCFCFB;
+    }
+
+    &__hamburger {
+        display: none;
+        @include breakpoint(map-get($bp, med)) { display: inline-block; }
+
+        font-size: ms(1);
+        color: black;
+
+        border-left: 1px solid #e8e8e8;
+        padding-left: ms(1);
+
+        cursor: pointer;
+    }
+}
+
+.m-nav--full {
+    position: absolute;
+    width: 100vw;
+}
+
+.m-nav--sticky {
+    position: fixed;
+    width: 100vw; 
+
+    margin: 0 !important;
+
+    border-bottom: 1px solid #e8e8e8;  
+    padding: ms(0) 0;
+}

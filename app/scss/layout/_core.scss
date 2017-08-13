@@ -1,6 +1,14 @@
 .l-grid {
     margin: auto;
-    max-width: $container;
     padding: 0 gutter();
-    background: susy-svg-grid() no-repeat scroll;
+    // background: susy-svg-grid() no-repeat scroll;
+
+    max-width: map-get($container, large);
+    
+    @include breakpoint(map-get($bp, med)) {
+        max-width: map-get($container, med);
+    }
+    @include breakpoint(map-get($bp, small)) {
+        max-width: map-get($container, small);
+    }
 }

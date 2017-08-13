@@ -22,30 +22,39 @@ $steps: 5;
     }
 
     .u-margin-#{$dir}-none {
-        margin-#{$dir}: 0;
+        margin-#{$dir}: 0 !important;
     }
 
     .u-padding-#{$dir}-none {
-        margin-#{$dir}: 0;
+        margin-#{$dir}: 0 !important;
     }
+
+}
+
+.u-margin-none {
+    margin: 0 !important;
+}
+
+.u-padding-none {
+    padding: 0 !important;
 }
 
 // float/clear
 
 .u-float-right {
-    float: right;
+    float: right !important;
 }
 
 .u-float-left {
-    float: left;
+    float: left !important;
 }
 
 .u-clear-right {
-    clear: right;
+    clear: right !important;
 }
 
 .u-clear-left {
-    clear: left;
+    clear: left !important;
 }
 
 // display
@@ -56,4 +65,14 @@ $steps: 5;
 
 .u-inline-block, .u-block-inline {
     display: inline-block !important;
+}
+
+// hide on breakpoints
+
+@each $key, $val in $bp {
+    .u-hide-on-#{$key} {
+        @include breakpoint($val) {
+            display: none !important;
+        }
+    }
 }
