@@ -24,13 +24,27 @@
     }
 
     @include breakpoint(map-get($bp, med)) {
+        & > a:nth-last-child(-n+2) {
+            display: none;
+        }
+    }
 
+    @include breakpoint(map-get($bp, small)) {
+        & > a:nth-last-child(-n+3) {
+            display: none;
+        }
+
+        & > a:not(:nth-last-child(-n+3)) {
+            margin: 0 gutter();
+        }
     }
 
     .o-button {
         position: absolute;
         top: 50%;
         left: 50%;
+
+        margin: 0;
 
         transform: translate(-52%, -50%); 
     }

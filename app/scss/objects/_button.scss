@@ -5,6 +5,8 @@
     font-weight: bold;
     letter-spacing: 2px;
     border: 2px solid map-get($color, primary);
+
+    text-align: center;
 }
 
 .o-button--white {
@@ -13,5 +15,11 @@
 }
 
 .o-button--solid {
-    
+    @extend .o-button;
+
+    padding: ms(-2) ms(2);
+
+    border: none;
+    background: map-get($color, primary);
+    color: white;
 }
