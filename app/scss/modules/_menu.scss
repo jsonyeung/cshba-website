@@ -13,8 +13,11 @@
 }
 
 .m-menu--vertical {
+    @extend .m-menu;
+
     flex-flow: column wrap;
     justify-content: center;
+    align-items: flex-start;
 
     width: 100%;
 

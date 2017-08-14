@@ -53,10 +53,7 @@
 
     @include breakpoint(map-get($bp, small)) { max-width: 100%; }
     
-    transition: all 0.3s;
-    transform: translateX(100%);
-    
-    & > li { 
+    .m-menu--vertical > li { 
         width: 100%; 
         padding: 0 ms(4);
     }
@@ -67,26 +64,16 @@
     }
 }
 
-.m-nav__menu--active {
-    transform: translateX(0);
-}
-
 .m-nav__overlay {
-    position: absolute;
-    top: 100%;
-
-    width: 100vw;
-    height: 100vh;
+    position: fixed;
+    top: 0; bottom: 0; 
+    right: 0; left: 0;
 
     opacity: 0;
     transition: all 0.3s;
 
     background: rgba(black, 0.5);
-    z-index: -1;
-}
-
-.m-nav__overlay--active {
-    opacity: 1;
+    z-index: 1;
 }
 
 .m-nav__menu--mobile, .m-nav__overlay {

@@ -16,8 +16,12 @@
 
 body { 
     background: map-get($color, background);
+    width: 100vw;
     height: 400vh;
+
     position: relative;
+
+    overflow-x: hidden;
 }
 
 p {
