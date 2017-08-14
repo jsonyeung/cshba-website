@@ -29,6 +29,10 @@
         left: 0; right: 0;
 
         z-index: -10;
+
+        background-repeat: no-repeat;
+        background-position: top center;
+        background-size: cover;
     }
 
     &__bg-intro {
@@ -40,5 +44,17 @@
     
     &__bg-content {
         padding-top: ms(10);
+    }
+}
+
+.l-block {
+
+    &--centered {
+        max-width: 750px;
+        margin: auto;
+
+        @include breakpoint(map-get($bp, med)) {
+            max-width: 100%;
+        }
     }
 }
