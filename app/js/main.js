@@ -12,10 +12,10 @@ $(document).ready(function() {
     var toggle_nav = function() {
         if (open) {
             TweenLite.to($overlay, 0.05, { autoAlpha: 0 });
-            TweenLite.to($mob_nav, 0.5, { x:500, ease: Power1.easeOut });
+            TweenLite.to($mob_nav, 0.5, {autoAlpha: 0, x:500, ease: Power1.easeOut });
         } else {
             TweenLite.to($overlay, 0.05, { autoAlpha: 1 });
-            TweenLite.to($mob_nav, 0.5, { x:0, ease: Power1.easeOut });
+            TweenLite.to($mob_nav, 0.5, { autoAlpha: 1, x:0, ease: Power1.easeOut });
         }
         open = !open;
     };

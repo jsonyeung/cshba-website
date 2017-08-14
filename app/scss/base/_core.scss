@@ -16,8 +16,7 @@
 
 body { 
     background: map-get($color, background);
-    width: 100vw;
-    height: 400vh;
+    width: 100%;
 
     position: relative;
 
