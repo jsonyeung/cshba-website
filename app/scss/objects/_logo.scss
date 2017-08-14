@@ -1,8 +1,6 @@
 .o-logo {
     &, * { line-height: 0; }
 
-    @extend img;
-
     background: url('images/logo-white.png') no-repeat;
     width: 222px;
     height: 57px;
@@ -12,4 +10,4 @@
         width: 81px;
         height: 25px;
     }
-}
+} 

@@ -3,6 +3,35 @@
     padding: ms(10) 0 ms(8);
 
     @include breakpoint(map-get($bp, med)) {
-        padding: ms(6) 0 ms(5);
+        padding: ms(6) 0 ms(6);
+    }
+}
+
+.l-homepage__instagram {
+    display: flex;
+
+    width: 110%;
+
+    position: relative;
+    left: -5%;
+    right: -5%;
+
+    margin-top: -#{ms(5)};
+
+    a {
+        margin: 0 gutter()/2;
+        display: inline-block;
+    }
+
+    @include breakpoint(map-get($bp, med)) {
+
+    }
+
+    .o-button {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+
+        transform: translate(-52%, -50%); 
     }
 }
