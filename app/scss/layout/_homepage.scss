@@ -79,3 +79,65 @@
 
     .l-block { flex-basis: 400px; max-width: 700px;  }
 }
+
+.l-homepage__slider {
+    position: relative;
+
+    &-item {
+        max-width: 500px;
+        margin: 0 ms(0);
+
+        @include breakpoint(map-get($bp, small)) { margin: 0 ms(0)/2; }    
+    }
+
+    .slick-arrow {
+        position: absolute;
+        top: 50%;
+        z-index: 1;
+
+        width: 50px;
+        height: 50px;
+        margin: 0 ms(0);
+
+        text-indent: -999em;
+        transition: all 0.1s;
+        transform: translateY(-50%);
+
+        background: none;
+        border: 2px solid map-get($color, primary);
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0; right: 0;
+
+            font-family: FontAwesome;
+
+            text-indent: 0;
+            transform: translateY(-50%);
+            color: map-get($color, primary);
+        }
+
+        &:active {
+            &:after { color: white; }
+            background: map-get($color, primary);
+        }
+    }
+
+    .slick-prev {
+        left: 0;
+
+        &:after {
+            content: '\f177';
+        }
+    }
+
+    .slick-next {
+        right: 0;
+
+        &:after {
+            content: '\f178';
+        }
+    }
+}

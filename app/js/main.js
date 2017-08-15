@@ -22,4 +22,26 @@ $(document).ready(function() {
 
     $hamburg.click(toggle_nav);
     $overlay.click(function() { toggle_nav(); });
+
+    $('.l-homepage__slider').slick({
+        centerMode: true,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        infinite: false,
+        arrows: true,
+        responsive: [
+            {
+                breakpoint: 900,
+                settings: {
+                    slidesToShow: 2
+                }
+            },
+            {
+                breakpoint: 700,
+                settings: {
+                    slidesToShow: 1
+                }
+            }
+        ]
+    });
 });
