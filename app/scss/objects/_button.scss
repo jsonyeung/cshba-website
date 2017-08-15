@@ -1,5 +1,6 @@
 .o-button {
-    padding: ms(-4) ms(2);
+    
+    padding: ms(-2) ms(2);
 
     font-family: map-get($type, tertiary);
     font-weight: bold;
@@ -10,10 +11,9 @@
     text-transform: uppercase;
 }
 
-.o-button--large {
+.o-button--small {
     @extend .o-button;
-
-    padding: ms(-2) ms(2);
+    padding: ms(-4) ms(2);
 }
 
 .o-button--white {
@@ -24,7 +24,7 @@
 }
 
 .o-button--solid {
-    @extend .o-button--large;
+    @extend .o-button;
 
     border: none;
     background: map-get($color, primary);
