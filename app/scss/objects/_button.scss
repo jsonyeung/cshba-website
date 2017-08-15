@@ -5,19 +5,26 @@
     font-weight: bold;
     letter-spacing: 2px;
     border: 2px solid map-get($color, primary);
-
+    
     text-align: center;
+    text-transform: uppercase;
+}
+
+.o-button--large {
+    @extend .o-button;
+
+    padding: ms(-2) ms(2);
 }
 
 .o-button--white {
+    @extend .o-button;
+
     color: white;
     border-color: white;
 }
 
 .o-button--solid {
-    @extend .o-button;
-
-    padding: ms(-2) ms(2);
+    @extend .o-button--large;
 
     border: none;
     background: map-get($color, primary);

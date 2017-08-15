@@ -1,3 +1,11 @@
-.u-grid {
-    
+$directions: right left top bottom;
+
+@each $dir in $directions {
+    .u-margin-#{$dir}-gutter {
+        margin-#{$dir}: gutter() !important;
+    }
+
+    .u-padding-#{$dir}-gutter {
+        padding-#{$dir}: gutter() !important;
+    }
 }

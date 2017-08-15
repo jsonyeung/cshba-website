@@ -9,14 +9,17 @@ $steps: 12;
         @for $i from 0 through $steps {
             &-#{$i} {
                 margin: ms($i) !important;
+                @include breakpoint(map-get($bp, med)) { margin: ms($i - 1) !important; }
             }
 
             &-#{$dir}-#{$i} {
                 margin-#{$dir}: ms($i) !important;
+                @include breakpoint(map-get($bp, med)) { margin-#{$dir}: ms($i - 1) !important; }
             }
 
             &-#{$dir}-neg-#{$i} {
                 margin-#{$dir}: -#{ms($i)} !important;
+                @include breakpoint(map-get($bp, med)) { margin-#{$dir}:-#{ms($i - 1)} !important; }
             }
         }
     }
@@ -27,7 +30,7 @@ $steps: 12;
                 padding: ms($i) !important;
             }
 
-            &-#{$dir}-#{$i} {
+            &-#{$dir}-#{$i} { 
                 padding-#{$dir}: ms($i) !important;
             }
         }
@@ -68,6 +71,19 @@ $steps: 12;
 .u-clear-left {
     clear: left !important;
 }
+
+// flexbox
+
+.u-flex, .u-flexbox {
+    &-justify-center {
+        justify-content: center !important;
+    }
+
+    &-align-center {
+        align-items: center !important;
+    }
+}
+
 
 // display
 

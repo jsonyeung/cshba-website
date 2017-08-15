@@ -21,6 +21,10 @@
 
     &__content {
         @extend .l-grid;
+        padding: 0 span(1);
+
+        display: flex;
+        flex-wrap: wrap;
     }
 
     &__bg {
@@ -48,6 +52,9 @@
 }
 
 .l-block {
+    flex: 1;
+    flex-basis: 400px;
+    padding: 0 gutter()/2;
 
     &--centered {
         max-width: 750px;

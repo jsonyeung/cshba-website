@@ -44,8 +44,16 @@
         top: 50%;
         left: 50%;
 
-        margin: 0;
+        margin: 0 !important;
 
-        transform: translate(-52%, -50%); 
+        transform: translate(-50%, -50%); 
+    }
+}
+
+.l-homepage__about {
+    &-image {
+        @include breakpoint(1000px) {
+            order: -1;
+        }
     }
 }
