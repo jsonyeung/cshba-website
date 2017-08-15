@@ -1,5 +1,4 @@
 .o-button {
-    
     padding: ms(-2) ms(2);
 
     font-family: map-get($type, tertiary);
@@ -11,16 +10,24 @@
     text-transform: uppercase;
 }
 
-.o-button--small {
-    @extend .o-button;
-    padding: ms(-4) ms(2);
-}
 
+.o-button--secondary {
+    @extend .o-button;
+
+    color: map-get($color, secondary);
+    border-color: map-get($color, secondary);
+}
 .o-button--white {
     @extend .o-button;
 
     color: white;
     border-color: white;
+}
+
+
+.o-button--small {
+    @extend .o-button;
+    padding: ms(-4) ms(2);
 }
 
 .o-button--solid {
@@ -29,4 +36,19 @@
     border: none;
     background: map-get($color, primary);
     color: white;
+}
+
+.o-button--link {
+    @extend .o-button;
+
+    padding: 0;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+.o-button--link-secondary {
+    @extend .o-button--link;
+    color: map-get($color, secondary-accent);
+    border-color: map-get($color, secondary-accent);
 }

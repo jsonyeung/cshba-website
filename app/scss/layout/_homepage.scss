@@ -88,6 +88,8 @@
         margin: 0 ms(0);
 
         @include breakpoint(map-get($bp, small)) { margin: 0 ms(0)/2; }    
+
+        &:focus { outline: none; }
     }
 
     .slick-arrow {
