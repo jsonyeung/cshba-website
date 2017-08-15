@@ -7,6 +7,7 @@ $(document).ready(function() {
 
     var open = false;
 
+    TweenLite.set([$overlay, $mob_nav], { autoAlpha: 0 });
     TweenLite.set($mob_nav, { x: 500 });
 
     var toggle_nav = function() {

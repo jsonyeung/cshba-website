@@ -143,3 +143,37 @@
         }
     }
 }
+
+.l-homepage__initiatives {
+
+    &-list {
+        @extend .l-section;
+
+        .l-block {
+            flex-basis: 700px;
+            padding-right: ms(4);
+        }
+    }
+
+    &-list-item {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+
+        h3 { margin-top: 0; }
+
+        a { 
+            margin-right: ms(4);
+        }
+
+        p {
+        }
+
+        & > div {
+        }
+    }
+}
+
+.l-homepage__twitter {
+    flex-basis: 375px;
+}
