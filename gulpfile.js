@@ -1,5 +1,6 @@
 var gulp          = require('gulp');
 
+var deploy        = require('gulp-gh-pages');
 var browserSync   = require('browser-sync').create();
 var plumber       = require('gulp-plumber');
 var sass          = require('gulp-sass');
@@ -61,4 +62,13 @@ gulp.task('dev', ['build', 'watch'], function() {
     };
     
     browserSync.init(browsersync_options);
+});
+
+gulp.task('deploy', function() {
+    var deploy_options = {
+        remoteUrl: 'https://github.com/jayyeung/cshba_website.git',
+    };
+
+    return gulp.src('dist/**/*')
+           .pipe(deploy(deploy_options));
 });
