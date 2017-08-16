@@ -4,7 +4,10 @@
     font-family: map-get($type, tertiary);
     font-weight: bold;
     letter-spacing: 2px;
+    background: none;
+    
     border: 2px solid map-get($color, primary);
+    color: map-get($color, primary);
     
     text-align: center;
     text-transform: uppercase;
