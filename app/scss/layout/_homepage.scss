@@ -147,33 +147,57 @@
 .l-homepage__initiatives {
 
     &-list {
-        @extend .l-section;
+        margin-bottom: ms(4);
 
-        .l-block {
-            flex-basis: 700px;
-            padding-right: ms(4);
-        }
+        padding: 0;
+        padding-right: ms(0);
+
+        flex-basis: 600px;
+        flex-grow: 3;
+
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
     }
 
     &-list-item {
+        width: 100%;
+
         display: flex;
-        align-items: center;
         flex-wrap: wrap;
+        align-content: flex-start;
 
-        h3 { margin-top: 0; }
+        margin-bottom: ms(4);
 
-        a { 
-            margin-right: ms(4);
+        & > a { width: 100%; margin-bottom: ms(1); flex-shrink:0; }
+
+        h4 { max-width: 500px; }
+
+        @include breakpoint((map-get($bp, med)) min-width) {
+            width: span(6) + gutter()/2;
         }
 
-        p {
-        }
+        @include breakpoint((map-get($bp, large) + 200) min-width) {
+            width: 100%;
+            align-items: center;
+            flex-wrap: nowrap;
 
-        & > div {
+            & > div { margin: 0 ms(3); }
+            & > p { margin-bottom: ms(1); }
+            & > a { width:300px; margin: 0; }
         }
     }
 }
 
 .l-homepage__twitter {
-    flex-basis: 375px;
+    flex-basis: 300px;
+    flex-grow: 1;
+
+    max-width: 500px;
+
+    margin: 0 ms(2); 
+
+    @include breakpoint(map-get($bp, small)) {
+        margin: 0;
+    }
 }
