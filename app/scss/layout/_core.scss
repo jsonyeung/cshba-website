@@ -67,5 +67,29 @@
 }
 
 .l-footer {
-    
+    display: flex;
+    flex-wrap: wrap;
+    background: map-get($color, footer);
+
+    &__main {
+        @extend .l-grid;
+        padding-top: ms(4);
+        padding-bottom: ms(4);
+    }
+
+    &__sub {
+        width: 100%;
+        padding: ms(0)/2 0;
+
+        background: map-get($color, sub-footer);
+
+        p { 
+            @extend .o-label;
+            text-transform: capitalize;
+            letter-spacing: 0;
+            
+            margin: 0; 
+            color: map-get($color, dark); 
+        }
+    }
 }

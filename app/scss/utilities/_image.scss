@@ -1,0 +1,9 @@
+.u-image {
+    &-no-responsive {
+        width: auto !important;
+    }
+
+    &-no-shadow {
+        box-shadow: none;
+    }
+}

@@ -1,18 +1,23 @@
 $color: (
+    // brand colours
     primary: #BF1534,
     primary-accent: #A61C28,
-
     secondary: #F2BC4D,
     secondary-accent: #D9A652,
     secondary-accent-2: #8C682C,
 
-    clear: #E9E9E9,
-    subtle: #ACACAC,
-    dark: #5A5A5A,
-
-    background: #FDFDFE,
+    // type
+    background: #FCFCFB,
     heading: #333,
     body: #333,
+    
+    // helper colours
+    clear: #E9E9E9,
+    subtle: #ACACAC,
+    dark: #525257,
+    white: white,
 
-    white: white
+    // layout
+    footer: #1A2228,
+    sub-footer: #141A1E
 );

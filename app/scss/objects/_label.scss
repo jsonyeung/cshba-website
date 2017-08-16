@@ -9,3 +9,10 @@
     letter-spacing: 2.5px; 
     vertical-align: middle;
 }
+
+.o-label--link {
+    @extend .o-label;
+
+    color: map-get($color, primary);
+    border-bottom: 1px solid map-get($color, primary);
+}
