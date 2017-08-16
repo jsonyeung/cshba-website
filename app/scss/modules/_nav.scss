@@ -91,7 +91,7 @@
     .o-logo { @extend .o-logo--white; }
 
     .m-nav__menu * { color: white !important; }
-    .m-nav__menu .o-button { @extend .o-button--white; }
+    .m-nav__menu .o-button { @extend .o-button--solid-white; color: map-get($color, primary) !important; }
 }
 
 @keyframes nav-pinned {

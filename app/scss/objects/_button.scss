@@ -38,6 +38,13 @@
     color: white;
 }
 
+.o-button--solid-white {
+    @extend .o-button--solid;
+
+    color: map-get($color, primary);
+    background: white;
+}
+
 .o-button--link {
     @extend .o-button;
 

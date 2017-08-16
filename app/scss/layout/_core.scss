@@ -67,14 +67,20 @@
 }
 
 .l-footer {
-    display: flex;
-    flex-wrap: wrap;
     background: map-get($color, footer);
 
     &__main {
         @extend .l-grid;
         padding-top: ms(4);
         padding-bottom: ms(4);
+
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__section {
+        padding: ms(0) ms(3);
+        
     }
 
     &__sub {
