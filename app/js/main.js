@@ -24,6 +24,28 @@ $(document).ready(function() {
     $hamburg.click(toggle_nav);
     $overlay.click(function() { toggle_nav(); });
 
+    var stick_options = {
+        offset: 150,
+        tolerance: 15,
+
+        classes: {
+            pinned: 'm-nav--sticky'
+        },
+
+        onPin: function() {
+            $nav.removeClass('m-nav--inverse');
+        },
+        onUnpin: function() {
+            if (open) { $nav.addClass('m-nav--sticky'); }
+        },
+        onTop: function() {
+            $nav.removeClass('m-nav--sticky')
+                .addClass('m-nav--inverse');
+        }
+    };
+    $nav.headroom(stick_options);
+
+
     $('.l-homepage__slider').slick({
         centerMode: true,
         slidesToShow: 3,

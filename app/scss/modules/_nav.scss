@@ -92,7 +92,11 @@
     .m-nav__menu .o-button { @extend .o-button--white; }
 }
 
-.m-nav--sticky {
+@keyframes nav-pinned {
+    from { transform: translateY(-100%); }
+}
+
+.m-nav--sticky {    
     position: fixed;
     width: 100vw; 
     z-index: 100;
@@ -101,4 +105,6 @@
     padding: ms(0) 0;
 
     box-shadow: 0 3px 15px rgba(map-get($color, subtle), 0.2); 
+
+    animation: nav-pinned 0.2s;
 }
