@@ -26,7 +26,7 @@ $(document).ready(function() {
 
     var stick_options = {
         offset: 150,
-        tolerance: 15,
+        tolerance: 10,
 
         classes: {
             pinned: 'm-nav--sticky'

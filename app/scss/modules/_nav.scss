@@ -88,6 +88,8 @@
 .m-nav--inverse {
     background: none;
 
+    .o-logo { @extend .o-logo--white; }
+
     .m-nav__menu * { color: white !important; }
     .m-nav__menu .o-button { @extend .o-button--white; }
 }
@@ -100,10 +102,11 @@
     position: fixed;
     width: 100vw; 
     z-index: 100;
-
+    
     margin: 0 !important;
     padding: ms(0) 0;
-
+    
+    background: map-get($color, background);
     box-shadow: 0 3px 15px rgba(map-get($color, subtle), 0.2); 
 
     animation: nav-pinned 0.2s;
