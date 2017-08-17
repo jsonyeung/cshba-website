@@ -30,6 +30,14 @@
             background-image: url('images/type-stroke-2.png');
         }
     }
+
+    &-3 {
+        @extend .u-stroke;
+        
+        &:after {
+            background-image: url('images/type-stroke-3.png');
+        }
+    }
  
     &-text {
         position: relative;
@@ -39,6 +47,7 @@
             top: -25%; left: 0;
             z-index: -1;
 
+            font-family: 'SimSun';
 
             color: rgba(map-get($color, dark), 0.1);
             @include ms-respond(font-size, 2);
