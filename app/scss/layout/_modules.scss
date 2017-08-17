@@ -5,14 +5,16 @@ $module: (
 
 .l-module {
     display: flex;
+    width: 100%;
     flex-wrap: wrap; 
     max-width: map-get($module, container-large);
 
     // 1 column
     &--1col {
         @extend .l-module;
-        justify-content: flex-start;
-        max-width: map-get($module, container); 
+        justify-content: center;
+
+        & > * { max-width: map-get($module, container); }
     }
 
     // 2 column paragraphs
@@ -31,14 +33,54 @@ $module: (
     // full-size image
     &--img {
         @extend .l-module;
-        width: 100%;
 
         margin-left: 0;
         margin-right: 0;
 
+        img { height: 100%; }
+
         &-full {
             @extend .l-module--img;
             max-width: 100%;
+        }
+    }
+}
+
+.l-module--table-of-contents {
+    @extend .m-menu--vertical;
+    @extend .l-module;
+
+    .o-label { border-bottom: 2px solid lightgrey; }
+}
+
+.l-module--society {
+    @extend .l-module;
+
+    &-list {
+        @extend .l-module--society; 
+    }
+
+    &-list-item {
+        width: 100%;
+
+        display: flex;
+        align-items: center;
+
+        img { 
+            width: span(4); 
+            min-width: 100px;
+        }
+        
+        div {
+            flex: 1;
+            padding: ms(1) gutter()*2;
+        }
+
+        h4 { margin-top: 0; }
+        p:not(a) { 
+            max-width: 750px;
+            @include breakpoint(1200px) { font-size: ms(-1); }  
+            @include breakpoint(830px) { display: none; }   
         }
     }
 }

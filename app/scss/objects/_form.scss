@@ -15,6 +15,9 @@
             &:focus { 
                 color: white; 
             }
+            &:hover { 
+                background: none;
+            }
         }
 
         button[type='submit'] {

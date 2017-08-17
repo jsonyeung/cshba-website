@@ -12,6 +12,11 @@
         padding: ms(1) 0;
     }
 
+    a {
+        transition: all 0.3s;
+        &:hover { opacity:0.5; }
+    }
+
     &__menu {
         @extend .l-grid;
 

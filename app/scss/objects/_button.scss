@@ -11,6 +11,13 @@
     
     text-align: center;
     text-transform: uppercase;
+
+    transition: all 0.3s;
+
+    &:hover {
+        color: white;
+        background: map-get($color, primary);
+    }
 }
 
 
@@ -19,12 +26,20 @@
 
     color: map-get($color, secondary);
     border-color: map-get($color, secondary);
+
+    &:hover {
+        background: map-get($color, secondary);
+    }
 }
 .o-button--white {
     @extend .o-button;
 
     color: white;
     border-color: white;
+
+    &:hover {
+        background: white;
+    }
 }
 
 
@@ -48,17 +63,41 @@
     background: white;
 }
 
+
 .o-button--link {
     @extend .o-button;
 
+    position: relative;
+
     padding: 0;
-    border-top: none;
-    border-left: none;
-    border-right: none;
+    border: none;
+
+    position: relative;
+
+    &:after {
+        content: '';
+        height: 2px;
+
+        position: absolute;
+        top: 100%;
+        left: 0; right: 0;
+
+        transition: 0.3s all;
+
+        background: map-get($color, primary);
+    }
+
+    &:hover {
+        &:after { right: 50%; }
+
+        color: map-get($color, heading);
+        background: none;
+    }
 }
 
 .o-button--link-secondary {
     @extend .o-button--link;
     color: map-get($color, secondary-accent);
-    border-color: map-get($color, secondary-accent);
+
+    &:after { background: map-get($color, secondary-accent); }
 }

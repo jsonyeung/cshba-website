@@ -21,4 +21,8 @@
 
 .u-type-contain {
     max-width: 750px;
+
+    &-large {
+        max-width: 960px;
+    }
 }
