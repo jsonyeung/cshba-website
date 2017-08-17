@@ -39,8 +39,8 @@ gulp.task('images', function() {
            .pipe(browserSync.stream());
 });
 
-gulp.task('index', function() {
-    return gulp.src('app/index.html')
+gulp.task('html', function() {
+    return gulp.src('app/**/*.html')
            .pipe(gulp.dest('dist'))
            .pipe(browserSync.stream());
 });
@@ -49,12 +49,12 @@ gulp.task('watch', function() {
     gulp.watch('app/scss/**/*.scss', ['sass']);
     gulp.watch('app/js/**/*.js', ['js']);
     gulp.watch('app/images/**/*', ['images']);
-    gulp.watch('app/index.html', ['index']);
+    gulp.watch('app/**/*.html', ['html']);
 });
 
 
 // Commands
-gulp.task('build', ['sass', 'js', 'index', 'images']);
+gulp.task('build', ['sass', 'js', 'html', 'images']);
 
 gulp.task('dev', ['build', 'watch'], function() {
     var browsersync_options = {

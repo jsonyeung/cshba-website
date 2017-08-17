@@ -24,6 +24,8 @@ $(document).ready(function() {
     $hamburg.click(toggle_nav);
     $overlay.click(function() { toggle_nav(); });
 
+    var has_inverse = $nav.hasClass('m-nav--inverse');
+
     var stick_options = {
         offset: 150,
         tolerance: 10,
@@ -39,8 +41,11 @@ $(document).ready(function() {
             if (open) { $nav.addClass('m-nav--sticky'); }
         },
         onTop: function() {
-            $nav.removeClass('m-nav--sticky')
-                .addClass('m-nav--inverse');
+            $nav.removeClass('m-nav--sticky');
+
+            if (has_inverse) {
+                $nav.addClass('m-nav--inverse');
+            }
         }
     };
     $nav.headroom(stick_options);

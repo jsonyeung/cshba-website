@@ -1,0 +1,49 @@
+$module: (
+    container-large: 1200px,
+    container: 750px
+);
+
+.l-module {
+    display: flex;
+    flex-wrap: wrap; 
+    max-width: map-get($module, container-large);
+
+    // 1 column
+    &--1col {
+        @extend .l-module;
+        justify-content: flex-start;
+        max-width: map-get($module, container); 
+    }
+
+    // 2 column paragraphs
+    &--2col {
+        @extend .l-module;
+        justify-content: flex-start;
+
+        & > * { 
+            width: span(6); 
+            margin: 0 ms(0)/2;
+
+            flex: 1 1 300px;
+        }
+    }
+
+    // full-size image
+    &--img {
+        @extend .l-module;
+        width: 100%;
+
+        margin-left: 0;
+        margin-right: 0;
+
+        &-full {
+            @extend .l-module--img;
+            max-width: 100%;
+        }
+
+        &-small {
+            @extend .l-module--img;
+            max-width: map-get($module, container);
+        }
+    }
+}

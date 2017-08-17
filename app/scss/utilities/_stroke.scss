@@ -1,7 +1,32 @@
 .u-stroke {
-    background: url('images/type-stroke-1.png');
-    
-    background-repeat: no-repeat;
-    background-size: contain;
-    
+    position: relative;
+
+    &:after {
+        content: '';
+        max-width: 960px;
+
+        position: absolute;
+        top: 0; bottom: 0;
+        left: 0; right: 0;
+        z-index: -2;
+
+        background: url('images/type-stroke-1.png');  
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-position: left center;
+    }
+ 
+    &-text {
+        position: relative;
+
+        span {
+            position: absolute;
+            top: -25%; left: 0;
+            z-index: -1;
+
+
+            color: rgba(map-get($color, dark), 0.1);
+            @include ms-respond(font-size, 2);
+        }
+    }    
 }
