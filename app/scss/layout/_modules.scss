@@ -5,7 +5,7 @@ $module: (
 
 .l-module {
     display: flex;
-    width: 100%;
+    flex: 1 1 100%;
     flex-wrap: wrap; 
     max-width: map-get($module, container-large);
 
@@ -42,6 +42,22 @@ $module: (
         &-full {
             @extend .l-module--img;
             max-width: 100%;
+        }
+    }
+
+    // sidebars
+    &--sidebar {
+        flex: 1 1 300px;
+        margin: ms(1);
+
+        &-left, &-right { @extend .l-module--sidebar; }
+
+        &-left {
+
+        }
+
+        &-right {
+            margin-left: gutter()*2;
         }
     }
 }
