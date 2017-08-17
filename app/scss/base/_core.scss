@@ -65,6 +65,19 @@ img {
     box-shadow: 0 3px 10px rgba(black, 0.3);  
 }
 
+figcaption {
+    @extend .o-label;
+    display: block;
+
+    letter-spacing: 0;
+    text-transform: none;
+    color: map-get($color, dark);
+
+    width: 100%;
+    text-align: center;
+    padding: ms(1) 0;
+}
+
 input, button {
     &:focus {
         outline: 0;

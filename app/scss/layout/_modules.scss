@@ -40,10 +40,5 @@ $module: (
             @extend .l-module--img;
             max-width: 100%;
         }
-
-        &-small {
-            @extend .l-module--img;
-            max-width: map-get($module, container);
-        }
     }
 }

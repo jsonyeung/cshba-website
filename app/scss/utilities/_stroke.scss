@@ -10,10 +10,25 @@
         left: 0; right: 0;
         z-index: -2;
 
-        background: url('images/type-stroke-1.png');  
         background-repeat: no-repeat;
         background-size: 100% 100%;
         background-position: left center;
+    }
+
+    &, &-1 {
+        @extend .u-stroke;
+
+        &:after {
+            background-image: url('images/type-stroke-1.png');  
+        }
+    }
+
+    &-2 {
+        @extend .u-stroke;
+        
+        &:after {
+            background-image: url('images/type-stroke-2.png');
+        }
     }
  
     &-text {
