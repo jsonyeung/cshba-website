@@ -47,8 +47,13 @@ $module: (
 
     // sidebars
     &--sidebar {
-        flex: 1 1 300px;
-        margin: ms(1);
+        flex: 0 1 300px;
+        margin: ms(1) ms(3);
+
+        @include breakpoint(1370px) { 
+            margin: ms(1);
+            flex-grow: 1; 
+        }
 
         &-left, &-right { @extend .l-module--sidebar; }
 
@@ -73,10 +78,6 @@ $module: (
     @extend .l-module;
 
     &-list {
-        @extend .l-module--society; 
-    }
-
-    &-list-item {
         width: 100%;
 
         display: flex;
@@ -97,6 +98,37 @@ $module: (
             max-width: 750px;
             @include breakpoint(1200px) { font-size: ms(-1); }  
             @include breakpoint(830px) { display: none; }   
+        }
+    }
+}
+
+.l-module--initiative {
+    &-study {
+        border-top: 1px solid map-get($color, subtle);
+
+        padding: ms(2) 0 ms(2);
+
+        @include breakpoint(map-get($bp, med) min-width) {
+            display: flex;
+            width: 100%;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            align-items: flex-start;
+
+            padding-top: ms(3);
+    
+            & > p { 
+                width: span(5); 
+            }
+            & > h4 { 
+                width: span(4); 
+            }
+            & > div {
+                width: span(2);
+            }
+            & > a {
+                width: span(1);
+            }
         }
     }
 }
