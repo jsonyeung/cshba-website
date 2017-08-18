@@ -61,6 +61,15 @@
     &__bg-content {
         padding-top: ms(10);
     }
+
+    &--respond {
+        @extend .l-section;
+        padding: ms(10) 0 ms(6);
+
+        @include breakpoint(map-get($bp, med)) {
+            padding: ms(8) 0 ms(4);
+        }
+    }
 }
 
 .l-block {

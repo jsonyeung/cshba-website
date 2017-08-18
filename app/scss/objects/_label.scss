@@ -16,3 +16,12 @@
     color: map-get($color, primary);
     border-bottom: 1px solid map-get($color, primary);
 }
+
+.o-label--knockout {
+    @extend .o-label;
+
+    padding: 0 ms(-2);
+
+    color: white;
+    background: #333;
+}

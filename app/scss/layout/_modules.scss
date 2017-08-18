@@ -1,6 +1,6 @@
 $module: (
     container-large: 1200px,
-    container: 750px
+    container: 700px 
 );
 
 .l-module {
@@ -81,7 +81,7 @@ $module: (
     &--links {
         @extend .m-menu--vertical;
 
-        li:not(:first-child) { 
+        li { 
             display: flex; 
             align-items: center;
 
@@ -114,16 +114,24 @@ $module: (
     }
 }
 
-.l-module--table-of-contents {
+
+
+.l-module__table-of-contents {
     @extend .m-menu--vertical;
     @extend .l-module;
 
     .o-label { border-bottom: 2px solid lightgrey; }
 }
 
-.l-module--society {
-    @extend .l-module;
 
+.l-module__society {
+    &-list {
+        @extend .l-module--2col;
+        align-items: center;
+    }
+}
+
+.l-module__initiative {
     &-list {
         width: 100%;
 
@@ -147,9 +155,7 @@ $module: (
             @include breakpoint(830px) { display: none; }   
         }
     }
-}
 
-.l-module--initiative {
     &-study {
         border-top: 1px solid map-get($color, subtle);
 
