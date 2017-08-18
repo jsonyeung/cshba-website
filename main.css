@@ -2339,23 +2339,107 @@ th {
 .u-type-center {
   text-align: center; }
 
-/* line 15, app/scss/utilities/_type.scss */
+/* line 18, app/scss/utilities/_type.scss */
+.u-type-size-0 {
+  font-size: 1em !important; }
+
+/* line 22, app/scss/utilities/_type.scss */
+.u-type-respond-0 {
+  font-size: 1em; }
+  @media (min-width: 20em) and (max-width: 80em) {
+    /* line 22, app/scss/utilities/_type.scss */
+    .u-type-respond-0 {
+      font-size: calc( 1em + 0 * ( ( 100vw - 20em) / 60 )); } }
+  @media (min-width: 80em) {
+    /* line 22, app/scss/utilities/_type.scss */
+    .u-type-respond-0 {
+      font-size: 1em; } }
+
+/* line 18, app/scss/utilities/_type.scss */
+.u-type-size-1 {
+  font-size: 1.333em !important; }
+
+/* line 22, app/scss/utilities/_type.scss */
+.u-type-respond-1 {
+  font-size: 1.125em; }
+  @media (min-width: 20em) and (max-width: 80em) {
+    /* line 22, app/scss/utilities/_type.scss */
+    .u-type-respond-1 {
+      font-size: calc( 1.125em + 0.208 * ( ( 100vw - 20em) / 60 )); } }
+  @media (min-width: 80em) {
+    /* line 22, app/scss/utilities/_type.scss */
+    .u-type-respond-1 {
+      font-size: 1.333em; } }
+
+/* line 18, app/scss/utilities/_type.scss */
+.u-type-size-2 {
+  font-size: 1.77689em !important; }
+
+/* line 22, app/scss/utilities/_type.scss */
+.u-type-respond-2 {
+  font-size: 1.26563em; }
+  @media (min-width: 20em) and (max-width: 80em) {
+    /* line 22, app/scss/utilities/_type.scss */
+    .u-type-respond-2 {
+      font-size: calc( 1.26563em + 0.51126 * ( ( 100vw - 20em) / 60 )); } }
+  @media (min-width: 80em) {
+    /* line 22, app/scss/utilities/_type.scss */
+    .u-type-respond-2 {
+      font-size: 1.77689em; } }
+
+/* line 18, app/scss/utilities/_type.scss */
+.u-type-size-3 {
+  font-size: 2.36859em !important; }
+
+/* line 22, app/scss/utilities/_type.scss */
+.u-type-respond-3 {
+  font-size: 1.42383em; }
+  @media (min-width: 20em) and (max-width: 80em) {
+    /* line 22, app/scss/utilities/_type.scss */
+    .u-type-respond-3 {
+      font-size: calc( 1.42383em + 0.94476 * ( ( 100vw - 20em) / 60 )); } }
+  @media (min-width: 80em) {
+    /* line 22, app/scss/utilities/_type.scss */
+    .u-type-respond-3 {
+      font-size: 2.36859em; } }
+
+/* line 18, app/scss/utilities/_type.scss */
+.u-type-size-4 {
+  font-size: 3.15733em !important; }
+
+/* line 22, app/scss/utilities/_type.scss */
+.u-type-respond-4 {
+  font-size: 1.60181em; }
+  @media (min-width: 20em) and (max-width: 80em) {
+    /* line 22, app/scss/utilities/_type.scss */
+    .u-type-respond-4 {
+      font-size: calc( 1.60181em + 1.55553 * ( ( 100vw - 20em) / 60 )); } }
+  @media (min-width: 80em) {
+    /* line 22, app/scss/utilities/_type.scss */
+    .u-type-respond-4 {
+      font-size: 3.15733em; } }
+
+/* line 29, app/scss/utilities/_type.scss */
 .u-type-subtitle {
   font-size: 1.125em;
   margin-top: -0.42219em; }
   @media (min-width: 20em) and (max-width: 80em) {
-    /* line 15, app/scss/utilities/_type.scss */
+    /* line 29, app/scss/utilities/_type.scss */
     .u-type-subtitle {
       font-size: calc( 1.125em + 0.208 * ( ( 100vw - 20em) / 60 )); } }
   @media (min-width: 80em) {
-    /* line 15, app/scss/utilities/_type.scss */
+    /* line 29, app/scss/utilities/_type.scss */
     .u-type-subtitle {
       font-size: 1.333em; } }
 
-/* line 22, app/scss/utilities/_type.scss */
+/* line 34, app/scss/utilities/_type.scss */
+.u-type-bold {
+  font-weight: bold; }
+
+/* line 40, app/scss/utilities/_type.scss */
 .u-type-contain {
   max-width: 750px; }
-  /* line 25, app/scss/utilities/_type.scss */
+  /* line 43, app/scss/utilities/_type.scss */
   .u-type-contain-large {
     max-width: 960px; }
 
@@ -2518,6 +2602,15 @@ th {
   /* line 102, app/scss/objects/_button.scss */
   .o-button--link-secondary:after {
     background: #D9A652; }
+
+/* line 1, app/scss/objects/_link.scss */
+.o-link, p a, a a, blockquote a {
+  text-shadow: 2px 0 0 #FCFCFB, -2px 0 0 #FCFCFB;
+  background-image: -webkit-gradient(linear, left top, right top, from(currentColor), to(currentColor));
+  background-image: linear-gradient(to right, currentColor 0%, currentColor 100%);
+  background-repeat: repeat-x;
+  background-position: 0 96%;
+  background-size: 100% 1px; }
 
 /* line 1, app/scss/objects/_label.scss */
 .o-label, .o-label--link, .o-label--knockout, figcaption, .l-footer__sub p, .l-footer__sub a, .l-footer__sub blockquote {
