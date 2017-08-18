@@ -1,4 +1,4 @@
-$(document).ready(function() {
+jQuery(document).ready(function($) {
     var $nav     = $('.m-nav');
     var $hamburg = $('.m-nav__hamburger');
 
