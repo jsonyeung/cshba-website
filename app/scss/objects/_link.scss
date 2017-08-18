@@ -1,0 +1,9 @@
+.o-link {
+    text-shadow: 2px 0 0 map-get($color , background), -2px 0 0 map-get($color , background);
+    background-image: linear-gradient( to right, currentColor 0%, currentColor 100% );
+    background-repeat: repeat-x;
+    background-position: 0 96%;
+    background-size: 100% 1px;
+}
+
+p a { @extend .o-link; }
