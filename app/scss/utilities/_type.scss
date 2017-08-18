@@ -24,11 +24,15 @@ $steps: 4;
     }
 }
 
-// subtitle
+// styling
 
 .u-type-subtitle {
     @include ms-respond(font-size, 1);
     margin-top: -#{ms(-3)};
+}
+
+.u-type-bold {
+    font-weight: bold;
 }
 
 // contain text to make reading easier
