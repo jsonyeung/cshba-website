@@ -58,6 +58,15 @@ a {
 
 li { }
 
+blockquote {
+    @extend p;
+    @include ms-respond(font-size, 1);
+
+    margin: ms(0) gutter()*2;
+
+    color: map-get($color, primary-accent);
+}
+
 img {
     width: 100%;
 

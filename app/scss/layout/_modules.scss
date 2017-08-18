@@ -24,9 +24,16 @@ $module: (
 
         & > * { 
             width: span(6); 
-            margin: 0 ms(0)/2;
+
+            margin: 0 gutter();
+            &:first-child { margin-left:0; }
+            &:last-child { margin-right: 0; }
 
             flex: 1 1 300px;
+            @include breakpoint(map-get($bp, med) - 200) { 
+                margin-left: 0; 
+                margin-right: 0;
+            }
         }
     }
 
@@ -45,24 +52,64 @@ $module: (
         }
     }
 
-    // sidebars
+    // sidebar
     &--sidebar {
-        flex: 0 1 300px;
+        flex: 0 1 250px;
+        align-self: flex-start;
+
         margin: ms(1) ms(3);
 
-        @include breakpoint(1370px) { 
+        @include breakpoint(1350px) { 
             margin: ms(1);
             flex-grow: 1; 
+            order: -1;
         }
 
-        &-left, &-right { @extend .l-module--sidebar; }
-
-        &-left {
-
-        }
+        p, a { margin: 0; }
 
         &-right {
+            @extend .l-module--sidebar;
+
             margin-left: gutter()*2;
+            padding-left: gutter()*2;
+            border-left: 2px solid lightgrey; 
+        }
+    }
+
+    // links
+
+    &--links {
+        @extend .m-menu--vertical;
+
+        li:not(:first-child) { 
+            display: flex; 
+            align-items: center;
+
+            margin-bottom: ms(1);
+
+            &:hover {
+
+                h5 { color: map-get($color, secondary-accent); }
+
+                .o-button--link-secondary {
+                    @extend .o-button--link-secondary:hover;
+
+                    &:after { 
+                        @extend .o-button--link-secondary:hover:after; 
+                    }
+                }
+            }
+        } 
+
+        a {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        h5 { 
+            margin: 0; 
+            color: map-get($color, dark); 
+            transition: all 0.4s;
         }
     }
 }
@@ -95,8 +142,8 @@ $module: (
 
         h4 { margin-top: 0; }
         p:not(a) { 
-            max-width: 750px;
-            @include breakpoint(1200px) { font-size: ms(-1); }  
+            max-width: map-get($module, container);
+            @include breakpoint(map-get($module, container-large)) { font-size: ms(-1); }  
             @include breakpoint(830px) { display: none; }   
         }
     }
