@@ -10,6 +10,20 @@
     text-align: center;
 }
 
+// size
+
+$steps: 4;
+
+@for $i from 0 through $steps {
+    .u-type-size-#{$i} {
+        font-size: ms($i) !important;
+    }
+
+    .u-type-respond-#{$i} {
+        @include ms-respond(font-size, $i);
+    }
+}
+
 // subtitle
 
 .u-type-subtitle {
