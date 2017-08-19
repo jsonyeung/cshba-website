@@ -3509,7 +3509,20 @@ input:focus, button:focus {
     .l-homepage__twitter {
       margin: 0; } }
 
-/* line 5, app/scss/layout/_society.scss */
+/* line 1, app/scss/layout/_society.scss */
+.l-society__header {
+  padding: 7.47844em 0 3.15733em; }
+  @media (max-width: 900px) {
+    /* line 1, app/scss/layout/_society.scss */
+    .l-society__header {
+      padding: 4.20873em 0 1.77689em; } }
+
+/* line 11, app/scss/layout/_society.scss */
+.l-society__bg {
+  background: url("images/bg-brush-pattern.png") repeat-y;
+  background-size: contain; }
+
+/* line 16, app/scss/layout/_society.scss */
 .l-society__subtitle {
   font-size: 1.26563em;
   margin-top: 0.31672em;
@@ -3529,14 +3542,14 @@ input:focus, button:focus {
       -ms-flex-align: center;
           align-items: center; }
   @media (min-width: 20em) and (max-width: 80em) {
-    /* line 5, app/scss/layout/_society.scss */
+    /* line 16, app/scss/layout/_society.scss */
     .l-society__subtitle {
       font-size: calc( 1.26563em + 0.51126 * ( ( 100vw - 20em) / 60 )); } }
   @media (min-width: 80em) {
-    /* line 5, app/scss/layout/_society.scss */
+    /* line 16, app/scss/layout/_society.scss */
     .l-society__subtitle {
       font-size: 1.77689em; } }
-  /* line 20, app/scss/layout/_society.scss */
+  /* line 31, app/scss/layout/_society.scss */
   .l-society__subtitle:after, .l-society__subtitle:before {
     content: '';
     width: 1em;
@@ -3544,7 +3557,7 @@ input:focus, button:focus {
     background: currentColor;
     margin: 0 1em; }
 
-/* line 30, app/scss/layout/_society.scss */
+/* line 41, app/scss/layout/_society.scss */
 .l-society__details {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3552,7 +3565,7 @@ input:focus, button:focus {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center; }
-  /* line 35, app/scss/layout/_society.scss */
+  /* line 46, app/scss/layout/_society.scss */
   .l-society__details-item {
     margin: 1em;
     text-align: center;
@@ -3560,7 +3573,7 @@ input:focus, button:focus {
         -ms-flex: 1 1 125px;
             flex: 1 1 125px; }
 
-/* line 47, app/scss/layout/_society.scss */
+/* line 58, app/scss/layout/_society.scss */
 .u-dropcap:first-letter {
   margin: 0 0.2em 0em 0;
   float: left;
