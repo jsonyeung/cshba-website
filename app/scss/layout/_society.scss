@@ -1,5 +1,16 @@
 .l-society__header {
     @extend .l-header;
+
+    padding: ms(7) 0 ms(4);
+
+    @include breakpoint(map-get($bp, med)) {
+        padding: ms(5) 0 ms(2);
+    }
+}
+
+.l-society__bg {
+    background: url('images/bg-brush-pattern.png') repeat-y;
+    background-size: contain;
 }
 
 .l-society__subtitle {
