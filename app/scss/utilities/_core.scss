@@ -77,6 +77,14 @@ $steps: 12;
 .u-flex, .u-flexbox {
     display: flex !important;
 
+    &-justify-start, &-justify-left {
+        justify-content: flex-start !important;
+    }
+
+    &-justify-end, &-justify-right {
+        justify-content: flex-end !important;
+    }
+
     &-justify-center {
         justify-content: center !important;
     }
