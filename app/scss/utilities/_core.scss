@@ -75,12 +75,14 @@ $steps: 12;
 // flexbox
 
 .u-flex, .u-flexbox {
+    display: flex !important;
+
     &-justify-center {
         justify-content: center !important;
     }
 
     &-justify-space-between {
-        justify-content: space-between
+        justify-content: space-between !important;
     }
     
     &-align-center {

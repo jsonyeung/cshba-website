@@ -1,0 +1,59 @@
+.l-society__header {
+    @extend .l-header;
+}
+
+.l-society__subtitle {
+    @include ms-respond(font-size, 2);
+    
+    margin-top: ms(-4);
+
+    letter-spacing: 10px;
+    font-family: 宋体, SimSun, 华文细黑, STXihei;
+    font-weight: bold;
+    color: map-get($color, subtle);
+
+    display: flex;  
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+
+    &:after, &:before {
+        content: '';
+        width: ms(0);
+        height: 1px;
+        background: currentColor;
+
+        margin: 0 ms(0);
+    }
+}
+
+.l-society__details {
+    @extend .l-module; 
+    display: flex; 
+    justify-content: center; 
+
+    &-item {
+        margin: ms(0);
+        
+        text-align: center;
+        flex-basis: 100px;
+    }
+}
+
+
+// special elements
+
+.u-dropcap {
+    &:first-letter {
+        margin :0 0.2em 0em 0;
+        float:left;
+        margin-left: -1px;
+    
+        font-weight: 700;
+        font-size: 3.1em;
+        line-height: 1;
+    
+        text-shadow: 2px 2px 1px map-get($color, background),
+        3px 3px 1px map-get($color, subtle);
+    }
+}
