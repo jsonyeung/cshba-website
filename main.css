@@ -2455,6 +2455,9 @@ th {
   /* line 43, app/scss/utilities/_type.scss */
   .u-type-contain-large {
     max-width: 960px; }
+  /* line 47, app/scss/utilities/_type.scss */
+  .u-type-contain-larger {
+    max-width: 1200px; }
 
 /* line 4, app/scss/utilities/_grid.scss */
 .u-margin-right-gutter {
