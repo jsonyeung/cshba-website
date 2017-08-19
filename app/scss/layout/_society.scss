@@ -28,7 +28,7 @@
 }
 
 .l-society__details {
-    @extend .l-module; 
+    @extend .l-module;
     display: flex; 
     justify-content: center; 
 
@@ -36,7 +36,7 @@
         margin: ms(0);
         
         text-align: center;
-        flex-basis: 100px;
+        flex: 1 1 125px;
     }
 }
 
