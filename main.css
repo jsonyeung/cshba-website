@@ -2175,46 +2175,56 @@ th {
   display: -ms-flexbox !important;
   display: flex !important; }
   /* line 80, app/scss/utilities/_core.scss */
+  .u-flex-justify-start, .u-flex-justify-left, .u-flexbox-justify-start, .u-flexbox-justify-left {
+    -webkit-box-pack: start !important;
+        -ms-flex-pack: start !important;
+            justify-content: flex-start !important; }
+  /* line 84, app/scss/utilities/_core.scss */
+  .u-flex-justify-end, .u-flex-justify-right, .u-flexbox-justify-end, .u-flexbox-justify-right {
+    -webkit-box-pack: end !important;
+        -ms-flex-pack: end !important;
+            justify-content: flex-end !important; }
+  /* line 88, app/scss/utilities/_core.scss */
   .u-flex-justify-center, .u-flexbox-justify-center {
     -webkit-box-pack: center !important;
         -ms-flex-pack: center !important;
             justify-content: center !important; }
-  /* line 84, app/scss/utilities/_core.scss */
+  /* line 92, app/scss/utilities/_core.scss */
   .u-flex-justify-space-between, .u-flexbox-justify-space-between {
     -webkit-box-pack: justify !important;
         -ms-flex-pack: justify !important;
             justify-content: space-between !important; }
-  /* line 88, app/scss/utilities/_core.scss */
+  /* line 96, app/scss/utilities/_core.scss */
   .u-flex-align-center, .u-flexbox-align-center {
     -webkit-box-align: center !important;
         -ms-flex-align: center !important;
             align-items: center !important; }
-  /* line 92, app/scss/utilities/_core.scss */
+  /* line 100, app/scss/utilities/_core.scss */
   .u-flex-full, .u-flexbox-full {
     -webkit-box-flex: 1;
         -ms-flex: 1 1 100%;
             flex: 1 1 100%; }
 
-/* line 100, app/scss/utilities/_core.scss */
+/* line 108, app/scss/utilities/_core.scss */
 .u-block {
   display: block !important; }
 
-/* line 104, app/scss/utilities/_core.scss */
+/* line 112, app/scss/utilities/_core.scss */
 .u-inline-block, .u-block-inline {
   display: inline-block !important; }
 
 @media (max-width: 500px) {
-  /* line 111, app/scss/utilities/_core.scss */
+  /* line 119, app/scss/utilities/_core.scss */
   .u-hide-on-small {
     display: none !important; } }
 
 @media (max-width: 900px) {
-  /* line 111, app/scss/utilities/_core.scss */
+  /* line 119, app/scss/utilities/_core.scss */
   .u-hide-on-med {
     display: none !important; } }
 
 @media (max-width: 1280px) {
-  /* line 111, app/scss/utilities/_core.scss */
+  /* line 119, app/scss/utilities/_core.scss */
   .u-hide-on-large {
     display: none !important; } }
 
