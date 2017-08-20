@@ -1,0 +1,55 @@
+.l-about__header {
+    @extend .l-header;
+
+    padding: ms(7) 0 0;
+
+    @include breakpoint(map-get($bp, med)) {
+        padding: ms(5) 0 0;
+    }
+}
+
+.l-about__vision {
+    @extend .l-section;
+
+    padding: ms(2) 0;
+    overflow: visible;
+
+    .l-block {     
+        padding: ms(0);
+    }
+
+    .l-block:first-child {
+        text-align: center;
+
+        p { 
+            display: inline-block;  
+            max-width: 500px; 
+
+            position: relative;
+
+            font-weight: bold;
+        }
+    }
+}
+
+.l-about__stamp {
+    @extend .u-image-no-shadow;
+    @extend .u-image-no-responsive;
+
+    max-width: 160px;
+
+    position: absolute;
+    bottom: 50%;
+    left: -10%;
+
+    @include breakpoint(map-get($bp, med)) {
+        bottom: 60%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+
+.l-about__directors {
+
+}
