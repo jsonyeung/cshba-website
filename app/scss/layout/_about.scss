@@ -2,9 +2,11 @@
     @extend .l-header;
 
     padding: ms(7) 0 0;
+    margin-bottom: ms(5);
 
     @include breakpoint(map-get($bp, med)) {
         padding: ms(5) 0 0;
+        margin-bottom: ms(3);
     }
 }
 
