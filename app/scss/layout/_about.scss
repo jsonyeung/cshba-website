@@ -53,8 +53,9 @@
 
 
 .l-about__directors {
+    margin: ms(4) 0;
+    
     .l-section__content {
-        margin-top: ms(4);
         padding-bottom: ms(3);
 
         background: #F7F7F7;
@@ -74,7 +75,37 @@
 }
 
 .l-about__message {
+    margin: ms(4) 0;
     
+    .l-section__content {
+        padding: ms(2);
+        background: #333;
+
+        @include breakpoint(map-get($bp, small)) {
+            padding: ms(0);
+        }
+    }
+
+    .l-block {
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+
+        padding: ms(4) ms(0);
+
+        border: 2px solid map-get($color, secondary);
+        text-align: center;
+
+        & > * { 
+            display: inline-block;
+            max-width: 750px;
+            color: white; 
+
+            width: 100%;
+        }
+
+        img { max-width: 250px; }
+    }
 }
 
 .l-about__sponsers {

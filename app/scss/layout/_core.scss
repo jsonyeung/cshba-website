@@ -26,6 +26,14 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
+
+        &--colored {
+            @extend .l-section__content;
+
+            padding-top: ms(1);
+            padding-bottom: ms(3);
+            background: #F7F7F7;
+        }
     }
 
     &__bg {
