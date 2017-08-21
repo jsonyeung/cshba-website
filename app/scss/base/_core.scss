@@ -78,11 +78,8 @@ figure {
 }
 
 figcaption {
+    @extend .o-label;
     display: block;
-
-    font-family: map-get($type, tertiary);
-    letter-spacing: 0;
-    color: map-get($color, subtle);
 
     width: 100%;
     letter-spacing: 2px;

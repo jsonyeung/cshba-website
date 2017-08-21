@@ -38,6 +38,23 @@
             background-image: url('images/type-stroke-3.png');
         }
     }
+
+    &-edge {
+        &-1 {
+            @extend .u-stroke;
+
+            &:after {
+                background: url('images/top-brush.png') repeat-x;
+                background-size: 100% 100%;
+
+                width: 100%;
+                max-width: none;
+                height: 25px;
+                
+                top: auto;
+            }
+        }
+    }
  
     &-text {
         position: relative;

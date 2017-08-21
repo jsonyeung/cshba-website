@@ -73,10 +73,10 @@
 
     &--respond {
         @extend .l-section;
-        padding: ms(10) 0 ms(7);
+        padding: ms(8) 0 ms(7);
 
         @include breakpoint(map-get($bp, med)) {
-            padding: ms(8) 0 ms(5);
+            padding: ms(6) 0 ms(5);
         }
     }
 }

@@ -1,5 +1,6 @@
 .l-about__header {
     @extend .l-header;
+    @extend .u-stroke-edge-1;
 
     padding: ms(7) 0 0;
     margin-bottom: ms(5);
