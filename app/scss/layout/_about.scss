@@ -53,5 +53,22 @@
 
 
 .l-about__directors {
+    .l-section__content {
+        margin-top: ms(4);
+        padding-bottom: ms(3);
 
+        background: #F7F7F7;
+    }
+
+    &-prev {
+        margin-bottom: ms(1);
+
+        @include breakpoint(map-get($bp, med) - 200 min-width) {
+            width: span(6);    
+        }
+
+        @include breakpoint(map-get($bp, large) min-width) {
+            width: span(4);
+        }
+    }
 }

@@ -3,6 +3,14 @@ $module: (
     container: 700px 
 );
 
+@each $key, $size in $module {
+    .l-module-#{$key} {
+        display: flex;
+        flex: 1 1 100%;
+        max-width: $size;
+    }
+}
+
 .l-module {
     display: flex;
     flex: 1 1 100%;

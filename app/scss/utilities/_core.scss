@@ -77,6 +77,10 @@ $steps: 12;
 .u-flex, .u-flexbox {
     display: flex !important;
 
+    &-wrap {
+        flex-wrap: wrap; 
+    }
+
     &-justify-start, &-justify-left {
         justify-content: flex-start !important;
     }
@@ -120,5 +124,33 @@ $steps: 12;
         @include breakpoint($val) {
             display: none !important;
         }
+    }
+}
+
+// position
+
+.u-position {
+    &-top-left {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    &-top-right {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    &-bottom-left {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+
+    &-bottom-right {
+        position: absolute;
+        bottom: 0;
+        right: 0;
     }
 }

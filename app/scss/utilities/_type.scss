@@ -14,7 +14,7 @@
 
 $steps: 4;
 
-@for $i from 0 through $steps {
+@for $i from -$steps through $steps {
     .u-type-size-#{$i} {
         font-size: ms($i) !important;
     }
