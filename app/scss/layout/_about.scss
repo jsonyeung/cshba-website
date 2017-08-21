@@ -72,3 +72,31 @@
         }
     }
 }
+
+.l-about__message {
+    
+}
+
+.l-about__sponsers {
+    padding: ms(4) 0;
+    .title { 
+        flex: 1 1 100%;
+        text-align: center;
+
+        font-family: map-get($type, tertiary); 
+        font-size: ms(1);
+        letter-spacing: 2px;
+
+        color: map-get($color, subtle);
+    }
+
+    a { 
+        max-width: 150px;
+        flex: 1 1 1;
+        margin: ms(0) gutter(); 
+    }
+
+    img {
+        @extend .u-image-no-shadow;
+    }
+}
