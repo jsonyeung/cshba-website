@@ -39,8 +39,14 @@ gulp.task('images', function() {
            .pipe(browserSync.stream());
 });
 
-gulp.task('html', function() {
-    return gulp.src('app/**/*.html')
+gulp.task('twig', function() {
+    return gulp.src('app/**/*.twig')
+           .pipe(gulp.dest('dist'))
+           .pipe(browserSync.stream());
+});
+
+gulp.task('php', function() {
+    return gulp.src('app/**/*.php')
            .pipe(gulp.dest('dist'))
            .pipe(browserSync.stream());
 });
@@ -49,16 +55,18 @@ gulp.task('watch', function() {
     gulp.watch('app/scss/**/*.scss', ['sass']);
     gulp.watch('app/js/**/*.js', ['js']);
     gulp.watch('app/images/**/*', ['images']);
-    gulp.watch('app/**/*.html', ['html']);
+    gulp.watch('app/**/*.twig', ['twig']);
+    gulp.watch('app/**/*.php', ['php']);
 });
 
 
 // Commands
-gulp.task('build', ['sass', 'js', 'html', 'images']);
+gulp.task('build', ['sass', 'js', 'twig', 'php', 'images']);
 
 gulp.task('dev', ['build', 'watch'], function() {
     var browsersync_options = {
-        server: './dist'
+        proxy: 'http://localhost/wordpress'
+        // server: './dist'
     };
     
     browserSync.init(browsersync_options);
