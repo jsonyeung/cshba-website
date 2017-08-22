@@ -23,14 +23,8 @@
             </div>
         </section>
 
-        <section class="l-section l-homepage__instagram">
+        <section id='instafeed' class="l-section l-homepage__instagram">
             <a href='#' class='o-button--solid'>@CSHBA <span class='fa fa-instagram'></span></a>
-            <a href='#'><img src='http://placehold.it/320x320'></a>
-            <a href='#'><img src='http://placehold.it/320x320'></a>
-            <a href='#'><img src='http://placehold.it/320x320'></a>
-            <a href='#'><img src='http://placehold.it/320x320'></a>
-            <a href='#'><img src='http://placehold.it/320x320'></a>
-            <a href='#'><img src='http://placehold.it/320x320'></a>
         </section>
 
         <section class="l-section u-margin-top-6">
@@ -181,9 +175,20 @@
         {% embed 'layout/scripts.twig' %}  
             {% block scripts %}
                 <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.min.js'></script>
-
-                <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/spectragram/1.0.3/spectragram.min.js'></script>
+                <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/instafeed.js/1.4.1/instafeed.min.js'></script>
+                
                 <script type='text/javascript'>
+                    var feed = new Instafeed({
+                        get: 'user',
+                        sortBy: 'most-recent',
+                        resolution: 'low_resolution',
+                        limit: 6,
+
+                        clientId: '{{post.get_field("instagram_client_id")}}',
+                        accessToken: '{{post.get_field("instagram_access_token")}}',
+                        userId: '{{post.get_field("instagram_user_id")}}'
+                    });
+                    feed.run();
                 </script>
             {% endblock %}    
         {% endembed %}     
