@@ -1,7 +1,7 @@
 <footer class='l-footer u-margin-top-7'>
     <div class="l-footer__main">
         <div class='l-footer__section'>
-            <img class='u-image-no-responsive u-image-no-shadow' src='{{theme.link}}/images/logo-white.png'>
+            <a href='{{site.link}}'><img class='u-image-no-responsive u-image-no-shadow' src='{{theme.link}}/images/logo-white.png'></a>
             <p class='u-color-white'>
                 Chinatown Society Heritage Building Association<br>
                 PO Box 1443<br>
@@ -41,4 +41,6 @@
             <p>Copyright {{'now'|date('Y')}} &copy; All Rights Reserved. Chinatown Society Heritage Building Association</p>
         </div>
     </div>
+
+    {{function('wp_footer')}}
 </footer>

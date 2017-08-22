@@ -99,6 +99,11 @@
 .l-footer {
     background: map-get($color, footer);
 
+    a {
+        transition: opacity 0.3s;
+        &:hover { opacity: 0.5; }
+    } 
+
     &__main {
         @extend .l-grid;
         padding-top: ms(5);
