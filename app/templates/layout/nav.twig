@@ -1,4 +1,8 @@
-<nav class='m-nav m-nav--inverse'>
+{% if not inverse is defined %}
+    {% set inverse = false %}
+{% endif %}
+
+<nav class='m-nav {{inverse ? "m-nav--inverse"}}'> 
     <div class='m-nav__menu'>
         <ul class='m-menu'>
             <li class='o-logo u-margin-right-3'><a href='#'><div class='o-logo'></div></a></li>

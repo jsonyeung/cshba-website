@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 
-    {% include 'layout/header.twig' %}
+    {% embed 'layout/header.twig' %}
+        {% block styles %}
+            <link rel='stylesheet' type='text/css' href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.min.css'>
+        {% endblock %} 
+    {% endembed %}
 
-    {% include 'layout/nav.twig' %}
+    {% include 'layout/nav.twig' with {'inverse': true} %}
 
         <header class='l-homepage__header'>
-            <div class='l-header__bg' style='background-image: url("images/homepage-header.png");'></div>
+            <div class='l-header__bg' style='background-image: url("{{theme.link}}/images/homepage-header.png");'></div>
             <div class='l-grid u-padding-top-7 u-type-center'>
                 <h1 class='u-color-background'>Keeping Heritage Traditions<br>in Vancouver Chinatown</h1>
                 <p class='u-type-subtitle u-color-secondary'>Anchoring Changes, Reviving Traditions</p>
@@ -13,7 +17,7 @@
         </header>
 
         <section class='l-homepage__detail'>
-            <div class='l-section__bg' style='background-image: url("images/homepage-brush-1.png"); background-size: 100% 100%;'></div>
+            <div class='l-section__bg' style='background-image: url("{{theme.link}}/images/homepage-brush-1.png"); background-size: 100% 100%;'></div>
             <div class='l-header__content u-padding-top-6 u-padding-bottom-7 u-type-center'>
                 <p class='u-color-background l-block--centered'>Vancouver Chinatown is unique. It is important to the City of Vancouver which would like to see it vigorously maintained and revitalized. Vancouver Chinatown is unique in that its history of close to 120 years has witnessed the growth of the originally ghettorized Chinese community and its gradual integration into mainstream Canadian society.</p>
             </div>
@@ -43,7 +47,7 @@
         </section>
 
         <section class="l-homepage__society">
-            <div class='l-section__bg' style='background-image: url("images/homepage-society.png"); background-size: auto 100%;'></div>
+            <div class='l-section__bg' style='background-image: url("{{theme.link}}/images/homepage-society.png"); background-size: auto 100%;'></div>
             <div class="l-section__content">
                 <div class='l-block u-margin-right-gutter'>
                     <h2 class='u-stroke-text-secondary-accent u-margin-none'>Family Associations and Benevolent Societies</h2>
@@ -174,9 +178,10 @@
 
         {% include 'layout/footer.twig' %}
 
-        {% include 'layout/scripts.twig' %}  
-        {% block scripts %}
-            <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.min.js'></script>
-        {% endblock %}         
+        {% embed 'layout/scripts.twig' %}  
+            {% block scripts %}
+                <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.min.js'></script>
+            {% endblock %}    
+        {% endembed %}     
     </body>
 </html>
