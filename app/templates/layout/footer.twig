@@ -32,18 +32,13 @@
         <div class='l-footer__section'>
             <ul class='m-menu--vertical'>
                 <li class='u-padding-bottom-1'><a href='#' class='o-button--solid u-inline-block'>Donate</a></li>
-                <ul class='o-social-media'>
-                    <li><a href='#' class="fa fa-facebook"></a></li>
-                    <li><a href='#' class="fa fa-twitter"></a></li>
-                    <li><a href='#' class="fa fa-instagram"></a></li>
-                    <li><a href='#' class="fa fa-youtube-play"></a></li>
-                </ul>
+                {% embed 'modules/social-media.twig' %}{% endembed %}
             </ul>
         </div>
     </div>
     <div class='l-footer__sub'>
         <div class="l-grid">
-            <p>Copyright 2017 &copy; All Rights Reserved. Chinatown Society Heritage Building Association</p>
+            <p>Copyright {{'now'|date('Y')}} &copy; All Rights Reserved. Chinatown Society Heritage Building Association</p>
         </div>
     </div>
 </footer>

@@ -1,10 +1,7 @@
 <?php
 
 $context = Timber::get_context();
-
-$context['posts'] = Timber::get_posts();
-$context['foo'] = 'bar';
+$context['post'] = new TimberPost();
 
 $templates = array('front-page.twig');
-
 Timber::render($templates, $context);

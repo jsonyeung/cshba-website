@@ -25,11 +25,31 @@ class CSHBASite extends TimberSite {
 
 		add_filter( 'timber_context', array( $this, 'add_to_context' ) );
 
+		add_action( 'init', array( $this, 'options_page' ) );
 		add_action( 'init', array( $this, 'register_post_types' ) );
 		add_action( 'init', array( $this, 'register_taxonomies' ) );
 
 		parent::__construct();
-    }
+	}
+	
+	function options_page() {
+		if ( function_exists('acf_add_options_page') ) {
+
+			acf_add_options_page(array(
+				'page_title' => 'Theme Settings',
+				'menu_title' => 'Theme Settings',
+				'menu_slug' => 'theme-settings',
+				'redirect' => false
+			));
+
+			acf_add_options_sub_page(array(
+				'page_title' => 'Social Media Settings',
+				'menu_title' => 'Social Media',
+				'parent_slug' => 'theme-settings'
+			));
+
+		}
+	}
     
 	function register_post_types() {
 		//this is where you can register custom post types
@@ -42,6 +62,7 @@ class CSHBASite extends TimberSite {
 	function add_to_context( $context ) {
 		$context['menu'] = new TimberMenu();
 		$context['site'] = $this;
+		$context['options'] = get_fields('option');
 
 		return $context;
     }

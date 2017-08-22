@@ -11,37 +11,37 @@
         <header class='l-homepage__header'>
             <div class='l-header__bg' style='background-image: url("{{theme.link}}/images/homepage-header.png");'></div>
             <div class='l-grid u-padding-top-7 u-type-center'>
-                <h1 class='u-color-background'>Keeping Heritage Traditions<br>in Vancouver Chinatown</h1>
-                <p class='u-type-subtitle u-color-secondary'>Anchoring Changes, Reviving Traditions</p>
+                <h1 class='u-color-background u-inline-block u-type-contain-large'>{{post.get_field('intro_title')}}</h1>
+                <p class='u-type-subtitle u-color-secondary'>{{post.get_field('intro_subtitle')}}</p>
             </div>
         </header>
 
         <section class='l-homepage__detail'>
             <div class='l-section__bg' style='background-image: url("{{theme.link}}/images/homepage-brush-1.png"); background-size: 100% 100%;'></div>
             <div class='l-header__content u-padding-top-6 u-padding-bottom-7 u-type-center'>
-                <p class='u-color-background l-block--centered'>Vancouver Chinatown is unique. It is important to the City of Vancouver which would like to see it vigorously maintained and revitalized. Vancouver Chinatown is unique in that its history of close to 120 years has witnessed the growth of the originally ghettorized Chinese community and its gradual integration into mainstream Canadian society.</p>
+                <p class='u-color-background l-block--centered'>{{post.get_field('intro_description')}}</p>
             </div>
         </section>
 
-        <section id='instafeed' class="l-section l-homepage__instagram">
+        <section class="l-section l-homepage__instagram">
             <a href='#' class='o-button--solid'>@CSHBA <span class='fa fa-instagram'></span></a>
-            <a href='#'><img src='http://placehold.it/306x306'></a>
-            <a href='#'><img src='http://placehold.it/306x306'></a>
-            <a href='#'><img src='http://placehold.it/306x306'></a>
-            <a href='#'><img src='http://placehold.it/306x306'></a>
-            <a href='#'><img src='http://placehold.it/306x306'></a>
-            <a href='#'><img src='http://placehold.it/306x306'></a>
+            <a href='#'><img src='http://placehold.it/320x320'></a>
+            <a href='#'><img src='http://placehold.it/320x320'></a>
+            <a href='#'><img src='http://placehold.it/320x320'></a>
+            <a href='#'><img src='http://placehold.it/320x320'></a>
+            <a href='#'><img src='http://placehold.it/320x320'></a>
+            <a href='#'><img src='http://placehold.it/320x320'></a>
         </section>
 
         <section class="l-section u-margin-top-6">
             <div class="l-section__content u-flexbox-align-center">
                 <div class='l-block u-margin-right-gutter u-margin-bottom-3 u-margin-top-3'>
-                    <h2>What is CSHBA?</h2>
-                    <p>The Chinatown Society Heritage Buildings Association (CSHBA) was incorporated in 2008. It is a mutual assistance organization with an objective of helping one another to rehabilitate the society ­owned heritage buildings in Chinatown. The membership consists of organizations that own heritage buildings and individuals who support the conservation of Chinatown.</p>
+                    <h2><span class='u-block o-label u-margin-bottom-0'>About Us</span> {{post.get_field('about_title')}}</h2>
+                    <p>{{post.get_field('about_description')}}</p>
                     <a class='o-button u-inline-block' href='#'>Learn Our Story</a>
                 </div>
                 <div class='l-block l-homepage__about-image'> 
-                    <img src='http://placehold.it/500x300'>
+                    <img src='{{theme.link}}/images/homepage-about.jpg'>
                 </div>
             </div>
         </section>
@@ -50,10 +50,10 @@
             <div class='l-section__bg' style='background-image: url("{{theme.link}}/images/homepage-society.png"); background-size: auto 100%;'></div>
             <div class="l-section__content">
                 <div class='l-block u-margin-right-gutter'>
-                    <h2 class='u-stroke-text-secondary-accent u-margin-none'>Family Associations and Benevolent Societies</h2>
+                    <h2 class='u-stroke-3 u-margin-none'>{{post.get_field('society_title')}}</h2>
                 </div>
                 <div class='l-block'> 
-                    <p>The Chinatown Society Heritage Buildings Association (CSHBA) was incorporated in 2008. It is a mutual assistance organization with an objective of helping one another to rehabilitate the society ­owned heritage buildings in Chinatown. The membership consists of organizations that own heritage buildings and individuals who support the conservation of Chinatown.</p>
+                    <p>{{post.get_field('society_description')}}</p>
                 </div>
             </div>
         </section>
@@ -111,14 +111,14 @@
 
 
         <section class="l-section u-margin-top-6 u-margin-bottom-6 u-padding-top-5 u-padding-bottom-5">
-            <div class='l-section__bg' style='background-image: url("images/homepage-brush-2.png"); background-position: center;'></div>
+            <div class='l-section__bg' style='background-image: url("{{theme.link}}/images/homepage-brush-2.png"); background-position: center;'></div>
             <div class="l-section__content u-flexbox-align-center">
                 <div class='l-block'> 
-                    <img src='http://placehold.it/500x300'>
+                    <img src='{{theme.link}}/images/homepage-initiatives.jpg'>
                 </div>
                 <div class='l-block u-margin-left-gutter u-margin-bottom-3 u-margin-top-3'>
-                    <h2 class='u-margin-top-none'><span class='u-block o-label u-color-secondary-accent-2 u-margin-bottom-0'>On The Initiative</span>Shaping The Lives of People</h2>
-                    <p>The Chinatown Society Heritage Buildings Association (CSHBA) was incorporated in 2008. It is a mutual assistance organization with an objective of helping one another to rehabilitate the society ­owned heritage buildings in Chinatown. The membership consists of organizations that own heritage buildings and individuals who support the conservation of Chinatown.</p>
+                    <h2 class='u-margin-top-none'><span class='u-block o-label u-color-secondary-accent-2 u-margin-bottom-0'>On The Initiative</span>{{post.get_field('initiative_title')}}</h2>
+                    <p>{{post.get_field('initiative_description')}}</p>
                     <a class='o-button u-inline-block' href='#'>See Our Impact</a>
                 </div>
             </div>
@@ -170,8 +170,8 @@
                 </div>
 
                 <div class='l-homepage__twitter'>
-                    <span class='o-label u-block u-margin-bottom-3'>Latest Tweets <a href='#'><span class='o-label--link'>@CSHBA</a></span>
-                    <a class="twitter-timeline" data-height="600" data-theme="light" data-link-color="#BF1534" href="https://twitter.com/YVR_chinatown">Chinatown Tweets - Curated tweets by CSHBA</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+                    <span class='o-label u-block u-margin-bottom-3'>Latest Tweets <a href='{{post.get_field('twitter_link')}}' target='_blank'><span class='o-label--link'>@CSHBA</a></span>
+                    <a class="twitter-timeline" data-height="600" data-theme="light" data-link-color="#BF1534" href="{{post.get_field('twitter_link')}}">Chinatown Tweets - Curated tweets by CSHBA</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
                 </div>
             </div>
         </section>
@@ -181,6 +181,10 @@
         {% embed 'layout/scripts.twig' %}  
             {% block scripts %}
                 <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.min.js'></script>
+
+                <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/spectragram/1.0.3/spectragram.min.js'></script>
+                <script type='text/javascript'>
+                </script>
             {% endblock %}    
         {% endembed %}     
     </body>
