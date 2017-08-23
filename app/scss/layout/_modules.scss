@@ -17,6 +17,8 @@ $module: (
     flex-wrap: wrap; 
     max-width: map-get($module, container-large);
 
+    p img { width: 100%; height: 100%; margin: ms(1) 0; }
+
     // 1 column
     &--1col {
         @extend .l-module;

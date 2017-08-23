@@ -2,20 +2,14 @@
     <div class="l-footer__main">
         <div class='l-footer__section'>
             <a href='{{site.link}}'><img class='u-image-no-responsive u-image-no-shadow' src='{{theme.link}}/images/logo-white.png'></a>
-            <p class='u-color-white'>
-                Chinatown Society Heritage Building Association<br>
-                PO Box 1443<br>
-                Eas Greenwich, RI 02818<br>
-                USA<br>
-            </p>
+            <p class='u-color-white'>{{options.footer.details}}</p>
         </div>
         <div class='l-footer__section'>
             <ul class='m-menu--vertical'>
                 <li class='u-padding-bottom-1'><h5 class='u-color-background u-margin-top-none'>Navigation</h5></li> 
-                <li class='u-padding-bottom-1'><a href='#' class='o-label'>Home</a></li> 
-                <li class='u-padding-bottom-1'><a href='/about.html' class='o-label'>About</a></li>
-                <li class='u-padding-bottom-1'><a href='#' class='o-label'>Societies</a></li>
-                <li class='u-padding-bottom-1'><a href='#' class='o-label'>Initatives</a></li>
+                {% for item in menu.items %}
+                    <li class='u-padding-bottom-1'><a href='{{item.link}}' target='{{item.target}}' class='o-label'>{{item.title}}</a></li> 
+                {% endfor %}
             </ul>
         </div>
         <div class='l-footer__section'>

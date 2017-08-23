@@ -60,8 +60,8 @@ class CSHBASite extends TimberSite {
     }
     
 	function add_to_context( $context ) {
-		$context['menu'] = new TimberMenu();
 		$context['site'] = $this;
+		$context['menu'] = new TimberMenu();
 		$context['options'] = get_fields('option');
 
 		return $context;

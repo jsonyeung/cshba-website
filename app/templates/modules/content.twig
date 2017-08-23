@@ -1,0 +1,15 @@
+{% if not layouts is defined %}
+    {% set layouts = post.get_field('modular_layout') %}
+{% endif %}
+
+{% for layout in layouts %}
+
+{% if layout.acf_fc_layout == 'one_col' %}
+<div class='l-module--1col'>
+    <div>
+        {{layout.content}}
+    </div>
+</div>
+{% endif %}
+
+{% endfor %}

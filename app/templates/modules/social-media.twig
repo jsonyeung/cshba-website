@@ -1,5 +1,5 @@
 <ul class='o-social-media {% block class %}{% endblock %}'>
     {% for media in options.social_media_links %}
-        <li><a href='{{media.link}}' class='fa fa-{{media.icon|lower}}'></a></li>
+        <li><a href='{{media.link}}' target='_blank' class='fa fa-{{media.icon|lower}}'></a></li>
     {% endfor %}
 </ul> 
