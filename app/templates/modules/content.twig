@@ -3,13 +3,21 @@
 {% endif %}
 
 {% for layout in layouts %}
+    {% set module = layout.acf_fc_layout %}
 
-{% if layout.acf_fc_layout == 'one_col' %}
-<div class='l-module--1col'>
-    <div>
-        {{layout.content}}
-    </div>
-</div>
-{% endif %}
+    {% if module == 'one_col' %}
+        <div class='l-module--1col'>
+            <div>
+                {{layout.content}}
+            </div>
+        </div>
+    {% elseif module == 'two_col' %}
+        <div class='l-module--2col'>
+            <div>{{layout.first_column}}</div>
+            <div>{{layout.second_column}}</div>
+        </div>
+    {% endif %}
 
+    {% block custom_layouts %}
+    {% endblock %}
 {% endfor %}

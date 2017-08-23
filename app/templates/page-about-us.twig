@@ -33,8 +33,7 @@
         <section class='l-section'>
             <div class='l-section__content'>
                 {% set layouts = post.get_field('info_modular_layout') %}
-                {% embed 'modules/content.twig' with {layouts:layouts} %}   
-                {% endembed %}        
+                {% embed 'modules/content.twig' with {layouts:layouts} %}{% endembed %}        
             </div>  
         </section>
 
@@ -95,15 +94,7 @@
 
         <section class='l-section'>
             <div class='l-section__content'>
-                <div class='l-module--2col'>
-                    <div>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores eligendi consequatur voluptatum temporibus. Neque beatae dolorem obcaecati nisi, ipsa eos quos ut quaerat quam sint aliquid earum. Distinctio, porro cupiditate.<br><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, labore maxime possimus necessitatibus consectetur eveniet dolorum consequatur impedit fugit culpa assumenda autem atque laudantium nam unde laborum quam? Blanditiis, obcaecati.</p>
-                    </div>
-                    <div>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto quam blanditiis, in pariatur incidunt itaque alias officiis quasi libero consequuntur, voluptatum fugit omnis sunt laboriosam voluptatibus cumque exercitationem similique. Numquam optio odio iusto sequi, repellat quae quisquam ea vitae tempora illum nesciunt unde cupiditate, ullam labore dolores. Velit, at aut..</p>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis totam eligendi quas numquam officia itaque.</p>
-                    </div>
-                </div>
+                {% embed 'modules/content.twig' with {layouts:post.get_field('modular_layout')} %}{% endembed %}
             </div>  
         </section>
 
