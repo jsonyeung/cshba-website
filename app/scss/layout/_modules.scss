@@ -93,11 +93,9 @@ $module: (
     // full-size image
     &--img {
         @extend .l-module;
+        display: block;
+        margin: ms(1) 0;
 
-        margin-left: 0;
-        margin-right: 0;
-
-        img { height: 100%; }
 
         &-full {
             @extend .l-module--img;

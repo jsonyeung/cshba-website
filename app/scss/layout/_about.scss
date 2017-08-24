@@ -64,29 +64,30 @@
 
     &-director {
         @extend .l-module--2col;
-        align-items: center;
 
         margin-bottom: ms(3);
 
         .director__image {
+            margin-right: gutter()*2;
             margin-bottom: ms(0);
             flex: 0 1 150px;
 
             @include breakpoint(map-get($bp, small) min-width) {
-                flex: 0 1 300px;
+                flex: 0 1 30%;
             }
         }
     }
 
     &-prev {
+        margin-right: gutter();
         margin-bottom: ms(1);
 
         @include breakpoint(map-get($bp, med) - 200 min-width) {
-            width: span(6);    
+            width: span(6) - gutter();    
         }
 
         @include breakpoint(map-get($bp, large) min-width) {
-            width: span(4);
+            width: 25% - gutter();
         }
 
         .director__image {
