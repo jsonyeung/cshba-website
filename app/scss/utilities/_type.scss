@@ -34,6 +34,15 @@ $steps: 4;
     letter-spacing: 2px;
 }
 
+@each $key, $family in $type {
+    .u-type-family {
+        &-#{$key} {
+            font-family: $family !important; 
+        }
+    }
+}
+
+
 .u-type-bold {
     font-weight: bold;
 }

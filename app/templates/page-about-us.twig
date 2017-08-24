@@ -47,12 +47,12 @@
 
                 {% for director in directors %}
                     {% if not director.retired %}
-                    <div class='l-module--2col u-margin-bottom-3'>
-                        <div>
-                            <img src='{{director.image.url|resize(500,300,"top-center")}}'>
+                    <div class='l-about__directors-director'>
+                        <div class='director__image'>
+                            <img src='{{TimberImage(director.image).src|resize(400,400,"center")}}'>
                         </div>
                         <div>
-                            <h3><span class='o-label u-block u-margin-top-1 u-margin-bottom-0 u-color-primary'>{{director.title}}</span> {{director.name}}</h3>
+                            <h3>{{director.name}} <span class='o-label--secondary u-color-primary u-block u-margin-top--1'>{{director.title}}</span></h3>
                             <p>{{director.description}}</p>
                             <ul class='m-menu u-flex-wrap'>
                                 {% for media in director.social_media %}
@@ -76,8 +76,8 @@
                         {% endif %}
 
                         <div class='l-about__directors-prev'>
-                            <img src='http://placehold.it/500x300'>
-                            <h5>Fred Mah <span class='o-label u-margin-left-0'>{{director.title}}</span></h5>
+                            <img class='director__image' src='{{TimberImage(director.image).src|resize(150,150,"center")}}'>
+                            <h5>{{director.name}} <span class='o-label--secondary u-margin-left-0'>{{director.title}}</span></h5>
                             <p class='u-type-respond--1'>{{director.description}}</p>
                             <ul class='m-menu'>
                                 {% for media in director.social_media %}

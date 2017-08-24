@@ -10,6 +10,14 @@
     vertical-align: middle;
 }
 
+.o-label--secondary {
+    @extend .o-label;
+    
+    font-size: 1rem;   
+    font-family: map-get($type, tertiary);
+    letter-spacing: 2px;
+}
+
 .o-label--link {
     @extend .o-label;
 

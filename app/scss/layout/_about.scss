@@ -62,6 +62,22 @@
         background: #F7F7F7;
     }
 
+    &-director {
+        @extend .l-module--2col;
+        align-items: center;
+
+        margin-bottom: ms(3);
+
+        .director__image {
+            margin-bottom: ms(0);
+            flex: 0 1 150px;
+
+            @include breakpoint(map-get($bp, small) min-width) {
+                flex: 0 1 300px;
+            }
+        }
+    }
+
     &-prev {
         margin-bottom: ms(1);
 
@@ -71,6 +87,14 @@
 
         @include breakpoint(map-get($bp, large) min-width) {
             width: span(4);
+        }
+
+        .director__image {
+            max-width: 100px;
+            
+            @include breakpoint(map-get($bp, small) min-width) {
+                max-width: 150px;
+            }
         }
     }
 }
