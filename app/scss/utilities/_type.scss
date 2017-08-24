@@ -29,6 +29,9 @@ $steps: 4;
 .u-type-subtitle {
     @include ms-respond(font-size, 1);
     margin-top: -#{ms(-3)};
+
+    font-family: map-get($type, tertiary); 
+    letter-spacing: 2px;
 }
 
 .u-type-bold {

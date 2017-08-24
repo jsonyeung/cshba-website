@@ -1,6 +1,6 @@
 $module: (
     container-large: 1200px,
-    container: 700px 
+    container: 700px, 
 );
 
 @each $key, $size in $module {
@@ -12,19 +12,62 @@ $module: (
 }
 
 .l-module {
+    max-width: map-get($module, container-large);
+
     display: flex;
     flex: 1 1 100%;
     flex-wrap: wrap; 
-    max-width: map-get($module, container-large);
 
+    & > * > *:first-child { margin-top: 0; }
     p img { width: 100%; height: 100%; }
 
     // 1 column
     &--1col {
         @extend .l-module;
         justify-content: center;
+        & > * { max-width: map-get($module, container); }  
+    }
 
-        & > * { max-width: map-get($module, container); }
+    // 1 column with tip
+    &--1col-tip {
+        @extend .l-module--1col;
+        flex-wrap: wrap-reverse;
+
+        & > *:last-child {
+            flex: 1; 
+            align-self: flex-end;
+
+            margin-left: gutter()*2;
+            padding-left: gutter();
+            border-left: 1px solid lightgrey;  
+
+            * {
+                @include ms-respond(font-size, -1);
+            }
+
+            &:before {
+                content: '';
+                display: block;
+                width: 50px;
+                height: 2px;
+
+                margin-bottom: ms(-2); 
+                background: map-get($color, primary);
+            }
+
+            @include breakpoint(1260px) {
+                flex: 1 1 100%;
+                margin: 0;
+                padding: 0;
+                border: none;
+
+                &:before { display: none; }
+                span { 
+                    padding-left: ms(0); 
+                    border-left: 2px solid map-get($color, primary); 
+                } 
+            } 
+        }
     }
 
     // 2 column paragraphs
@@ -82,7 +125,7 @@ $module: (
 
             margin-left: gutter()*2;
             padding-left: gutter()*2;
-            border-left: 2px solid lightgrey; 
+            border-left: 1px solid lightgrey; 
         }
     }
 

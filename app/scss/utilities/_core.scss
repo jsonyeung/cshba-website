@@ -130,6 +130,10 @@ $steps: 12;
 // position
 
 .u-position {
+    &-relative {
+        position: relative;
+    }
+    
     &-top-left {
         position: absolute;
         top: 0;

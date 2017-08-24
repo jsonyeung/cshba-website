@@ -54,7 +54,7 @@
 
 
 .l-about__directors {
-    margin: ms(4) 0;
+    margin: ms(3) 0 ms(4);
     
     .l-section__content {
         padding-bottom: ms(3);
@@ -76,11 +76,12 @@
 }
 
 .l-about__message {
-    margin: ms(4) 0;
-    
+    margin: ms(4) 0 0;
+    position: relative;
+
     .l-section__content {
         padding: ms(2);
-        background: #333;
+        //background: #333;
 
         @include breakpoint(map-get($bp, small)) {
             padding: ms(0);
@@ -94,7 +95,7 @@
 
         padding: ms(4) ms(0);
 
-        border: 2px solid map-get($color, secondary);
+        // border: 2px solid map-get($color, secondary);
         text-align: center;
 
         & > * { 
@@ -110,25 +111,27 @@
 }
 
 .l-about__sponsers {
-    padding: ms(4) 0;
+    padding: ms(2) 0; 
     .title { 
         flex: 1 1 100%;
         text-align: center;
 
+
+        @include ms-respond(font-size, 1);
         font-family: map-get($type, tertiary); 
-        font-size: ms(1);
         letter-spacing: 2px;
 
         color: map-get($color, subtle);
     }
 
     a { 
-        max-width: 200px;
+        max-width: 175px;
         flex: 1 1 150px;
         margin: ms(0) gutter(); 
 
         transition: opacity 0.3s;
-        &:hover { opacity: 0.7; }
+        opacity: 0.7;
+        &:hover { opacity: 1; }
     }
 
     img {

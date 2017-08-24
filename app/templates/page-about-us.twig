@@ -98,21 +98,8 @@
             </div>  
         </section>
 
-        <section class='l-about__message'>
-            <div class='l-section__content'>
-                <div class='l-block'>
-                    <blockquote>We are open, collaborative, and use our collective experience, design and technical expertise to create meaningful and compelling content for all mediums. We embrace new challenges with an open heart, a hunger to learn, and a passion for solving problems as a team.</blockquote>
-                    <div class='u-inline-block'>
-                        <img class='u-image-no-responsive u-margin-top-2' src='http://placehold.it/200x100'>
-                        <span class='o-label u-block'>Fred Mah, President</span>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
         <section class='l-about__sponsers'> 
-            <div class='l-section__content u-flex-align-center'>
+            <div class='l-section__content--colored u-flex-align-center'>
                 <h3 class='title u-margin-bottom-1'>We are proudly partnered with</h3>
                 {% for sponser in post.get_field('sponsers') %}
                     <a href='#'><img src='{{TimberImage(sponser.image).src}}'></a>

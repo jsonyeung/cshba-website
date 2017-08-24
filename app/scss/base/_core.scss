@@ -81,10 +81,14 @@ figure {
 figcaption {
     @extend .o-label;
     display: block;
-
+    
     width: 100%;
+    margin-top: ms(0);
+    padding-left: ms(0);
+
+    color: map-get($color, dark);
+    border-left: 2px solid map-get($color, dark);
     letter-spacing: 2px;
-    padding: ms(0) 0 0;
 }
 
 input, button {

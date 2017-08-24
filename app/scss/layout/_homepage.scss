@@ -1,23 +1,17 @@
 .l-homepage__header {
     @extend .l-header;
     @extend .u-stroke-edge-1;
-    padding: ms(10) 0 ms(6);
+    padding: ms(10) 0 ms(4);
 
     @include breakpoint(map-get($bp, med)) {
-        padding: ms(6) 0 ms(4);
+        padding: ms(6) 0 ms(2);
     }
 }
 
 .l-homepage__detail {
     @extend .l-section;
-    margin-top: -#{ms(5)};
-    z-index: 1;
 
-    .l-section__bg {
-        @include breakpoint(map-get($bp, med)) {
-            background-size: auto 100% !important;
-        }
-    }
+    z-index: 1;
 }
 
 .l-homepage__instagram {

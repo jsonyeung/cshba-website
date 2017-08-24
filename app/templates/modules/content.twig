@@ -6,16 +6,28 @@
     {% set module = layout.acf_fc_layout %}
 
     {% if module == 'one_col' %}
-        <div class='l-module--1col'>
+        <div class='l-module--1col u-margin-bottom-0'>
             <div>
                 {{layout.content}}
             </div>
+        </div> 
+    {% elseif module == 'one_col_tip' %}
+        <div class='l-module--1col-tip u-margin-top-0 u-margin-bottom-0'>
+            <div>
+                {{layout.content}}
+            </div>
+            <div>
+                <span class='o-label u-block u-color-secondary-accent'>{{layout.tip.label}}</span>
+                <p class='u-color-secondary-dark'>{{layout.tip.description}}</p>
+            </div>
         </div>
     {% elseif module == 'two_col' %}
-        <div class='l-module--2col'>
+        <div class='l-module--2col u-margin-bottom-0'>
             <div>{{layout.first_column}}</div>
             <div>{{layout.second_column}}</div>
         </div>
+    {% elseif module == 'img_full' %}
+        
     {% endif %}
 
     {% block custom_layouts %}
