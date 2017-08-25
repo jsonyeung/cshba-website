@@ -56,7 +56,7 @@
                             <p>{{director.description}}</p>
                             <ul class='m-menu u-flex-wrap'>
                                 {% for media in director.social_media %}
-                                <li class='u-margin-bottom-0'><a class='o-button--link-secondary u-type-respond--1' target='_blank' style='color:{{media.social_media_colour}}' href='{{media.social_media_link}}'><span class='fa fa-{{media.social_media_icon}}'></span> @Fred Mah</a></li>
+                                <li class='u-margin-bottom-0'><a class='o-button--link-secondary u-type-respond--1' target='_blank' style='color:{{media.social_media_colour}}' href='{{media.social_media_link}}'><span class='fa fa-{{media.social_media_icon}}'></span> @{{director.name}}</a></li>
                                 {% endfor %}
                             </ul>
                         </div>
