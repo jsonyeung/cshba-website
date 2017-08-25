@@ -1,8 +1,8 @@
 <html>
     <head>
         <title>
-            {% if site.title %}
-                {{site.title}} &mdash; {{site.name}}
+            {% if wp_title %}
+                {{wp_title}} - {{site.name}}
             {% else %}
                 {{site.name}}
             {% endif %}

@@ -3,7 +3,7 @@
         color: $value !important;
     }
 
-    .u-color-background-#{$key} {
+    .u-color-background-#{$key}, .u-color-bg-#{$key} {
         background-color: $value !important;
     }
 }

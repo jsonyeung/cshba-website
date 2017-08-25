@@ -1,5 +1,5 @@
 $module: (
-    container-large: 1200px,
+    container-large: 1280px,
     container: 700px, 
 );
 
@@ -26,6 +26,8 @@ $module: (
         @extend .l-module;
         justify-content: center;
         & > * { max-width: map-get($module, container); }  
+
+        figure { width: 100% !important; }
     }
 
     // 1 column with tip
@@ -64,7 +66,7 @@ $module: (
                 &:before { display: none; }
                 span { 
                     padding-left: ms(0); 
-                    border-left: 2px solid map-get($color, primary); 
+                    border-left: 2px solid map-get($color, primary);  
                 } 
             } 
         }
@@ -97,10 +99,16 @@ $module: (
         margin: ms(1) 0;
 
 
-        &-full {
+        &-wide {
             @extend .l-module--img;
             max-width: 100%;
         }
+
+        &-full {
+            width: 100vw;
+            margin-left: calc(-50vw + 50%); 
+            margin-right: calc(-50vw + 50%); 
+        } 
     }
 
     // sidebar

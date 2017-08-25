@@ -26,14 +26,6 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-
-        &--colored {
-            @extend .l-section__content;
-
-            padding-top: ms(1);
-            padding-bottom: ms(3);
-            background: #F7F7F7;
-        }
     }
 
     &__bg {
@@ -73,7 +65,7 @@
 
     &--respond {
         @extend .l-section;
-        padding: ms(8) 0 ms(7);
+        padding: ms(8) 0 ms(8);
 
         @include breakpoint(map-get($bp, med)) {
             padding: ms(6) 0 ms(5);
