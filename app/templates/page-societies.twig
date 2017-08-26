@@ -23,20 +23,21 @@
             </div>  
         </section>
 
-        <section class='l-section u-margin-top-4 u-margin-bottom-4'>
-            <div class='l-section__content u-color-bg-alternate  u-padding-top-2 u-padding-bottom-4'>
+        <section class='l-section u-color-bg-alternate u-margin-top-4 u-margin-bottom-neg-7'>
+            <div class='l-section__content u-padding-top-2 u-padding-bottom-7'>
                 <div class='l-module'>
                     <h3>Societies with Heritage Buildings <span class='o-label u-margin-left-0'>12 Buildings Total</span></h3>
 
-                    <div class='l-module__society-list u-margin-top-2'>
-                        <img class='u-margin-bottom-2' src='http://placehold.it/500x300'>
-                        <div>
-                            <a href='#'><h4 class='u-margin-top-none u-color-primary'>Yue Shan Society</h4></a>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero eligendi sed dignissimos reprehenderit sunt rem necessitatibus? Blanditiis soluta delectus accusamus maxime amet nisi eos quisquam eum sit minima! Dignissimos, sapiente?</p>
-                            <a class='o-button--link-secondary' href='society.html'>Learn More</a>
+                    {% for society in societies %}
+                        <div class='l-module__society-list u-margin-top-2'>
+                            <img class='u-margin-bottom-2' src='http://placehold.it/500x300'>
+                            <div>
+                                <a href='#'><h4 class='u-margin-top-none u-color-primary'>{{society.title}}</h4></a>
+                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero eligendi sed dignissimos reprehenderit sunt rem necessitatibus? Blanditiis soluta delectus accusamus maxime amet nisi eos quisquam eum sit minima! Dignissimos, sapiente?</p>
+                                <a class='o-button--link-secondary' href='{{society.link}}'>Learn More</a>
+                            </div>
                         </div>
-                    </div>
-
+                    {% endfor %}
                 </div>
             </div>
         </section>

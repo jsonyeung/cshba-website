@@ -3,14 +3,6 @@ $module: (
     container: 700px, 
 );
 
-@each $key, $size in $module {
-    .l-module-#{$key} {
-        display: flex;
-        flex: 1 1 100%;
-        max-width: $size;
-    }
-}
-
 .l-module {
     max-width: map-get($module, container-large);
 
@@ -75,19 +67,34 @@ $module: (
     // 2 column paragraphs
     &--2col {
         @extend .l-module;
-        justify-content: flex-start;
 
         & > * { 
-            width: span(6); 
+            width: 100%; 
+            
+            @include breakpoint(map-get($bp, med) min-width) {
+                width: 50% - gutter()*2;
+                margin: 0 gutter();
 
-            margin: 0 gutter();
-            &:first-child { margin-left:0; }
-            &:last-child { margin-right: 0; }
+                &:first-child { margin-left: 0; }
+                &:last-child { margin-right: 0; }
+            }
+        }
+    }  
 
-            flex: 1 1 300px;
-            @include breakpoint(map-get($bp, med) - 200) { 
-                margin-left: 0; 
-                margin-right: 0;
+    // 3 column paragraphs 
+    &--3col {
+        @extend .l-module;
+
+        & > * {
+            width: 100%; 
+
+            @include breakpoint(map-get($bp, med) min-width) {
+                width: 50% - gutter()*2;
+                margin: 0 gutter();
+            }
+
+            @include breakpoint(map-get($bp, large) min-width) {
+                width: 33% - gutter()*2;
             }
         }
     }

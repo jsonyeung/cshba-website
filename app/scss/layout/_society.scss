@@ -1,16 +1,16 @@
 .l-society__header {
     @extend .l-header;
 
-    padding: ms(7) 0 ms(4);
+    padding: ms(7) 0 ms(2);
 
     @include breakpoint(map-get($bp, med)) {
-        padding: ms(5) 0 ms(2);
+        padding: ms(5) 0 ms(0);
     }
 }
 
 .l-society__bg {
     background: url('images/bg-brush-pattern.png') repeat-y;
-    background-size: contain;
+    background-size: 100% auto;
 }
 
 .l-society__subtitle {
@@ -43,8 +43,12 @@
     display: flex; 
     justify-content: center; 
 
+    border-bottom: 1px solid lightgrey;
+    margin-bottom: ms(4);
+
     &-item {
         margin: ms(0);
+        margin-bottom: 0;
         
         text-align: center;
         flex: 1 1 125px;

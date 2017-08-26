@@ -61,12 +61,15 @@
                 <h3>Societies with Heritage Buildings <span class="o-label u-margin-left-0">12 Buildings</span></h3>
             </div>
             <div class='l-homepage__slider'>
-                <div class='l-homepage__slider-item'>
-                    <img src='http://placehold.it/500x400'>
-                    <h4 class='u-color-primary'><a href='#'>Yue Shan Society</a></h4>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo tempore odio beatae rerum excepturi eaque cupiditate obcaecati minima iusto reiciendis.</p>
-                    <a href='#' class='o-button--link-secondary'>Read More</a>
-                </div>
+                {% for society in societies %}
+                    <div class='l-homepage__slider-item'>
+                        <img src='http://placehold.it/500x400'>
+                        <h4 class='u-color-primary'><a href='#'>Yue Shan Society</a></h4>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo tempore odio beatae rerum excepturi eaque cupiditate obcaecati minima iusto reiciendis.</p>
+                        <a href='#' class='o-button--link-secondary'>Read More</a>
+                    </div>
+                {% endfor %}
+
                 <div class='l-homepage__slider-item'>
                     <img src='http://placehold.it/500x400'>
                     <h4 class='u-color-primary'><a href='#'>Mah Benevolent Society</a></h4>
@@ -103,7 +106,7 @@
                 </div>
             </div>
             <div class='l-grid u-type-center u-margin-top-6'>
-                <a class='o-button u-inline-block' href='/page.html'>Learn The History</a>
+                <a class='o-button u-inline-block' href='{{site.link}}/societies'>Learn The History</a>
             </div>
         </section> 
 

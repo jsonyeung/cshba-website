@@ -9,3 +9,9 @@ $directions: right left top bottom;
         padding-#{$dir}: gutter() !important;
     }
 }
+
+@for $i from 1 to 12 {
+    .u-grid-span-#{$i} {
+        width: span($i) !important;
+    }
+}

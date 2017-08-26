@@ -22,7 +22,13 @@
             </div>
         </div>
     {% elseif module == 'two_col' %}
-        {{not layout.heading is empty ? '<h2 class="l-module--2col u-margin-bottom-0">' ~ layout.heading ~ '</h2>'}}
+        {% if not layout.heading is empty %}
+        <div class='l-module--2col'>
+            <div>
+                <h3 class='u-flex-full'>{{layout.heading}}</h3> 
+            </div>
+        </div>
+        {% endif %}
         <div class='l-module--2col u-margin-bottom-0'>
             <div>{{layout.first_column}}</div>
             <div>{{layout.second_column}}</div>

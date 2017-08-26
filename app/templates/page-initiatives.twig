@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+    {% embed 'layout/header.twig' %}
+        {% block styles %}
+            <link rel='stylesheet' type='text/css' href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.min.css'>
+        {% endblock %} 
+    {% endembed %}
+
+    {% include 'layout/nav.twig' with {'inverse': false} %}
+
+        <header class='l-header--respond u-stroke-edge-1 u-margin-bottom-5'>
+            <div class='l-header__bg' style='background-image:url("{{theme.link}}/images/societies-header.png");'></div>
+            <div class='l-section__content u-padding-top-7 u-padding-bottom-5'>
+                <div class='u-type-center'>
+                    <h1 class='u-stroke-text u-type-contain-large'>{{wp_title}}<span>華埠僑團傳 統建築協會</span></h1>
+                </div>
+            </div>
+        </header> 
+
+        <section class='l-section'>
+            <div class='l-section__content'>
+                {% embed 'modules/content.twig' with {layouts:post.get_field('modular_layout')} %}{% endembed %}
+            </div>  
+        </section>
+
+        <section class='l-section u-margin-top-4 u-margin-bottom-7'>
+            <div class='l-section__content'>
+                <div class='l-module'>
+                    <h3>Our Initiatives <span class='o-label u-margin-left-0'>12 Buildings Total</span></h3>
+
+                    <div class='l-module__initiative-list u-margin-top-2'>
+                        <img src='http://placehold.it/500x400'>
+                        <div>
+                            <a href='/initiative.html'><h4>Building Plannings and Development Grant Program</h4></a>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero eligendi sed dignissimos reprehenderit sunt rem necessitatibus? Blanditiis soluta delectus accusamus maxime amet nisi eos quisquam eum sit minima! Dignissimos, sapiente?</p>
+                            <a class='o-button--link-secondary' href='/initiative.html'>Learn More</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    
+        <section class='l-section'>
+            <div class='l-section__content'>
+                <div class='l-module'>
+                    <h3 class='u-margin-bottom-1'>Relevant Studies <span class="o-label u-margin-left-0">12 Studies</span></h3>
+
+                    <div class='l-module__initiative-study u-margin-top-1'>
+                        <h4 class='u-margin-top-none'>Revitalizing Chinatown in Downtown Vancouver</h4>
+                        <p class='u-margin-top-none'><span class='o-label u-block u-margin-bottom-0'>summary</span> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam harum labore itaque facilis officiis commodi laudantium autem, minima corporis debitis.</p>
+                        <div>
+                            <span class='o-label'>Published</span>
+                            <p>July 23, 2017</p>
+                        </div>
+                        <a class='o-button--link' href='#'>Link <span class='fa fa-link u-margin-left--1'></span></a>
+                    </div>
+                    <div class='l-module__initiative-study'>
+                        <h4 class='u-margin-top-none'>Revitalizing Chinatown in Downtown Vancouver</h4>
+                        <p class='u-margin-top-none'><span class='o-label u-block u-margin-bottom-0'>summary</span> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam harum labore itaque facilis officiis commodi laudantium autem, minima corporis debitis.</p>
+                        <div>
+                            <span class='o-label'>Published</span>
+                            <p>July 23, 2017</p>
+                        </div>
+                        <a class='o-button--link' href='#'>Link <span class='fa fa-link u-margin-left--1'></span></a>
+                    </div>
+                    <div class='l-module__initiative-study'>
+                        <h4 class='u-margin-top-none'>Revitalizing Chinatown in Downtown Vancouver</h4>
+                        <p class='u-margin-top-none'><span class='o-label u-block u-margin-bottom-0'>summary</span> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam harum labore itaque facilis officiis commodi laudantium autem, minima corporis debitis.</p>
+                        <div>
+                            <span class='o-label'>Published</span>
+                            <p>July 23, 2017</p>
+                        </div>
+                        <a class='o-button--link' href='#'>Link <span class='fa fa-link u-margin-left--1'></span></a>
+                    </div>
+                    <div class='l-module__initiative-study'>
+                        <h4 class='u-margin-top-none'>Revitalizing Chinatown in Downtown Vancouver</h4>
+                        <p class='u-margin-top-none'><span class='o-label u-block u-margin-bottom-0'>summary</span> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam harum labore itaque facilis officiis commodi laudantium autem, minima corporis debitis.</p>
+                        <div>
+                            <span class='o-label'>Published</span>
+                            <p>July 23, 2017</p>
+                        </div>
+                        <a class='o-button--link' href='#'>Link <span class='fa fa-link u-margin-left--1'></span></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {% include 'layout/footer.twig' %}
+        {% embed 'layout/scripts.twig' %}{% endembed %}    
+    </body>
+</html>

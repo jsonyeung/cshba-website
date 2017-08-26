@@ -3,7 +3,7 @@
     @extend .u-stroke-edge-1;
 
     padding: ms(7) 0 0;
-    margin-bottom: ms(5);
+    margin-bottom: ms(7);
 
     @include breakpoint(map-get($bp, med)) {
         padding: ms(5) 0 0;
@@ -55,11 +55,10 @@
 
 .l-about__directors {
     margin: ms(3) 0;
+    background: #F7F7F7;
     
     .l-section__content {
         padding-bottom: ms(3);
-
-        background: #F7F7F7;
     }
 
     &-director {
@@ -137,7 +136,9 @@
 }
 
 .l-about__sponsers {
-    padding: ms(2) 0; 
+    padding: ms(2) 0;
+    margin: 0 0 ms(4);
+     
     .title { 
         flex: 1 1 100%;
         text-align: center;
