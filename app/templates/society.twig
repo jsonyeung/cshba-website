@@ -13,9 +13,9 @@
         <header class='l-society__header'>
             <div class='l-header__content u-padding-top-5'>
                 <div class='l-block u-type-center'>
-                    <span class='o-label'>全加馬氏 HOST</span>
-                    <h1 class='u-margin-bottom-none u-color-primary'>Mah Benevolent Society</h1>
-                    <p class='l-society__subtitle'>全加馬氏宗親總會</p>
+                    <img class='u-image-no-shadow u-image-no-responsive' src='{{theme.link}}/images/society-label.svg'>
+                    <h1 class='u-margin-bottom-none u-color-primary'>{{wp_title}}</h1>
+                    <p class='l-society__subtitle'>{{post.get_field('chinese_title')}}</p>
                 </div>
             </div>
         </header>
@@ -24,16 +24,18 @@
             <div class='l-section__content'>
                 <div class='l-module--1col'>
                     <div>
-                        <p class='u-dropcap'>The Mah Society Building at 137 East Pender Street in Vancouver's Chinatown is a substantial five-storey brick building with a store at street level, a three-storey rooming house above, and a tong meeting hall on the top storey.</p>
+                        <p class='u-dropcap'>{{post.get_field('intro_description')}}</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <section class='l-section'>
-            <figure class='u-margin-top-3 u-margin-bottom-3'>
-                <img src='{{theme.link}}/images/test.png'>
-            </figure>
+            <div class='l-section__content'>
+                <figure class='l-module--img u-margin-top-3 u-margin-bottom-3'>
+                    <img src='{{TimberImage(post.get_field("intro_image")).src }}'>
+                </figure>
+            </div>
         </section>
 
         <section class='l-section u-margin-top-2'> 

@@ -68,6 +68,7 @@
         font-size: 3.1em;
         line-height: 1;
     
+        text-transform: uppercase;
         text-shadow: 2px 2px 1px map-get($color, background),
         3px 3px 1px map-get($color, subtle);
     }
