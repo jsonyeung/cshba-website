@@ -32,9 +32,13 @@
 
         <section class='l-section'>
             <div class='l-section__content'>
-                <figure class='l-module--img u-margin-top-3 u-margin-bottom-3'>
-                    <img src='{{TimberImage(post.get_field("intro_image")).src }}'>
-                </figure>
+                {% include 'modules/content.twig' with {layouts:post.get_field('modular_layout')} %}
+            </div>  
+        </section>
+
+        <section class='l-section'>
+            <div class='l-section__bg-container u-margin-top-5 u-margin-bottom-2'>
+                <div class='l-section__bg' style='background-image: url("{{post.get_field("intro_image") ?: post.thumbnail.src}}"); background-size: cover; background-position: center;'></div>
             </div>
         </section>
 

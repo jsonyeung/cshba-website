@@ -76,6 +76,8 @@
                 max-width: 300px; 
             }
         }
+
+        & > div:last-child { width: auto; flex: 1 1 300px; }
     }
 
     &-prev {

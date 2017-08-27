@@ -34,6 +34,13 @@ $steps: 4;
     letter-spacing: 2px;
 }
 
+.u-type-subtitle--desc {
+    @extend .u-type-subtitle;
+    
+    font-family: map-get($type, primary);
+    letter-spacing: 0;
+}
+
 @each $key, $family in $type {
     .u-type-family {
         &-#{$key} {

@@ -121,26 +121,7 @@ $module: (
 
     // sidebar
     &--sidebar {
-        flex: 0 1 250px;
-        align-self: flex-start;
-
-        margin: ms(1) ms(3);
-
-        @include breakpoint(1350px) { 
-            margin: ms(1);
-            flex-grow: 1; 
-            order: -1;
-        }
-
-        p, a { margin: 0; }
-
-        &-right {
-            @extend .l-module--sidebar;
-
-            margin-left: gutter()*2;
-            padding-left: gutter()*2;
-            border-left: 1px solid lightgrey; 
-        }
+       flex: 0 1;
     }
 
     // links
@@ -195,8 +176,8 @@ $module: (
         display: flex;
         align-items: center;
 
-        img { 
-            width: span(4); 
+        & > a { 
+            width: span(3); 
             min-width: 100px;
         }
         
@@ -206,7 +187,7 @@ $module: (
         }
 
         h4 { margin-top: 0; }
-        p:not(a) { 
+        p:not(a) {  
             max-width: map-get($module, container);
             @include breakpoint(map-get($module, container-large)) { font-size: ms(-1); }  
             @include breakpoint(830px) { display: none; }   
@@ -214,7 +195,7 @@ $module: (
     }
 
     &-study {
-        border-top: 1px solid map-get($color, subtle);
+        border-top: 1px solid lightgrey;
 
         padding: ms(2) 0 ms(2);
 

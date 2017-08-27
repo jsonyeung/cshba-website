@@ -37,7 +37,7 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: bold;
 
     line-height: 1.2;
-    margin: ms(0) 0 ms(-2);
+    margin: ms(1) 0 ms(-2);
 
     color: map-get($color, heading);
 }
