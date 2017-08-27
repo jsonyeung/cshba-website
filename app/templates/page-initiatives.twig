@@ -18,11 +18,7 @@
             </div>
         </header> 
 
-        <section class='l-section'>
-            <div class='l-section__content'>
-                {% include 'modules/content.twig' with {layouts:post.get_field('modular_layout')} %}
-            </div>  
-        </section>
+        {% include 'modules/content.twig' with {layouts:post.get_field('modular_layout')} %}
 
         <section class='l-section u-color-bg-alternate u-margin-top-4 u-margin-bottom-4'>
             <div class='l-section__content u-padding-top-2 u-padding-bottom-5'>

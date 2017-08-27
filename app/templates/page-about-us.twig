@@ -30,12 +30,10 @@
             </section>
         </header>
 
-        <section class='l-section'>
-            <div class='l-section__content'>
-                {% set layouts = post.get_field('info_modular_layout') %}
-                {% embed 'modules/content.twig' with {layouts:layouts} %}{% endembed %}        
-            </div>  
-        </section>
+
+        {% set layouts = post.get_field('info_modular_layout') %}
+        {% include 'modules/content.twig' with {layouts:layouts} %}    
+
 
         <section class='l-about__directors'>
             <div class='l-section__content'>
@@ -101,11 +99,8 @@
             </div>
         </section>
 
-        <section class='l-section'>
-            <div class='l-section__content'>
-                {% embed 'modules/content.twig' with {layouts:post.get_field('modular_layout')} %}{% endembed %}
-            </div>  
-        </section>
+
+        {% include 'modules/content.twig' %}
 
         {% include 'layout/footer.twig' %}
 

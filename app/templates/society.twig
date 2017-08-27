@@ -31,14 +31,8 @@
         </section>
 
         <section class='l-section'>
-            <div class='l-section__content'>
-                {% include 'modules/content.twig' with {layouts:post.get_field('modular_layout')} %}
-            </div>  
-        </section>
-
-        <section class='l-section'>
-            <div class='l-section__bg-container u-margin-top-5 u-margin-bottom-2'>
-                <div class='l-section__bg' style='background-image: url("{{post.get_field("intro_image") ?: post.thumbnail.src}}"); background-size: cover; background-position: center;'></div>
+            <div class='l-section__bg-container u-margin-top-3 u-margin-bottom-3'>
+                <div class='l-section__bg' style='background-image: url("{{TimberImage(post.get_field('intro_image')).src ?: post.thumbnail.src}}"); background-size: cover; background-position: center;'></div>
             </div>
         </section>
 
@@ -65,55 +59,7 @@
             </div>
         </section>
 
-        <section class='l-section u-margin-bottom-3'>
-            <div class='l-section__content'>
-                <div class='l-module--2col'>
-                    <div>
-                        <h3 class='u-flex-full'>Away From it All</h3> 
-                    </div>
-                </div>
-                <div class='l-module--2col'>
-                    <div><p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam impedit, amet nesciunt id et magni maxime doloribus dolor dolorum repellat perferendis cumque aliquid laudantium officia quaerat voluptatum maiores, enim deserunt.</p></div>
-                    <div><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum quos labore voluptates blanditiis deleniti tempora quae, ducimus doloribus itaque debitis repudiandae adipisci at exercitationem nemo.</p></div>
-                </div>
-            </div>
-        </section>
-
-        <section class='l-section'>
-            <div class='l-section__content'>
-                <div class='l-module--3col'>
-                    <div>
-                        <h3 class='u-flex-full'>Milestones</h3> 
-                    </div>
-                </div>
-                <div class='l-module--3col'>
-                    <div class='u-margin-top-1'>
-                        <h4 class='o-label--secondary u-color-dark'>Traditional Accommodations</h4>
-                        <p>For most people, traveling to Japan is a once in a lifetime opportunity. If you're traveling to Japan, leave the guesswork out and don't worry about logistics. We'll take your specific interests and intentionally craft the perfect trip for you.</p>
-                    </div>
-                    <div class='u-margin-top-1'>
-                        <h4 class='o-label--secondary u-color-dark'>Traditional Accommodations</h4>
-                        <p>For most people, traveling to Japan is a once in a lifetime opportunity. If you're traveling to Japan, leave the guesswork out and don't worry about logistics. We'll take your specific interests and intentionally craft the perfect trip for you.</p>
-                    </div>
-                    <div class='u-margin-top-1'>
-                        <h4 class='o-label--secondary u-color-dark'>Traditional Accommodations</h4>
-                        <p>For most people, traveling to Japan is a once in a lifetime opportunity. If you're traveling to Japan, leave the guesswork out and don't worry about logistics. We'll take your specific interests and intentionally craft the perfect trip for you.</p>
-                    </div>
-                    <div class='u-margin-top-1'>
-                        <h4 class='o-label--secondary u-color-dark'>Traditional Accommodations</h4>
-                        <p>For most people, traveling to Japan is a once in a lifetime opportunity. If you're traveling to Japan, leave the guesswork out and don't worry about logistics. We'll take your specific interests and intentionally craft the perfect trip for you.</p>
-                    </div>
-                    <div class='u-margin-top-1'>
-                        <h4 class='o-label--secondary u-color-dark'>Traditional Accommodations</h4>
-                        <p>For most people, traveling to Japan is a once in a lifetime opportunity. If you're traveling to Japan, leave the guesswork out and don't worry about logistics. We'll take your specific interests and intentionally craft the perfect trip for you.</p>
-                    </div>
-                    <div class='u-margin-top-1'>
-                        <h4 class='o-label--secondary u-color-dark'>Traditional Accommodations</h4>
-                        <p>For most people, traveling to Japan is a once in a lifetime opportunity. If you're traveling to Japan, leave the guesswork out and don't worry about logistics. We'll take your specific interests and intentionally craft the perfect trip for you.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+        {% include 'modules/content.twig' %}
 
         {% include 'layout/footer.twig' %}
 

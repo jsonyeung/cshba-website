@@ -63,47 +63,12 @@
             <div class='l-homepage__slider'>
                 {% for society in societies %}
                     <div class='l-homepage__slider-item'>
-                        <img src='http://placehold.it/500x400'>
-                        <h4 class='u-color-primary'><a href='#'>Yue Shan Society</a></h4>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo tempore odio beatae rerum excepturi eaque cupiditate obcaecati minima iusto reiciendis.</p>
-                        <a href='#' class='o-button--link-secondary'>Read More</a>
+                        <a href='{{society.link}}'><img src='http://placehold.it/500x400'></a>
+                        <h4 class='u-color-primary'><a href='{{society.link}}'>{{society.title}}</a></h4>
+                        <p>{{society.intro_description | excerpt(40)}}</p>
+                        <a href='{{society.link}}' class='o-button--link-secondary'>Read More</a>
                     </div>
                 {% endfor %}
-
-                <div class='l-homepage__slider-item'>
-                    <img src='http://placehold.it/500x400'>
-                    <h4 class='u-color-primary'><a href='#'>Mah Benevolent Society</a></h4>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo tempore odio beatae rerum excepturi eaque cupiditate obcaecati minima iusto reiciendis.</p>
-                    <a href='#' class='o-button--link-secondary'>Read More</a>
-                </div>
-                <div class='l-homepage__slider-item'>
-                    <img src='http://placehold.it/500x400'>
-                    <h4 class='u-color-primary'><a href='#'>Yue Shan Society</a></h4>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo tempore odio beatae rerum excepturi eaque cupiditate obcaecati minima iusto reiciendis.</p>
-                    <a href='#' class='o-button--link-secondary'>Read More</a>
-                </div>
-                <div class='l-homepage__slider-item'>
-                    <img src='http://placehold.it/500x400'>
-                    <h4 class='u-color-primary'><a href='#'>Yue Shan Society</a></h4>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo tempore odio beatae rerum excepturi eaque cupiditate obcaecati minima iusto reiciendis.</p>
-                    <a href='#' class='o-button--link-secondary'>Read More</a>
-                </div>
-                <div class='l-homepage__slider-item'>
-                    <img src='http://placehold.it/500x400'>
-                    <h4 class='u-color-primary'><a href='#'>Yue Shan Society</a></h4>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo tempore odio beatae rerum excepturi eaque cupiditate obcaecati minima iusto reiciendis.</p>
-                    <a href='#' class='o-button--link-secondary'>Read More</a>
-                </div>
-                <div class='l-homepage__slider-item'>
-                    <img src='http://placehold.it/500x400'>
-                    <h4 class='u-color-primary'><a href='#'>Yue Shan Society</a></h4>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo tempore odio beatae rerum excepturi eaque cupiditate obcaecati minima iusto reiciendis.</p>
-                    <a href='#' class='o-button--link-secondary'>Read More</a>
-                </div>
-                <div class='l-homepage__slider-item u-type-center'>
-                    <span class='o-label u-block u-margin-bottom-1 u-margin-top-9'>Interested?</span>
-                    <a class='o-button--secondary u-inline-block' href='#'>View All Buildings</a>
-                </div>
             </div>
             <div class='l-grid u-type-center u-margin-top-6'>
                 <a class='o-button u-inline-block' href='{{site.link}}/societies'>Learn The History</a>
