@@ -85,7 +85,7 @@
                 <div class='l-block u-margin-left-gutter u-margin-bottom-3 u-margin-top-3'>
                     <h2 class='u-margin-top-none'><span class='u-block o-label u-color-secondary-accent-2 u-margin-bottom-0'>On The Initiative</span>{{post.get_field('initiative_title')}}</h2>
                     <p>{{post.get_field('initiative_description')}}</p>
-                    <a class='o-button u-inline-block' href='#'>See Our Impact</a>
+                    <a class='o-button u-inline-block' href='{{site.link}}/initiatives'>See Our Impact</a>
                 </div>
             </div>
         </section>
@@ -98,40 +98,19 @@
                         <span class='o-label'>Latest Initiatives</span>
                     </div>
 
-                    <div class='l-homepage__initiatives-list-item'>
-                        <a class='u-block' href='#'><img src='http://placehold.it/300x200'></a>
-                        <div>
-                            <h4 class='u-margin-top-none'>Building Plannings Grant Program</h4>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus, ab.</p>
-                            <a class='o-button--link-secondary' href='#'>Read More</a>
+                    {% for init in initiatives %}
+                        <div class='l-homepage__initiatives-list-item'>
+                            <a class='u-block' href='{{init.link}}'><img src='{{TimberImage(init.thumbnail).src|resize(300,200,"center")}}'></a>
+                            <div>
+                                <a href='{{init.link}}'><h4 class='u-margin-top-none'>{{init.title}}</h4></a>
+                                <p>{{init.initiative_summary | excerpt(15) }}</p>
+                                <a class='o-button--link-secondary' href='{{init.link}}'>Read More</a>
+                            </div>
                         </div>
-                    </div>
-                    <div class='l-homepage__initiatives-list-item'>
-                        <a class='u-block' href='#'><img src='http://placehold.it/300x200'></a>
-                        <div>
-                            <h4 class='u-margin-top-none'>Building Plannings Grant Program</h4>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus, ab.</p>
-                            <a class='o-button--link-secondary' href='#'>Read More</a>
-                        </div>
-                    </div>
-                    <div class='l-homepage__initiatives-list-item'>
-                        <a class='u-block' href='#'><img src='http://placehold.it/300x200'></a>
-                        <div>
-                            <h4 class='u-margin-top-none'>Building Plannings Grant Program</h4>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus, ab.</p>
-                            <a class='o-button--link-secondary' href='#'>Read More</a>
-                        </div>
-                    </div>
-                    <div class='l-homepage__initiatives-list-item'>
-                        <a class='u-block' href='#'><img src='http://placehold.it/300x200'></a>
-                        <div>
-                            <h4 class='u-margin-top-none'>Revitalization Program</h4>
-                            <a class='o-button--link-secondary' href='#'>Read More</a>
-                        </div>
-                    </div>
+                    {% endfor %}
 
                     <div class="l-grid u-type-center u-margin-top-3">
-                        <a class='o-button' href='#'>View All Initatives</a> 
+                        <a class='o-button' href='{{site.link}}/initiatives#init'>View All Initatives</a> 
                     </div>
                 </div>
 
@@ -150,6 +129,28 @@
                 <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/instafeed.js/1.4.1/instafeed.min.js'></script>
                 
                 <script type='text/javascript'>
+                    $('.l-homepage__slider').slick({
+                        centerMode: true,
+                        slidesToShow: 3,
+                        slidesToScroll: 1,
+                        infinite: false,
+                        arrows: true,
+                        responsive: [
+                            {
+                                breakpoint: 900,
+                                settings: {
+                                    slidesToShow: 2
+                                }
+                            },
+                            {
+                                breakpoint: 700,
+                                settings: {
+                                    slidesToShow: 1
+                                }
+                            }
+                        ]
+                    });
+                    
                     var feed = new Instafeed({
                         get: 'user',
                         sortBy: 'most-recent',

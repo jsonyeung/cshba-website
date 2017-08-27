@@ -9,7 +9,7 @@
 
     <section class='l-section'>
         <div class='l-section__content'>
-            <div class='l-module--1col u-margin-bottom-0'>
+            <div class='l-module--1col u-margin-bottom-0  {{layout.position == "left" ? "u-flex-justify-left"}} {{layout.position == "right" ? "u-flex-justify-right"}}'>
                 <div>
                     {{layout.content}}
                 </div>
@@ -84,8 +84,8 @@
                     </div>
                 </div>
             {% endif %}
-            <div class='l-module--3col'>
-                {% for point in layout.pointers %}
+            <div class='l-module--3col u-margin-bottom-0'>
+                {% for point in layout.points %}
                     <div class='u-margin-top-1'>
                         <h4 class='o-label--secondary u-color-dark'>{{point.title}}</h4>
                         <p>{{point.description}}</p>

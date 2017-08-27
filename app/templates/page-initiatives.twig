@@ -20,10 +20,10 @@
 
         {% include 'modules/content.twig' with {layouts:post.get_field('modular_layout')} %}
 
-        <section class='l-section u-color-bg-alternate u-margin-top-4 u-margin-bottom-4'>
+        <section id='init' class='l-section u-color-bg-alternate u-margin-top-4 u-margin-bottom-4'>
             <div class='l-section__content u-padding-top-2 u-padding-bottom-5'>
                 <div class='l-module'>
-                    <h3>Our Initiatives <span class='o-label u-margin-left-0'>12 Initiatives</span></h3>
+                    <h3>Our Initiatives</h3>
 
                     {% for init in initiatives %}
                         <div class='l-module__initiative-list u-margin-top-2'>
@@ -42,8 +42,7 @@
         <section class='l-section'>
             <div class='l-section__content'>
                 <div class='l-module'>
-                    <h3>Relevant Studies <span class="o-label u-margin-left-0">12 Studies</span></h3>
-                    <p class='u-type-subtitle--desc u-flex-full'>Here are some studies</p>
+                    <h3>Relevant Studies</h3>
 
                     <div class='l-module__initiative-study u-margin-top-1'>
                         <h4 class='u-margin-top-none'>Revitalizing Chinatown in Downtown Vancouver</h4>

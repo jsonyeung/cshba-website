@@ -12,6 +12,9 @@ $module: (
 
     p img { width: 100%; height: 100%; }
 
+    ul, ol { padding-left: 0; }
+    li { @extend p; }
+
     // 1 column
     &--1col {
         @extend .l-module;

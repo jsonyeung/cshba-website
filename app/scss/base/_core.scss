@@ -89,8 +89,10 @@ figcaption {
     margin-top: ms(1);
     padding-left: ms(0);
 
+    font-size: ms(-1);
+
     color: map-get($color, dark);
-    border-left: 2px solid map-get($color, dark);
+    border-left: 2px solid lightgrey;
 }
 
 input, button {
