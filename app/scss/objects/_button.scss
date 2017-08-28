@@ -98,6 +98,7 @@
 .o-button--link-secondary {
     @extend .o-button--link;
     color: map-get($color, secondary-accent);
+    background: none !important;
 
     &:after { background: map-get($color, secondary-accent); }
 }

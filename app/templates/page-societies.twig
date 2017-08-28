@@ -20,18 +20,21 @@
 
         {% include 'modules/content.twig' with {layouts:post.get_field('modular_layout')} %}
 
-        <section class='l-section u-color-bg-alternate u-margin-top-4 u-margin-bottom-neg-7'>
+        <section id='soc' class='l-section u-color-bg-alternate u-margin-top-4 u-margin-bottom-neg-7'>
             <div class='l-section__content u-padding-top-2 u-padding-bottom-7'>
                 <div class='l-module'>
-                    <h3>Societies with Heritage Buildings <span class='o-label u-margin-left-0'>12 Buildings Total</span></h3>
+                    <h3 class='u-flex-full u-type-center u-margin-bottom-1'>Societies with Heritage Buildings</h3>
 
                     {% for society in societies %}
                         <div class='l-module__society-list u-margin-top-2'>
-                            <img class='u-margin-bottom-2' src='http://placehold.it/500x300'>
+                            <a href='#'><img class='u-margin-bottom-2' src='{{society.thumbnail|resize(500,300,"center")}}'></a>
                             <div>
-                                <a href='#'><h4 class='u-margin-top-none u-color-primary'>{{society.title}}</h4></a>
-                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero eligendi sed dignissimos reprehenderit sunt rem necessitatibus? Blanditiis soluta delectus accusamus maxime amet nisi eos quisquam eum sit minima! Dignissimos, sapiente?</p>
-                                <a class='o-button--link-secondary' href='{{society.link}}'>Learn More</a>
+                                <a href='{{society.link}}'>
+                                    <h4 class='u-margin-none u-color-primary'>{{society.title}}</h4>
+                                    <p class='o-label--secondary u-margin-top-none'>{{society.chinese_title}}</p>
+                                </a>
+                                <p>{{society.intro_description | excerpt(35) }}</p>
+                                <a class='o-button--link-secondary' href='{{society.link}}'>Explore Society</a>
                             </div>
                         </div>
                     {% endfor %}

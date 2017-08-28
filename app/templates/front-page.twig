@@ -63,12 +63,17 @@
             <div class='l-homepage__slider'>
                 {% for society in societies %}
                     <div class='l-homepage__slider-item'>
-                        <a href='{{society.link}}'><img src='http://placehold.it/500x400'></a>
+                        <a href='{{society.link}}'><img src='{{society.thumbnail|resize(500,400,"center")}}'></a>
                         <h4 class='u-color-primary'><a href='{{society.link}}'>{{society.title}}</a></h4>
                         <p>{{society.intro_description | excerpt(40)}}</p>
-                        <a href='{{society.link}}' class='o-button--link-secondary'>Read More</a>
+                        <a href='{{society.link}}' class='o-button--link-secondary'>Explore Society</a>
                     </div>
                 {% endfor %}
+                
+                <div class='u-type-center'>
+                    <span class='o-label u-block u-margin-bottom-1 u-margin-top-9'>Interested?</span>
+                    <a class='o-button--secondary u-inline-block' href='{{site.link}}/societies#soc'>View All Buildings</a>
+                </div>
             </div>
             <div class='l-grid u-type-center u-margin-top-6'>
                 <a class='o-button u-inline-block' href='{{site.link}}/societies'>Learn The History</a>
@@ -104,13 +109,13 @@
                             <div>
                                 <a href='{{init.link}}'><h4 class='u-margin-top-none'>{{init.title}}</h4></a>
                                 <p>{{init.initiative_summary | excerpt(15) }}</p>
-                                <a class='o-button--link-secondary' href='{{init.link}}'>Read More</a>
+                                <a class='o-button--link-secondary' href='{{init.link}}'>Learn More</a>
                             </div>
                         </div>
                     {% endfor %}
 
                     <div class="l-grid u-type-center u-margin-top-3">
-                        <a class='o-button' href='{{site.link}}/initiatives#init'>View All Initatives</a> 
+                        <a class='o-button u-inline-block' href='{{site.link}}/initiatives#init'>View All Initatives</a> 
                     </div>
                 </div>
 

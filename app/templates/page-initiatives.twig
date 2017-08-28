@@ -23,7 +23,7 @@
         <section id='init' class='l-section u-color-bg-alternate u-margin-top-4 u-margin-bottom-4'>
             <div class='l-section__content u-padding-top-2 u-padding-bottom-5'>
                 <div class='l-module'>
-                    <h3>Our Initiatives</h3>
+                    <h3 class='u-flex-full u-type-center'>Our Initiatives</h3>
 
                     {% for init in initiatives %}
                         <div class='l-module__initiative-list u-margin-top-2'>
@@ -44,42 +44,17 @@
                 <div class='l-module'>
                     <h3>Relevant Studies</h3>
 
-                    <div class='l-module__initiative-study u-margin-top-1'>
-                        <h4 class='u-margin-top-none'>Revitalizing Chinatown in Downtown Vancouver</h4>
-                        <p class='u-margin-top-none'><span class='o-label u-block u-margin-bottom-0'>summary</span> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam harum labore itaque facilis officiis commodi laudantium autem, minima corporis debitis.</p>
-                        <div>
-                            <span class='o-label'>Published</span>
-                            <p>July 23, 2017</p>
+                    {% for study in post.get_field('studies') %}
+                        <div class='l-module__initiative-study u-margin-top-1'>
+                            <h4 class='u-margin-top-none'>{{study.title}}</h4>
+                            <p class='u-margin-top-none'><span class='o-label u-block u-margin-bottom-0'>Summary</span> {{study.summary}}</p>
+                            <div>
+                                <span class='o-label'>Published</span>
+                                <p>{{study.published}}</p>
+                            </div>
+                            <a class='o-button--link' href='{{study.link}}' target='_blank'>Link <span class='fa fa-link u-margin-left--1'></span></a>
                         </div>
-                        <a class='o-button--link' href='#'>Link <span class='fa fa-link u-margin-left--1'></span></a>
-                    </div>
-                    <div class='l-module__initiative-study'>
-                        <h4 class='u-margin-top-none'>Revitalizing Chinatown in Downtown Vancouver</h4>
-                        <p class='u-margin-top-none'><span class='o-label u-block u-margin-bottom-0'>summary</span> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam harum labore itaque facilis officiis commodi laudantium autem, minima corporis debitis.</p>
-                        <div>
-                            <span class='o-label'>Published</span>
-                            <p>July 23, 2017</p>
-                        </div>
-                        <a class='o-button--link' href='#'>Link <span class='fa fa-link u-margin-left--1'></span></a>
-                    </div>
-                    <div class='l-module__initiative-study'>
-                        <h4 class='u-margin-top-none'>Revitalizing Chinatown in Downtown Vancouver</h4>
-                        <p class='u-margin-top-none'><span class='o-label u-block u-margin-bottom-0'>summary</span> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam harum labore itaque facilis officiis commodi laudantium autem, minima corporis debitis.</p>
-                        <div>
-                            <span class='o-label'>Published</span>
-                            <p>July 23, 2017</p>
-                        </div>
-                        <a class='o-button--link' href='#'>Link <span class='fa fa-link u-margin-left--1'></span></a>
-                    </div>
-                    <div class='l-module__initiative-study'>
-                        <h4 class='u-margin-top-none'>Revitalizing Chinatown in Downtown Vancouver</h4>
-                        <p class='u-margin-top-none'><span class='o-label u-block u-margin-bottom-0'>summary</span> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam harum labore itaque facilis officiis commodi laudantium autem, minima corporis debitis.</p>
-                        <div>
-                            <span class='o-label'>Published</span>
-                            <p>July 23, 2017</p>
-                        </div>
-                        <a class='o-button--link' href='#'>Link <span class='fa fa-link u-margin-left--1'></span></a>
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
         </section>

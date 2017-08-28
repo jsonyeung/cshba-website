@@ -24,7 +24,7 @@ class CSHBASite extends TimberSite {
 		add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ) );
 
 		add_filter( 'timber_context', array( $this, 'add_to_context' ) );
-
+		
 		add_action( 'init', array( $this, 'options_page' ) );
 		add_action( 'init', array( $this, 'register_post_types' ) );
 		add_action( 'init', array( $this, 'register_taxonomies' ) );
@@ -50,7 +50,12 @@ class CSHBASite extends TimberSite {
 
 		}
 	}
-    
+
+	function register_editor_styles() {
+		add_editor_style();
+	}
+
+	
 	function register_post_types() {
 		//this is where you can register custom post types
     }

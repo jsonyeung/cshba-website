@@ -39,22 +39,18 @@
         <section class='l-section u-margin-top-2'> 
             <div class='l-section__content'>
                 <div class='l-society__details'>
-                    <div class='l-society__details-item'>
-                        <span class='o-label u-block u-margin-bottom-0'>Location</span>
-                        <a class='o-link' href='#'>137-139 E Pender St</a> 
-                    </div>
-                    <div class='l-society__details-item'>
-                        <span class='o-label u-block u-margin-bottom-0'>Built in</span>
-                        <p>December 21, 1913</p>
-                    </div>
-                    <div class='l-society__details-item'>
-                        <span class='o-label u-block u-margin-bottom-0'>Heritage Class</span>
-                        <p>Building Social and Community Life</p>
-                    </div>
-                    <div class='l-society__details-item'>
-                        <span class='o-label u-block u-margin-bottom-0'>Heritage Class</span>
-                        <p>Yes</p> 
-                    </div>
+                    {% for meta in post.get_field('meta') %}
+                        <div class='l-society__details-item'>
+                            <span class='o-label u-block u-margin-bottom-0'>{{meta.label}}</span>
+                            {% for val in meta.values %}
+                                {% if val.link %}
+                                    <a class='o-link u-margin-none' href='{{val.link}}' target='_blank'>{{val.value}}</a>
+                                {% else %}
+                                    <p class='u-margin-none'>{{val.value}}</p>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    {% endfor %}
                 </div>
             </div>
         </section>

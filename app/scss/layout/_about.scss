@@ -64,6 +64,7 @@
     &-director {
         @extend .l-module--2col;
 
+        width: 90%;
         margin-bottom: ms(3);
 
         .director__image {

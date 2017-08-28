@@ -5,6 +5,9 @@ var browserSync   = require('browser-sync').create();
 var plumber       = require('gulp-plumber');
 var sass          = require('gulp-sass');
 var postcss       = require('gulp-postcss');
+var concat        = require('gulp-concat');
+var rename        = require('gulp-rename');
+var uglify        = require('gulp-uglify');
 var util          = require('gulp-util');
 var gulpif        = require('gulp-if');
 var imagemin      = require('gulp-imagemin');
@@ -26,8 +29,11 @@ gulp.task('sass', function() {
 });
 
 gulp.task('js', function() {
-    return gulp.src('app/js/*.js')
+    return gulp.src('app/js/**/*.js')
           .pipe(plumber())
+          .pipe(concat('main.js'))
+          .pipe(rename('main.min.js'))
+          .pipe(uglify())
           .pipe(gulp.dest('dist'))
           .pipe(browserSync.stream());
 });
@@ -49,6 +55,10 @@ gulp.task('php', function() {
     return gulp.src('app/**/*.php')
            .pipe(gulp.dest('dist'))
            .pipe(browserSync.stream());
+});
+
+gulp.task('fonts', function() {
+    return gulp.src('app/')
 });
 
 gulp.task('watch', function() {
