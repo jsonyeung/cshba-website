@@ -14,10 +14,26 @@
     }
 }
 
+@keyframes slideIn {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+}
+
 .l-section, .l-header {
     position: relative;
     overflow: hidden;
     width: 100%;
+
+    h1 {
+        animation: slideIn 2s;
+        animation-fill-mode: both;
+    }
+    .u-type-subtitle {
+        animation: slideIn 3s 0.25s;
+        animation-fill-mode: both;
+    }
 
     &__content {
         @extend .l-grid;

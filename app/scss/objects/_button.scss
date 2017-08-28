@@ -54,6 +54,10 @@
     border: none;
     background: map-get($color, primary);
     color: white;
+
+    &:hover {
+        background: darken(map-get($color, primary), 5);
+    }
 }
 
 .o-button--solid-white {
@@ -61,6 +65,10 @@
 
     color: map-get($color, primary);
     background: white;
+
+    &:hover {
+        background: darken(white, 5);
+    }
 }
 
 

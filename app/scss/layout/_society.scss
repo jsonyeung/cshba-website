@@ -27,6 +27,9 @@
     justify-content: center;
     align-items: center;
 
+    animation: slideIn 3s 0.25s;
+    animation-fill-mode: both;
+
     &:after, &:before {
         content: '';
         width: ms(0);

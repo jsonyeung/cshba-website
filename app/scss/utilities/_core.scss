@@ -6,7 +6,7 @@ $steps: 12;
 @each $dir in $directions {
 
     .u-margin {
-        @for $i from 0 through $steps {
+        @for $i from -$steps through $steps {
             &-#{$i} {
                 margin: ms($i) !important;
                 @include breakpoint(map-get($bp, med)) { margin: ms($i - 1) !important; }

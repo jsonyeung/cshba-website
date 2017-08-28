@@ -1,0 +1,7 @@
+@media print {
+    nav, footer { display: none; }
+    header { padding-top: 0; }
+    header h1 { margin-top: 0; }
+
+    .l-section__bg-container, .l-initiative__share { display: none; }
+}

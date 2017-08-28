@@ -1,0 +1,18 @@
+.l-initiative__share {
+    width: 100%;
+    max-width: map-get($module, container);
+
+    li { 
+        margin-bottom: 0;
+        margin-right: 1em; 
+    }
+    li:last-child { margin: 0; }
+
+    a { background: none !important; } 
+
+    @include breakpoint(map-get($bp, large) min-width) {
+        position: absolute;
+        top: ms(4);
+        left: ms(2);
+    }
+}

@@ -42,8 +42,18 @@
         </section>
 
         <section class='l-section'>
-            <div class='l-section__content'>
+            <div class='l-section__content u-position-relative'>
                 <div class='l-module--1col'>
+                    <div class='l-initiative__share'>   
+                        <span class='o-label'>Share</span>
+                        <ul class='m-menu u-margin-top--1 u-margin-bottom-0'>
+                            <li><a href='http://www.facebook.com/sharer.php?u={{post.link}}' target='_blank' style='color:#3b5998;'><span class='fa fa-facebook'></span></a></li>
+                            <li><a href='#' style='color:#55acee;'><span class='fa fa-twitter'></span></a></li>
+                            <li><a href='#' style='color:#dd4b39;'><span class='fa fa-google-plus'></span></a></li>
+                        </ul>
+                        <a class='o-button--link-secondary u-type-respond--1' href='javascript:window.print();'><span class='fa fa-print'></span> Print this page</a>
+                    </div>
+
                     <div>{{post.content}}</div>
                 </div>
             </div>
@@ -51,25 +61,6 @@
 
         {% include 'layout/footer.twig' %}
 
-        {% embed 'layout/scripts.twig' %}  
-            {% block scripts %}
-                <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.min.js'></script>
-                <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/instafeed.js/1.4.1/instafeed.min.js'></script>
-                
-                <script type='text/javascript'>
-                    var feed = new Instafeed({
-                        get: 'user',
-                        sortBy: 'most-recent',
-                        resolution: 'low_resolution',
-                        limit: 6,
-
-                        clientId: '{{post.get_field("instagram_client_id")}}',
-                        accessToken: '{{post.get_field("instagram_access_token")}}',
-                        userId: '{{post.get_field("instagram_user_id")}}'
-                    });
-                    feed.run();
-                </script>
-            {% endblock %}    
-        {% endembed %}     
+        {% embed 'layout/scripts.twig' %}{% endembed %}     
     </body>
 </html>
