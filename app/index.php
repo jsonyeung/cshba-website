@@ -5,7 +5,7 @@ $context = Timber::get_context();
 $context['posts'] = Timber::get_posts();
 $context['foo'] = 'bar';
 
-$templates = array('index.twig');
+$templates = array('index.twig', 'page.twig');
 
 if ( is_front_page() ) {
 	array_unshift($templates, 'front-page.twig');

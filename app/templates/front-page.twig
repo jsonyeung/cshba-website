@@ -36,7 +36,7 @@
                 <div class='l-block u-margin-right-gutter u-margin-bottom-3 u-margin-top-3'>
                     <h2><span class='u-block o-label u-margin-bottom-0'>About Us</span> {{post.get_field('about_title')}}</h2>
                     <p>{{post.get_field('about_description')}}</p>
-                    <a class='o-button u-inline-block' href='{{site.link}}/about-us'>Learn Our Story</a>
+                    <a class='o-button--solid u-inline-block' href='{{site.link}}/about-us'>Learn Our Story</a>
                 </div>
                 <div class='l-block l-homepage__about-image'> 
                     <img src='{{theme.link}}/images/homepage-about.jpg'>
@@ -64,7 +64,10 @@
                 {% for society in societies %}
                     <div class='l-homepage__slider-item'>
                         <a href='{{society.link}}'><img src='{{society.thumbnail|resize(500,400,"center")}}'></a>
-                        <h4 class='u-color-primary'><a href='{{society.link}}'>{{society.title}}</a></h4>
+                        <a href='{{society.link}}'>
+                            <h4 class='u-margin-bottom-none u-color-primary'>{{society.title}}</h4>
+                            <p class='o-label--secondary u-margin-none'>{{society.chinese_title}}</p>
+                        </a>
                         <p>{{society.intro_description | excerpt(40)}}</p>
                         <a href='{{society.link}}' class='o-button--link-secondary'>Explore Society</a>
                     </div>
@@ -76,7 +79,7 @@
                 </div>
             </div>
             <div class='l-grid u-type-center u-margin-top-6'>
-                <a class='o-button u-inline-block' href='{{site.link}}/societies'>Learn The History</a>
+                <a class='o-button--solid u-inline-block' href='{{site.link}}/societies'>Learn The History</a>
             </div>
         </section> 
 
@@ -90,7 +93,7 @@
                 <div class='l-block u-margin-left-gutter u-margin-bottom-3 u-margin-top-3'>
                     <h2 class='u-margin-top-none'><span class='u-block o-label u-color-secondary-accent-2 u-margin-bottom-0'>On The Initiative</span>{{post.get_field('initiative_title')}}</h2>
                     <p>{{post.get_field('initiative_description')}}</p>
-                    <a class='o-button u-inline-block' href='{{site.link}}/initiatives'>See Our Impact</a>
+                    <a class='o-button--solid u-inline-block' href='{{site.link}}/initiatives'>See Our Impact</a>
                 </div>
             </div>
         </section>

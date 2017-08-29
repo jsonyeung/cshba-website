@@ -1,0 +1,55 @@
+legend {
+    @extend .o-label--secondary;
+    color: map-get($color, dark);
+}
+
+#give-payment-mode-select {
+    margin: ms(3) 0;
+}
+
+label.give-label {
+    @extend .o-label;
+}
+
+input[type='submit'].give-submit {
+    @extend .o-button--solid;
+
+    margin-top: ms(1);
+}
+
+#give_donation_receipt {
+    font-family: map-get($type, primary);
+
+    td {
+        font-size: 1rem;
+    }
+
+    strong {
+        @extend .o-label;
+        font-weight: bold;
+    }
+}
+
+.give-text-input, .give-currency-symbol {
+    font-family: map-get($type, tertiary);
+    font-size: ms(1) !important;
+    padding: ms(0) !important;
+}
+
+.give-text-input {
+    min-width: 200px !important;
+    border: 2px solid map-get($color, primary) !important;
+    letter-spacing: 2px;
+}
+
+.give-currency-symbol {
+    color: white !important;
+    background: map-get($color, primary) !important;
+    border: 2px solid map-get($color, primary) !important; 
+
+    line-height: 0 !important; 
+}
+
+.form-row {
+    margin-bottom: ms(0);
+}

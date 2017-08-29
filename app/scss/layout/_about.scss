@@ -54,7 +54,7 @@
 
 
 .l-about__directors {
-    margin: ms(3) 0;
+    margin: ms(3) 0 0;
     background: #F7F7F7;
     
     .l-section__content {
@@ -147,7 +147,7 @@
         text-align: center;
 
 
-        @include ms-respond(font-size, 1);
+        @include ms-respond(font-size, 0);
         font-family: map-get($type, tertiary); 
         letter-spacing: 2px;
 

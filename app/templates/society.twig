@@ -31,8 +31,10 @@
         </section>
 
         <section class='l-section'>
-            <div class='l-section__bg-container u-margin-top-3 u-margin-bottom-3'>
-                <div class='l-section__bg' style='background-image: url("{{TimberImage(post.get_field('intro_image')).src ?: post.thumbnail.src}}"); background-size: cover; background-position: center;'></div>
+            <div class='l-section__content u-padding-none u-margin-top-3'>
+                <div class='l-section__bg-container'>
+                    <div class='l-section__bg' style='background-image: url("{{TimberImage(post.get_field('intro_image')).src ?: post.thumbnail.src}}"); background-size: cover; background-position: center;'></div>
+                </div>
             </div>
         </section>
 

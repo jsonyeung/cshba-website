@@ -62,11 +62,12 @@ li { }
 
 blockquote {
     @extend p;
-    @include ms-respond(font-size, 1);
 
-    margin: ms(0) gutter()*2;
-
+    margin: 0;
+    padding: 0 gutter()*2;
+    
     color: map-get($color, primary-accent);
+    border-left: 2px solid map-get($color, primary);
 }
 
 img {
@@ -88,8 +89,7 @@ figcaption {
     display: block;
     
     width: 100%;
-    margin-top: ms(1);
-    padding-left: ms(0);
+    margin: ms(1) 0 0;
 
     font-size: ms(-1);
     text-align: center;

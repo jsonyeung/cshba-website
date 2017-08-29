@@ -100,7 +100,7 @@
         </section>
 
 
-        {% include 'modules/content.twig' %}
+        {% include 'modules/content.twig' with {layouts:post.get_field('modular_layout')} %}
 
         {% include 'layout/footer.twig' %}
 

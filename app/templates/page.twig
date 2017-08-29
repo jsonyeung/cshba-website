@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+    {% embed 'layout/header.twig' %}
+        {% block styles %}
+            <link rel='stylesheet' type='text/css' href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.min.css'>
+        {% endblock %} 
+    {% endembed %}
+
+    {% include 'layout/nav.twig' with {'inverse': false} %}
+
+        <header class='l-header u-stroke-edge-1 u-margin-bottom-6'>
+            <div class='l-header__bg' style='background-image:url("{{post.thumbnail.src}}"); background-position: center;'></div>
+            <div class='l-section__content u-padding-top-7 u-padding-bottom-5'>
+                <div class='u-type-center'>
+                    <h1 class='u-stroke-text u-type-contain-large'>{{post.get_field('intro_title') ?: wp_title}}</h1>
+                    <p class='u-type-subtitle'>{{post.get_field('intro_subtitle')}}</p>
+                </div>
+            </div>
+        </header> 
+
+        {% if post.content %}
+            <section class='l-section'>
+                <div class='l-section__content'>
+                    <div class='l-block u-type-contain-large'>
+                        {{post.content}}
+                    </div>
+                </div>
+            </section>
+        {% endif %}
+
+        {% include 'modules/content.twig' with {layouts:post.get_field('modular_layout')} %}
+
+        {% include 'layout/footer.twig' %}
+        {% embed 'layout/scripts.twig' %}{% endembed %}    
+    </body>
+</html>
