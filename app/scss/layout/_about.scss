@@ -3,7 +3,7 @@
     @extend .u-stroke-edge-1;
 
     padding: ms(8) 0 0;
-    margin-bottom: ms(4);
+    margin-bottom: ms(5);
 
     @include breakpoint(map-get($bp, med)) {
         padding: ms(5) 0 0;
@@ -55,17 +55,21 @@
 
 .l-about__directors {
     margin: ms(3) 0 0;
-    background: #F7F7F7;
+    background: map-get($color, alternate);
     
     .l-section__content {
+        padding-top: ms(6);
         padding-bottom: ms(3);
     }
 
     &-director {
         @extend .l-module--2col;
-
         width: 90%;
         margin-bottom: ms(3);
+
+        @include breakpoint(map-get($bp, small) min-width) {
+            justify-content: center;
+        }
 
         .director__image {
             margin-right: gutter()*2;
@@ -78,7 +82,7 @@
             }
         }
 
-        & > div:last-child { width: auto; flex: 1 1 300px; }
+        & > div:last-child { max-width: 700px; flex: 1 1 300px; } 
     }
 
     &-prev {

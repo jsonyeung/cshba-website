@@ -58,7 +58,9 @@ gulp.task('php', function() {
 });
 
 gulp.task('fonts', function() {
-    return gulp.src('app/')
+    return gulp.src('app/fonts/**/*')
+           .pipe(gulp.dest('fonts'))
+           .pipe(browserSync.stream());
 });
 
 gulp.task('watch', function() {

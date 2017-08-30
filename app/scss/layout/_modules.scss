@@ -32,28 +32,38 @@ $module: (
         @extend .l-module--1col;
         flex-wrap: wrap-reverse;
 
+        & > *:first-child {
+            max-width: none;
+            flex: 1 1 50%;
+        }
+
         & > *:last-child {
-            flex: 1; 
+            max-width: none;
+            flex: 0 1 500px; 
             align-self: flex-end;
 
-            margin-left: gutter()*2;
-            padding: gutter() gutter()*2;
+            margin-left: gutter();
+            padding: gutter();
 
-            * {
-                @include ms-respond(font-size, -1);
+            p {
+                color: map-get($color, subtle);
             }
 
             span { 
-                padding-left: ms(0); 
-                border-left: 2px solid map-get($color, primary);  
+                padding: ms(0) 0 0;  
+                border-top: 1px solid lightgrey;  
             } 
+        }
 
-            @include breakpoint(1260px) {
+        @include breakpoint(1270px) {
+            max-width: map-get($module, container);
+
+            & > *:last-child {
                 flex: 1 1 100%;
                 margin: 0;
                 padding: ms(0) 0;
-            } 
-        }
+            }
+        } 
     }
 
     // 2 column paragraphs
