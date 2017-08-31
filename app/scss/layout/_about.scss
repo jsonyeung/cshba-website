@@ -54,6 +54,8 @@
 
 
 .l-about__directors {
+    @extend .u-stroke-edge-2;
+    
     margin: ms(3) 0 0;
     background: map-get($color, alternate);
     

@@ -20,14 +20,14 @@
 
         {% include 'modules/content.twig' with {layouts:post.get_field('modular_layout')} %}
 
-        <section id='init' class='l-section u-color-bg-alternate u-margin-top-4 u-margin-bottom-4'>
+        <section id='init' class='l-section u-stroke-edge-2 u-color-bg-alternate u-margin-top-4 u-margin-bottom-4'>
             <div class='l-section__content u-padding-top-2 u-padding-bottom-5'>
                 <div class='l-module'>
-                    <h3 class='u-flex-full u-type-center'>Our Initiatives</h3>
+                    <h3 class='u-flex-full'>Our Initiatives</h3>
 
                     {% for init in initiatives %}
                         <div class='l-module__initiative-list u-margin-top-2'>
-                            <a href='{{init.link}}'><img src='{{init.thumbnail.src|resize(400,300,"center")}}'></a>
+                            <a href='{{init.link}}'><img src='{{init.thumbnail.src|resize(500,300,"center")}}'></a>
                             <div>
                                 <a href='{{init.link}}'><h4>{{init.title}}</h4></a>
                                 <p>{{init.initiative_summary}}</p>

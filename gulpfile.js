@@ -59,7 +59,7 @@ gulp.task('php', function() {
 
 gulp.task('fonts', function() {
     return gulp.src('app/fonts/**/*')
-           .pipe(gulp.dest('fonts'))
+           .pipe(gulp.dest('dist/fonts'))
            .pipe(browserSync.stream());
 });
 
@@ -67,13 +67,14 @@ gulp.task('watch', function() {
     gulp.watch('app/scss/**/*.scss', ['sass']);
     gulp.watch('app/js/**/*.js', ['js']);
     gulp.watch('app/images/**/*', ['images']);
+    gulp.watch('app/fonts/**/*', ['fonts']);
     gulp.watch('app/**/*.twig', ['twig']);
     gulp.watch('app/**/*.php', ['php']);
 });
 
 
 // Commands
-gulp.task('build', ['sass', 'js', 'twig', 'php', 'images']);
+gulp.task('build', ['sass', 'js', 'twig', 'php', 'images', 'fonts']);
 
 gulp.task('dev', ['build', 'watch'], function() {
     var browsersync_options = {

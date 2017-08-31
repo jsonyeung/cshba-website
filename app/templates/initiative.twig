@@ -11,7 +11,7 @@
         <header class='l-header u-padding-top-6'>
             <div class='l-section__content u-padding-top-5'>
                 <div class='l-block u-type-contain-larger u-padding-none'>
-                    <h1><span class='o-label--secondary u-block u-color-secondary-accent'>Initiative</span> {{wp_title}}</h1>
+                    <h1><span class='o-label--secondary u-block u-color-secondary-accent'>Initiative</span> {{post.title}}</h1>
                     <span class='o-label u-block u-margin-top-4 u-margin-bottom-2'>Summary</span>
                     <p class='u-type-subtitle--desc u-type-type-respond-2 u-inline-block u-type-contain-large u-color-dark'>{{post.get_field('initiative_summary')}}</p>
 
@@ -56,6 +56,26 @@
                     </div>
 
                     <div>{{post.content}}</div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section class='l-section u-margin-top-6'>
+            <div class='l-section__content'>
+                <div class='l-module--3col'>
+                    <h4 class='u-margin-bottom-1'>Related Initiatives</h4>
+                </div>
+                <div class='l-initiative__related'>
+                    {% for init in initiatives %}
+                    <div>
+                        <a href='{{init.link}}' class='u-block'><img src='http://placehold.it/500x300'></a>
+                        <div>
+                            <a href='{{init.link}}'><h5>{{init.title}}</h5></a>  
+                            <a class='o-button--link-secondary' href='{{init.link}}'>Learn More</a>
+                        </div>
+                    </div>
+                    {% endfor %}
                 </div>
             </div>
         </section>

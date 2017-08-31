@@ -54,6 +54,20 @@
                 top: auto;
             }
         }
+
+        &-2 {
+            @extend .u-stroke-edge-1;
+
+            &:after, &:before { z-index: 1; }
+            
+            &:before {
+                @extend .u-stroke-edge-1:after;
+                top: 0;
+                bottom: auto;
+
+                transform: scaleY(-1);
+            }
+        }
     }
  
     &-text {

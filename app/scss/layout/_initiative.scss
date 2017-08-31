@@ -16,3 +16,24 @@
         left: ms(2);
     }
 }
+
+.l-initiative__related {
+    @extend .l-module--3col;
+
+    & > div {
+        margin-top: ms(2);
+
+        @include breakpoint(map-get($bp, med)) {
+            img {
+                width: 150px;
+                float: left;
+
+                margin-right: gutter()*2;
+            }
+
+            h5 {
+                margin: 0 gutter() ms(-1);
+            }
+        }
+    }
+}

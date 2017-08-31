@@ -70,13 +70,13 @@
 
     &__bg-container {
         width: 100%;
-        height: 800px;
+        height: 600px;
         position: relative;
 
-        @include breakpoint(map-get($bp, med)) {
+        @include breakpoint(map-get($bp, med) + 200) {
             height: 400px;
         }
-        @include breakpoint(map-get($bp, small)) {
+        @include breakpoint(map-get($bp, small) + 100) {
             height: 200px;
         }
     }

@@ -178,15 +178,24 @@ $module: (
 
         display: flex;
         align-items: center;
+        flex-wrap: wrap;
 
         & > a { 
             width: span(3); 
             min-width: 100px;
+
+            @include breakpoint(map-get($bp, small)) {
+                width: 100%;
+            }
         }
         
         div {
             flex: 1;
             padding: ms(1) gutter()*2;
+
+            @include breakpoint(map-get($bp, small)) {
+                padding: ms(0) 0;
+            }
         }
 
         h4 { margin-top: 0; }
