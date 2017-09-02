@@ -15,21 +15,21 @@
                 <p class='u-type-subtitle u-color-secondary'>{{post.get_field('intro_subtitle')}}</p>
             </div>
 
-            <section class='l-about__vision'>
-                <div class='l-section__content'>
-                    <div class='l-block'>
-                        <p class='u-type-respond-2 u-type-center u-color-white'>
-                            <img class='l-about__stamp' src='{{theme.link}}/images/vision-stamp.svg'>
-                            {{post.get_field('our_vision_chinese')}}
-                        </p>
-                    </div>
-                    <div class='l-block'>
-                        <p class='u-type-respond-1 u-color-white'><span class='o-label u-block u-margin-bottom-0'>Meaning</span> {{post.get_field('our_vision_english')}}</p>
-                    </div>
-                </div>
-            </section>
         </header>
 
+        <section class='l-about__vision'>
+            <div class='l-section__content'>
+                <div class='l-block'>
+                    <p class='u-type-respond-1'>
+                        <img class='l-about__stamp' src='{{theme.link}}/images/vision-stamp.svg'>
+                        {{post.get_field('our_vision_chinese')}}
+                    </p>
+                </div>
+                <div class='l-block'>
+                    <p class='u-type-respond-1'><span class='o-label u-block u-margin-bottom-0'>Meaning</span> {{post.get_field('our_vision_english')}}</p>
+                </div>
+            </div>
+        </section>
 
         {% set layouts = post.get_field('info_modular_layout') %}
         {% include 'modules/content.twig' with {layouts:layouts} %}    

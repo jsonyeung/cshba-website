@@ -8,9 +8,15 @@
 
     {% include 'layout/nav.twig' with {'inverse': false} %}
 
-        <header class='l-header u-padding-top-6'>
-            <div class='l-section__content u-padding-top-5'>
-                <div class='l-block u-type-contain-larger u-padding-none'>
+        <section class='l-section'>
+            <div class='l-section__bg-container u-margin-top-7 u-margin-bottom-2'>
+                <div class='l-section__bg' style='background-image: url("{{post.thumbnail.src}}"); background-size: cover; background-position: center;'></div>
+            </div>
+        </section>
+
+        <header class='l-header'>
+            <div class='l-section__content'>
+                <div class='l-block u-type-contain-large u-padding-none'>
                     <h1><span class='o-label--secondary u-block u-color-secondary-accent'>Initiative</span> {{post.title}}</h1>
                     <span class='o-label u-block u-margin-top-4 u-margin-bottom-2'>Summary</span>
                     <p class='u-type-subtitle--desc u-type-type-respond-2 u-inline-block u-type-contain-large u-color-dark'>{{post.get_field('initiative_summary')}}</p>
@@ -34,16 +40,10 @@
         </header>
 
         <section class='l-section'>
-            <div class='l-section__content u-padding-none'>
-                <div class='l-section__bg-container u-margin-top-5 u-margin-bottom-2'>
-                    <div class='l-section__bg' style='background-image: url("{{post.thumbnail.src}}"); background-size: cover; background-position: center;'></div>
-                </div>
-            </div>
-        </section>
-
-        <section class='l-section'>
             <div class='l-section__content u-position-relative'>
                 <div class='l-module--1col'>
+                    <div>{{post.content}}</div>
+
                     <div class='l-initiative__share'>   
                         <span class='o-label'>Share</span>
                         <ul class='m-menu u-margin-top--1 u-margin-bottom-0'>
@@ -54,8 +54,6 @@
                         </ul>
                         <a class='o-button--link-secondary u-type-respond--1' href='javascript:window.print();'><span class='fa fa-print'></span> Print this page</a>
                     </div>
-
-                    <div>{{post.content}}</div>
                 </div>
             </div>
         </section>
@@ -69,7 +67,7 @@
                 <div class='l-initiative__related'>
                     {% for init in initiatives %}
                     <div>
-                        <a href='{{init.link}}' class='u-block'><img src='http://placehold.it/500x300'></a>
+                        <a href='{{init.link}}' class='u-block'><img src='{{init.thumbnail|resize(500,300, "center")}}'></a>
                         <div>
                             <a href='{{init.link}}'><h5>{{init.title}}</h5></a>  
                             <a class='o-button--link-secondary' href='{{init.link}}'>Learn More</a>

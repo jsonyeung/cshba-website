@@ -27,7 +27,7 @@
 
                     {% for society in societies %}
                         <div class='l-module__society-list u-margin-top-2'>
-                            <a href='#'><img class='u-margin-bottom-2' src='{{society.thumbnail|resize(500,300,"center")}}'></a>
+                            <a href='{{society.link}}'><img class='u-margin-bottom-2' src='{{society.thumbnail|resize(500,300,"center")}}'></a>
                             <div>
                                 <a href='{{society.link}}'>
                                     <h4 class='u-margin-none u-color-primary'>{{society.title}}</h4>
