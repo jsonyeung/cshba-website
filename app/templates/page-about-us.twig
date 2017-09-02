@@ -49,7 +49,7 @@
                             <img src='{{TimberImage(value.image).src | resize(500,300,"center")}}'>
                         </div>
                         <div class='l-block u-margin-left-gutter u-margin-bottom-3 u-margin-top-3'>
-                            <h2 class='u-margin-top-none'><span class='u-block o-label u-color-primary u-margin-bottom-0'>Core Values</span>{{value.chinese}}<br>&mdash; {{value.english}}</h2>
+                            <h2 class='u-margin-top-none'><span class='u-block o-label u-color-secondary-accent u-margin-bottom-0'>Core Values</span>{{value.chinese}}<br>&mdash; {{value.english}}</h2>
                             <p>{{ value.description }}</p>
                             <p class='u-type-subtitle u-color-secondary-accent u-margin-none'>{{ "%02d"|format(loop.index) }} / {{ "%02d"|format(loop.length) }}</p>
                         </div>
@@ -60,21 +60,27 @@
         <img class='l-about__stamp-values' src='{{theme.link}}/images/values-stamp.svg' alt='stamp'>
     </section>
 
+    <section class='l-about__mission'>
+        <div class='l-section__content'>
+            <div>
+                <h3 class='o-label u-color-primary u-margin-bottom-1'>Our Mission</h3>
+                <p class='u-type-respond-1 u-type-contain'>{{post.get_field('our_mission')}}</p> 
+            </div>
+        </div>
+    </section>
+
     <section class='l-about__directors'>
         <div class='l-section__content'>
-            <div class='l-module'>
-            </div>
-
             {% set directors = post.get_field('board_of_directors_directors') %}
 
+            <h3 class='o-label u-flex-full'>Board of Directors</h3>
             {% for director in directors %}
-                {% if not director.retired %}
                 <div class='l-about__directors-director'>
                     <div class='director__image'>
                         <img src='{{TimberImage(director.image).src|resize(400,400,"center")}}'>
                     </div>
                     <div>
-                        <h3 class='u-margin-top-none'>{{director.name}} <span class='o-label--secondary u-color-primary u-block u-margin-top--1'>{{director.title}}</span></h3>
+                        <h4 class='u-margin-top-none'>{{director.name}} <span class='o-label--secondary u-color-primary u-block'>{{director.title}}</span></h4>
                         <p>{{director.description}}</p>
                         <ul class='m-menu u-flex-wrap'>
                             {% for media in director.social_media %}
@@ -83,34 +89,7 @@
                         </ul>
                     </div>
                 </div>
-                {% endif %}
             {% endfor %}
-
-            <div class='l-module u-flex-justify-center'>
-                {% set has_retired = false %}
-
-                {% for director in directors %}
-                    {% if director.retired %}
-
-                    {% if not has_retired %}
-                        <h4 class='o-label u-type-center u-flex-full u-margin-bottom-4'>Previous Board of Directors</h4>
-                        {% set has_retired = true %}
-                    {% endif %}
-
-                    <div class='l-about__directors-prev'>
-                        <img class='director__image' src='{{TimberImage(director.image).src|resize(150,150,"center")}}'>
-                        <h5>{{director.name}} <span class='o-label--secondary u-margin-left-0'>{{director.title}}</span></h5>
-                        <p class='u-type-respond--1'>{{director.description}}</p>
-                        <ul class='m-menu'>
-                            {% for media in director.social_media %}
-                            <li><a class='o-button--link-secondary u-type-respond--1' target='_blank' style='color:{{media.social_media_colour}}' href='{{media.social_media_link}}'><span class='fa fa-{{media.social_media_icon}}'></span></a></li>
-                            {% endfor %}
-                        </ul>
-                    </div>
-                    {% endif %}
-                {% endfor %}
-            </div>
-
         </div>  
     </section>
 

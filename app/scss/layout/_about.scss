@@ -114,7 +114,7 @@
     margin: ms(3) 0;
     padding: ms(5) 0;
 
-    @include breakpoint(map-get($bp, med)) {
+    @include breakpoint(map-get($bp, med) + 200) {
         margin: ms(1) 0;
         padding: ms(2) 0;
         
@@ -124,38 +124,49 @@
     }
 }
 
-
 .l-about__directors {
-    padding: ms(5) 0 ms(2); 
-    margin: ms(3) 0;
-
-    background: map-get($color, alternate);
-    @extend .u-stroke-edge-2;
+    margin: ms(3) 0 ms(2);
 
     @include breakpoint(map-get($bp, large)) {
-        margin: ms(1) 0;
+        margin: ms(2) 0 ms(1);
+    }
+
+    .l-section__content {
+        justify-content: flex-start;
+    }
+
+    h3 {
+        padding: gutter()/2;
     }
 
     &-director {
-        @extend .l-module--2col;
-        width: 90%;
-        margin-bottom: ms(1);
+        width: 25%;
+        display: block;
 
-        justify-content: center;
+        margin-bottom: ms(1);
+        padding: gutter()/2;
+
+
+        @include breakpoint(map-get($bp, large)) {
+            width: 33.33%;
+        }
 
         @include breakpoint(map-get($bp, med)) {
-            justify-content: flex-start;   
+            width: 50%;
+        }
+
+        @include breakpoint(map-get($bp, small)) {
+            width: 100%;
         }
 
         .director__image {
             margin-right: gutter()*2;
             margin-bottom: ms(0);
-            flex: 0 1 150px;
+            width: 100%;
+        }
 
-            @include breakpoint(map-get($bp, small) min-width) {
-                flex: 0 1 30%;
-                max-width: 300px; 
-            }
+        p {
+            font-size: ms(-1);
         }
 
         & > div:last-child { max-width: 700px; flex: 1 1 300px; } 
