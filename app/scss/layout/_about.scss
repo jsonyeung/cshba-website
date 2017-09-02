@@ -104,6 +104,10 @@
     }
 }
 
+.l-about__values {
+    position: relative;
+}
+
 .l-about__slider {
     @extend .l-homepage__slider;
 
@@ -122,19 +126,26 @@
 
 
 .l-about__directors {
-    margin: ms(5) 0 0;
+    padding: ms(5) 0 ms(2); 
+    margin: ms(3) 0;
+
+    background: map-get($color, alternate);
+    @extend .u-stroke-edge-2;
 
     @include breakpoint(map-get($bp, large)) {
         margin: ms(1) 0;
-    }
-    
-    .l-section__content {
     }
 
     &-director {
         @extend .l-module--2col;
         width: 90%;
-        margin-bottom: ms(3);
+        margin-bottom: ms(1);
+
+        justify-content: center;
+
+        @include breakpoint(map-get($bp, med)) {
+            justify-content: flex-start;   
+        }
 
         .director__image {
             margin-right: gutter()*2;
@@ -174,57 +185,7 @@
     }
 }
 
-.l-about__message {
-    margin: ms(4) 0 0;
-    position: relative;
-
-    .l-section__content {
-        padding: ms(2);
-        //background: #333;
-
-        @include breakpoint(map-get($bp, small)) {
-            padding: ms(0);
-        }
-    }
-
-    .l-block {
-        display: flex;
-        flex-flow: column wrap;
-        align-items: center;
-
-        padding: ms(4) ms(0);
-
-        // border: 2px solid map-get($color, secondary);
-        text-align: center;
-
-        & > * { 
-            display: inline-block;
-            max-width: 750px;
-            color: white; 
-
-            width: 100%;
-        }
-
-        img { max-width: 250px; }
-    }
-}
-
 .l-about__sponsers {
-    padding: ms(2) 0;
-    margin: 0 0 ms(4);
-     
-    .title { 
-        flex: 1 1 100%;
-        text-align: center;
-
-
-        @include ms-respond(font-size, 0);
-        font-family: map-get($type, tertiary); 
-        letter-spacing: 2px;
-
-        color: map-get($color, subtle);
-    }
-
     a { 
         max-width: 175px;
         flex: 1 1 150px;

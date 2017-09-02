@@ -29,35 +29,33 @@
 
         <div class="l-section__content u-flex-justify-right">
             <div class='l-about__vision-english'>
-                <p class='u-type-respond-1'><span class='o-label u-block u-margin-bottom-0'>Meaning</span> {{post.get_field('our_vision_english')}}</p>
+                <p class='u-type-respond-1'><span class='o-label u-color-primary u-block u-margin-bottom-0'>Our Vision</span> {{post.get_field('our_vision_english')}}</p>
+                <div class='l-about__sponsers'> 
+                    <h3 class='o-label u-block u-margin-bottom-1'>In Partnership with</h3>
+                    {% for sponser in post.get_field('sponsers') %}
+                        <a href='#'><img src='{{TimberImage(sponser.image).src}}'></a>
+                    {% endfor %}
+                </div> 
             </div>
         </div>
     </section>
 
-    <section class='l-about__slider'>
-        <div>
-            <div class="l-section">
-                <div class="l-section__content u-flexbox-align-center">
-                    <div class='l-block'> 
-                        <img src='{{theme.link}}/images/homepage-initiatives.jpg'>
-                    </div>
-                    <div class='l-block u-margin-left-gutter u-margin-bottom-3 u-margin-top-3'>
-                        <h2 class='u-margin-top-none'><span class='u-block o-label u-color-primary u-margin-bottom-0'>Our Values #1</span>而气量<br>Live your Life as is</h2>
-                        <p class='u-hide-on-small'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere, quas quae neque cum a fuga optio. Aperiam cupiditate beatae nam id delectus, quisquam eum sit architecto. Tenetur optio asperiores distinctio.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="l-section">
-                <div class="l-section__content u-flexbox-align-center">
-                    <div class='l-block'> 
-                        <img src='{{theme.link}}/images/homepage-initiatives.jpg'>
-                    </div>
-                    <div class='l-block u-margin-left-gutter u-margin-bottom-3 u-margin-top-3'>
-                        <h2 class='u-margin-top-none'><span class='u-block o-label u-color-primary u-margin-bottom-0'>Value #1</span>而气量<br>Live your Life as is</h2>
-                        <p class='u-hide-on-small'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere, quas quae neque cum a fuga optio. Aperiam cupiditate beatae nam id delectus, quisquam eum sit architecto. Tenetur optio asperiores distinctio.</p>
+    <section class='l-about__values'>
+        <div class='l-about__slider'>
+            {% for value in post.get_field('our_values') %}
+                <div class="l-section">
+                    <div class="l-section__content u-flexbox-align-center">
+                        <div class='l-block'> 
+                            <img src='{{TimberImage(value.image).src | resize(500,300,"center")}}'>
+                        </div>
+                        <div class='l-block u-margin-left-gutter u-margin-bottom-3 u-margin-top-3'>
+                            <h2 class='u-margin-top-none'><span class='u-block o-label u-color-primary u-margin-bottom-0'>Core Values</span>{{value.chinese}}<br>&mdash; {{value.english}}</h2>
+                            <p>{{ value.description }}</p>
+                            <p class='u-type-subtitle u-color-secondary-accent u-margin-none'>{{ "%02d"|format(loop.index) }} / {{ "%02d"|format(loop.length) }}</p>
+                        </div>
                     </div>
                 </div>
-            </div>
+            {% endfor %}
         </div>
         <img class='l-about__stamp-values' src='{{theme.link}}/images/values-stamp.svg' alt='stamp'>
     </section>
@@ -95,7 +93,7 @@
                     {% if director.retired %}
 
                     {% if not has_retired %}
-                        <h4 class='o-label u-type-center u-flex-full u-margin-bottom-6'>Previous Board of Directors</h4>
+                        <h4 class='o-label u-type-center u-flex-full u-margin-bottom-4'>Previous Board of Directors</h4>
                         {% set has_retired = true %}
                     {% endif %}
 
@@ -116,16 +114,6 @@
         </div>  
     </section>
 
-    <section class='l-about__sponsers'> 
-        <div class='l-section__content u-flex-align-center'>
-            <h3 class='o-label u-block u-margin-bottom-1'>We are proudly partnered with</h3>
-            {% for sponser in post.get_field('sponsers') %}
-                <a href='#'><img src='{{TimberImage(sponser.image).src}}'></a>
-            {% endfor %}
-        </div>
-    </section>
-
-
         {% include 'modules/content.twig' with {layouts:post.get_field('modular_layout')} %}
 
         {% include 'layout/footer.twig' %}
@@ -135,7 +123,7 @@
                 <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.min.js'></script>
                 
                 <script type='text/javascript'>
-                    $('.l-about__slider > div').slick({
+                    $('.l-about__slider').slick({
                         centerMode: true,
                         slidesToShow: 1,
                         slidesToScroll: 1,
