@@ -24,7 +24,7 @@ class CSHBASite extends TimberSite {
 		add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ) );
 
 		add_filter( 'timber_context', array( $this, 'add_to_context' ) );
-		add_filter('acf/settings/show_admin', '__return_false');
+		//add_filter('acf/settings/show_admin', '__return_false');
 		
 		add_action( 'init', array( $this, 'options_page' ) );
 		add_action( 'init', array( $this, 'register_post_types' ) );

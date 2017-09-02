@@ -9,100 +9,142 @@
     {% include 'layout/nav.twig' with {'inverse': true} %}
 
      <header class='l-about__header'>
-            <div class='l-header__bg' style='background: url("{{theme.link}}/images/about-header.png"); background-position: bottom center;'></div>
-            <div class='l-grid u-padding-top-7 u-padding-bottom-6 u-type-center'>
-                <h1 class='u-color-background u-inline-block u-type-contain-large'>{{post.get_field('intro_title')}}</h1>
-                <p class='u-type-subtitle u-color-secondary'>{{post.get_field('intro_subtitle')}}</p>
+        <div class='l-header__bg' style='background-image: url("{{theme.link}}/images/about-header.png");'></div>
+        <div class='l-grid u-padding-top-7 u-padding-bottom-6 u-type-center'>
+            <h1 class='u-color-background u-inline-block u-type-contain-large'>{{post.get_field('intro_title')}}</h1>
+            <p class='u-type-subtitle u-color-secondary'>{{post.get_field('intro_subtitle')}}</p>
+        </div>
+    </header>
+
+    <section class='l-about__vision'>
+        <div class='l-section__content u-margin-none u-flex-justify-left' style='max-width:none'>
+            <div class='l-section__bg' style='background-image: url("{{theme.link}}/images/about-vision-bg.png");'></div>
+            <div class='l-about__vision-chinese'>
+                <p>
+                    <img class='l-about__stamp-vision' src='{{theme.link}}/images/vision-stamp.svg' alt='stamp'>
+                    {{post.get_field('our_vision_chinese')}}
+                </p>
+            </div>
+        </div>
+
+        <div class="l-section__content u-flex-justify-right">
+            <div class='l-about__vision-english'>
+                <p class='u-type-respond-1'><span class='o-label u-block u-margin-bottom-0'>Meaning</span> {{post.get_field('our_vision_english')}}</p>
+            </div>
+        </div>
+    </section>
+
+    <section class='l-about__slider'>
+        <div>
+            <div class="l-section">
+                <div class="l-section__content u-flexbox-align-center">
+                    <div class='l-block'> 
+                        <img src='{{theme.link}}/images/homepage-initiatives.jpg'>
+                    </div>
+                    <div class='l-block u-margin-left-gutter u-margin-bottom-3 u-margin-top-3'>
+                        <h2 class='u-margin-top-none'><span class='u-block o-label u-color-primary u-margin-bottom-0'>Our Values #1</span>而气量<br>Live your Life as is</h2>
+                        <p class='u-hide-on-small'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere, quas quae neque cum a fuga optio. Aperiam cupiditate beatae nam id delectus, quisquam eum sit architecto. Tenetur optio asperiores distinctio.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="l-section">
+                <div class="l-section__content u-flexbox-align-center">
+                    <div class='l-block'> 
+                        <img src='{{theme.link}}/images/homepage-initiatives.jpg'>
+                    </div>
+                    <div class='l-block u-margin-left-gutter u-margin-bottom-3 u-margin-top-3'>
+                        <h2 class='u-margin-top-none'><span class='u-block o-label u-color-primary u-margin-bottom-0'>Value #1</span>而气量<br>Live your Life as is</h2>
+                        <p class='u-hide-on-small'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere, quas quae neque cum a fuga optio. Aperiam cupiditate beatae nam id delectus, quisquam eum sit architecto. Tenetur optio asperiores distinctio.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <img class='l-about__stamp-values' src='{{theme.link}}/images/values-stamp.svg' alt='stamp'>
+    </section>
+
+    <section class='l-about__directors'>
+        <div class='l-section__content'>
+            <div class='l-module'>
             </div>
 
-        </header>
+            {% set directors = post.get_field('board_of_directors_directors') %}
 
-        <section class='l-about__vision'>
-            <div class='l-section__content'>
-                <div class='l-block'>
-                    <p class='u-type-respond-1'>
-                        <img class='l-about__stamp' src='{{theme.link}}/images/vision-stamp.svg'>
-                        {{post.get_field('our_vision_chinese')}}
-                    </p>
+            {% for director in directors %}
+                {% if not director.retired %}
+                <div class='l-about__directors-director'>
+                    <div class='director__image'>
+                        <img src='{{TimberImage(director.image).src|resize(400,400,"center")}}'>
+                    </div>
+                    <div>
+                        <h3 class='u-margin-top-none'>{{director.name}} <span class='o-label--secondary u-color-primary u-block u-margin-top--1'>{{director.title}}</span></h3>
+                        <p>{{director.description}}</p>
+                        <ul class='m-menu u-flex-wrap'>
+                            {% for media in director.social_media %}
+                            <li class='u-margin-bottom-0'><a class='o-button--link-secondary u-type-respond--1' target='_blank' style='color:{{media.social_media_colour}}' href='{{media.social_media_link}}'><span class='fa fa-{{media.social_media_icon}}'></span> @{{director.name}}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
                 </div>
-                <div class='l-block'>
-                    <p class='u-type-respond-1'><span class='o-label u-block u-margin-bottom-0'>Meaning</span> {{post.get_field('our_vision_english')}}</p>
-                </div>
-            </div>
-        </section>
+                {% endif %}
+            {% endfor %}
 
-        {% set layouts = post.get_field('info_modular_layout') %}
-        {% include 'modules/content.twig' with {layouts:layouts} %}    
-
-
-        <section class='l-about__directors'>
-            <div class='l-section__content'>
-                <div class='l-module'>
-                </div>
-
-                {% set directors = post.get_field('board_of_directors_directors') %}
+            <div class='l-module u-flex-justify-center'>
+                {% set has_retired = false %}
 
                 {% for director in directors %}
-                    {% if not director.retired %}
-                    <div class='l-about__directors-director'>
-                        <div class='director__image'>
-                            <img src='{{TimberImage(director.image).src|resize(400,400,"center")}}'>
-                        </div>
-                        <div>
-                            <h3 class='u-margin-top-none'>{{director.name}} <span class='o-label--secondary u-color-primary u-block u-margin-top--1'>{{director.title}}</span></h3>
-                            <p>{{director.description}}</p>
-                            <ul class='m-menu u-flex-wrap'>
-                                {% for media in director.social_media %}
-                                <li class='u-margin-bottom-0'><a class='o-button--link-secondary u-type-respond--1' target='_blank' style='color:{{media.social_media_colour}}' href='{{media.social_media_link}}'><span class='fa fa-{{media.social_media_icon}}'></span> @{{director.name}}</a></li>
-                                {% endfor %}
-                            </ul>
-                        </div>
+                    {% if director.retired %}
+
+                    {% if not has_retired %}
+                        <h4 class='o-label u-type-center u-flex-full u-margin-bottom-6'>Previous Board of Directors</h4>
+                        {% set has_retired = true %}
+                    {% endif %}
+
+                    <div class='l-about__directors-prev'>
+                        <img class='director__image' src='{{TimberImage(director.image).src|resize(150,150,"center")}}'>
+                        <h5>{{director.name}} <span class='o-label--secondary u-margin-left-0'>{{director.title}}</span></h5>
+                        <p class='u-type-respond--1'>{{director.description}}</p>
+                        <ul class='m-menu'>
+                            {% for media in director.social_media %}
+                            <li><a class='o-button--link-secondary u-type-respond--1' target='_blank' style='color:{{media.social_media_colour}}' href='{{media.social_media_link}}'><span class='fa fa-{{media.social_media_icon}}'></span></a></li>
+                            {% endfor %}
+                        </ul>
                     </div>
                     {% endif %}
                 {% endfor %}
-
-                <div class='l-module'>
-                    {% set has_retired = false %}
-
-                    {% for director in directors %}
-                        {% if director.retired %}
-
-                        {% if not has_retired %}
-                            <h4 class='u-flex-full u-margin-bottom-2'>Previous Board of Directors</h4>
-                            {% set has_retired = true %}
-                        {% endif %}
-
-                        <div class='l-about__directors-prev'>
-                            <img class='director__image' src='{{TimberImage(director.image).src|resize(150,150,"center")}}'>
-                            <h5>{{director.name}} <span class='o-label--secondary u-margin-left-0'>{{director.title}}</span></h5>
-                            <p class='u-type-respond--1'>{{director.description}}</p>
-                            <ul class='m-menu'>
-                                {% for media in director.social_media %}
-                                <li><a class='o-button--link-secondary u-type-respond--1' target='_blank' style='color:{{media.social_media_colour}}' href='{{media.social_media_link}}'><span class='fa fa-{{media.social_media_icon}}'></span></a></li>
-                                {% endfor %}
-                            </ul>
-                        </div>
-                        {% endif %}
-                    {% endfor %}
-                </div>
-
-            </div>  
-        </section>
-
-        <section class='l-about__sponsers'> 
-            <div class='l-section__content u-flex-align-center'>
-                <h3 class='title u-margin-bottom-1'>We are proudly partnered with</h3>
-                {% for sponser in post.get_field('sponsers') %}
-                    <a href='#'><img src='{{TimberImage(sponser.image).src}}'></a>
-                {% endfor %}
             </div>
-        </section>
+
+        </div>  
+    </section>
+
+    <section class='l-about__sponsers'> 
+        <div class='l-section__content u-flex-align-center'>
+            <h3 class='o-label u-block u-margin-bottom-1'>We are proudly partnered with</h3>
+            {% for sponser in post.get_field('sponsers') %}
+                <a href='#'><img src='{{TimberImage(sponser.image).src}}'></a>
+            {% endfor %}
+        </div>
+    </section>
 
 
         {% include 'modules/content.twig' with {layouts:post.get_field('modular_layout')} %}
 
         {% include 'layout/footer.twig' %}
 
-        {% embed 'layout/scripts.twig' %}{% endembed %}     
+        {% embed 'layout/scripts.twig' %}  
+            {% block scripts %}
+                <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.min.js'></script>
+                
+                <script type='text/javascript'>
+                    $('.l-about__slider > div').slick({
+                        centerMode: true,
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        infinite: false,
+                        arrows: true
+                    });
+ 
+                </script>
+            {% endblock %}    
+        {% endembed %}         
     </body>
 </html>

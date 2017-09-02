@@ -1,36 +1,69 @@
 .l-about__header {
     @extend .l-header;
-    @extend .u-stroke-edge-1;
 
-    padding: ms(8) 0 0;
-    margin-bottom: ms(5);
+    padding: ms(8) 0 ms(7);
+    margin: 0;
 
     @include breakpoint(map-get($bp, med)) {
-        padding: ms(5) 0 0;
-        margin-bottom: ms(3);
+        padding: ms(4) 0 ms(3);
+    }
+
+    .l-header__bg {
+        background-position: 50% center; 
     }
 }
 
 .l-about__vision {
     @extend .l-section;
 
-    padding: ms(2) 0;
     overflow: visible;
 
-    .l-block {     
-        padding: ms(0);
+    .l-section__bg { 
+        background-position: bottom center;
     }
 
-    .l-block:first-child {
-        text-align: center;
+    .l-section__content {
+        position: relative;
+        max-width: 1400px;
+    }
+
+    .l-module {
+        justify-content: space-between;
+    }
+
+    &-chinese {
+        width: 70%; 
+        max-width: 700px;
+
+        padding: ms(5) 0 ms(7) 10%;
 
         p { 
-            display: inline-block;  
-            max-width: 500px; 
+            position: relative; 
+            color: black; 
+        }
 
-            position: relative;
+        @include ms-respond(font-size, 2);
+        font-weight: bold;
 
-            font-weight: bold;
+        @include breakpoint(map-get($bp, large)) {
+            padding-left: 5%;
+        }
+        @include breakpoint(map-get($bp, med) + 200) {
+            padding-left: 0;
+            flex: 1 1 100%;
+        }
+        @include breakpoint(map-get($bp, small)) {
+            padding: ms(5) 0 ms(5);
+        }
+    }
+
+    &-english {
+        max-width: 600px;
+        
+        margin-top: -#{ms(9)}; 
+
+        @include breakpoint(map-get($bp, large)) {
+            margin-top: -#{ms(5)};;
         }
     }
 }
@@ -41,37 +74,67 @@
 
     max-width: 160px;
 
-    position: absolute;
-    bottom: 50%;
-    left: -10%;
+    @include breakpoint(map-get($bp, med) + 200) {
+        max-width: 125px;
+    }
+
+    &-vision {
+        @extend .l-about__stamp;
+
+        position: absolute;
+        top: -3em;
+        left: -10%;
+    
+        @include breakpoint(map-get($bp, med) + 200) {
+            top: -4em;
+            left: -5%;
+        }
+    }
+    
+    &-values {
+        @extend .l-about__stamp;
+
+        position: absolute;
+        top: 5%;
+        right: 10%;
+
+        @include breakpoint(map-get($bp, med) + 200) {
+            top: -1.5em;
+        }
+    }
+}
+
+.l-about__slider {
+    @extend .l-homepage__slider;
+
+    margin: ms(3) 0;
+    padding: ms(5) 0;
 
     @include breakpoint(map-get($bp, med)) {
-        bottom: 60%;
-        left: 50%;
-        transform: translateX(-50%);
+        margin: ms(1) 0;
+        padding: ms(2) 0;
+        
+        .l-section__content {
+            padding: 0;
+        }
     }
 }
 
 
 .l-about__directors {
-    @extend .u-stroke-edge-2;
-    
-    margin: ms(3) 0 0;
-    background: map-get($color, alternate);
+    margin: ms(5) 0 0;
+
+    @include breakpoint(map-get($bp, large)) {
+        margin: ms(1) 0;
+    }
     
     .l-section__content {
-        padding-top: ms(6);
-        padding-bottom: ms(3);
     }
 
     &-director {
         @extend .l-module--2col;
         width: 90%;
         margin-bottom: ms(3);
-
-        @include breakpoint(map-get($bp, small) min-width) {
-            justify-content: center;
-        }
 
         .director__image {
             margin-right: gutter()*2;
@@ -90,6 +153,8 @@
     &-prev {
         margin-right: gutter();
         margin-bottom: ms(1);
+
+        text-align: center;
 
         @include breakpoint(map-get($bp, med) - 200 min-width) {
             width: span(6) - gutter();    
