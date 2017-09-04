@@ -1,6 +1,6 @@
 $module: (
-    container-large: 1400px,
-    container: 700px, 
+    container-large: 1200px,
+    container: 600px, 
 );
 
 .l-module {
@@ -167,8 +167,14 @@ $module: (
 
 .l-module__society {
     &-list {
-        @extend .l-module--2col;
-        align-items: center;
+        & > a {
+            display: block;
+            width: 300px;
+        }
+
+        & > div {
+            float: left;
+        }
     }
 }
 
@@ -177,32 +183,35 @@ $module: (
         width: 100%;
 
         display: flex;
-        align-items: center;
+        justify-content: center;
+        align-items: flex-start;
         flex-wrap: wrap;
-
+      
         & > a { 
             width: span(3); 
             min-width: 100px;
 
             @include breakpoint(map-get($bp, small)) {
                 width: 100%;
+                margin-bottom: ms(-1);
             }
         }
         
         div {
-            flex: 1;
-            padding: ms(1) gutter()*2;
+            flex: 1 1 200px;
+            padding: 0 gutter()*2;
 
             @include breakpoint(map-get($bp, small)) {
-                padding: ms(0) 0;
+                padding: 0;
             }
         }
 
         h4 { margin-top: 0; }
         p:not(a) {  
             max-width: map-get($module, container);
-            @include breakpoint(map-get($module, container-large)) { font-size: ms(-1); }  
-            @include breakpoint(830px) { display: none; }   
+            margin-bottom: ms(-1); 
+
+            color: #909090;
         }
     }
 

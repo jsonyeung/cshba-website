@@ -12,7 +12,7 @@
 
     a { background: none !important; } 
 
-    @include breakpoint(map-get($bp, large) min-width) {
+    @include breakpoint(map-get($bp, med) + 100 min-width) {
         flex: 0 1;
         margin-left: gutter()*2;
     }

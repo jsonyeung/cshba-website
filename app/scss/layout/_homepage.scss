@@ -6,6 +6,10 @@
     @include breakpoint(map-get($bp, med)) {
         padding: ms(6) 0 ms(2);
     }
+
+    h1 {
+        @include ms-respond(font-size, 4);
+    }
 }
 
 .l-homepage__detail {

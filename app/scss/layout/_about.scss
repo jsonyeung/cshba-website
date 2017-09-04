@@ -1,7 +1,7 @@
 .l-about__header {
     @extend .l-header;
 
-    padding: ms(8) 0 ms(7);
+    padding: ms(6) 0 ms(5);
     margin: 0;
 
     @include breakpoint(map-get($bp, med)) {
@@ -106,6 +106,24 @@
 
 .l-about__values {
     position: relative;
+
+    background: map-get($color, alternate);
+}
+
+.l-about__mission {
+    padding: ms(4) 0;
+
+    @include breakpoint(map-get($bp, med)) {
+        padding: ms(2) 0;
+    }
+
+    .l-section__content {
+        max-width: map-get($module, container-large);
+
+        div {
+            max-width: 600px;
+        }
+    }
 }
 
 .l-about__slider {
@@ -126,24 +144,30 @@
 
 .l-about__directors {
     margin: ms(3) 0 ms(2);
+    padding: ms(4) 0;
+
+    background: map-get($color, alternate);
 
     @include breakpoint(map-get($bp, large)) {
         margin: ms(2) 0 ms(1);
     }
+    
+    @include breakpoint(map-get($bp, med)) {
+        padding: ms(2) 0;
+    }
 
     .l-section__content {
-        justify-content: flex-start;
-    }
+    } 
 
     h3 {
         padding: gutter()/2;
     }
 
     &-director {
-        width: 25%;
+        width: 20%;
         display: block;
 
-        margin-bottom: ms(1);
+        margin-top: ms(1);
         padding: gutter()/2;
 
 
@@ -163,10 +187,10 @@
             margin-right: gutter()*2;
             margin-bottom: ms(0);
             width: 100%;
-        }
 
-        p {
-            font-size: ms(-1);
+            @include breakpoint(map-get($bp, small)) {
+                max-width: 150px;
+            }
         }
 
         & > div:last-child { max-width: 700px; flex: 1 1 300px; } 

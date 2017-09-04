@@ -8,16 +8,21 @@
 
     {% include 'layout/nav.twig' with {'inverse': false} %}
 
-        <section class='l-section'>
-            <div class='l-section__bg-container u-margin-top-7 u-margin-bottom-2'>
-                <div class='l-section__bg' style='background-image: url("{{post.thumbnail.src}}"); background-size: cover; background-position: center;'></div>
+        <section class='l-section u-stroke-edge-1 u-color-bg-alternate u-padding-top-8 u-padding-bottom-8'>
+            <div class='l-section__content u-flex-justify-left'>
             </div>
         </section>
+
+        <section class='l-section u-margin-top-neg-8 u-margin-bottom-2'>
+            <div class='l-section__bg-container'>
+                <div class='l-section__bg' style='background-image: url("{{post.thumbnail.src}}"); background-size: cover; background-position: center;'></div>
+            </div>
+        </section> 
 
         <header class='l-header'>
             <div class='l-section__content'>
                 <div class='l-block u-type-contain-large u-padding-none'>
-                    <h1><span class='o-label--secondary u-block u-color-secondary-accent'>Initiative</span> {{post.title}}</h1>
+                    <h1>{{post.title}}</h1>
                     <span class='o-label u-block u-margin-top-4 u-margin-bottom-2'>Summary</span>
                     <p class='u-type-subtitle--desc u-type-type-respond-2 u-inline-block u-type-contain-large u-color-dark'>{{post.get_field('initiative_summary')}}</p>
 
@@ -41,7 +46,7 @@
 
         <section class='l-section'>
             <div class='l-section__content u-position-relative'>
-                <div class='l-module--1col'>
+                <div class='l-module--1col u-flex-justify-left' style='max-width:960px;'>
                     <div>{{post.content}}</div>
 
                     <div class='l-initiative__share'>   
@@ -59,10 +64,10 @@
         </section>
 
         
-        <section class='l-section u-margin-top-6'>
+        <section class='l-section u-margin-top-6 u-margin-bottom-neg-7 u-color-bg-alternate u-padding-top-5 u-padding-bottom-5'>
             <div class='l-section__content'>
                 <div class='l-module--3col'>
-                    <h4 class='u-margin-bottom-1'>Related Initiatives</h4>
+                    <h4 class='u-margin-top-none u-margin-bottom-1'>Related Initiatives</h4>
                 </div>
                 <div class='l-initiative__related'>
                     {% for init in initiatives %}

@@ -8,29 +8,29 @@
 
     {% include 'layout/nav.twig' with {'inverse': false} %}
 
-        <header class='l-header--respond u-stroke-edge-1 u-margin-bottom-7'>
+        <header class='l-header--respond u-margin-bottom-7'>
             <div class='l-header__bg' style='background-image:url("{{post.thumbnail.src}}");'></div>
-            <div class='l-section__content u-padding-top-7 u-padding-bottom-5'>
+            <div class='l-section__content u-padding-top-7 u-padding-bottom-6'>
                 <div class='u-type-center'>
                     <h1 class='u-stroke-text u-type-contain-large'>{{post.get_field('intro_title') ?: post.title}}</h1>
-                    <p class='u-type-subtitle'>{{post.get_field('intro_subtitle')}}</p>
+                    <p class='u-type-subtitle u-type-contain u-color-dark u-margin-auto u-color-secondary'>{{post.get_field('intro_subtitle')}}</p>
                 </div>
             </div>
         </header> 
 
         {% include 'modules/content.twig' with {layouts:post.get_field('modular_layout')} %}
 
-        <section id='init' class='l-section u-stroke-edge-2 u-color-bg-alternate u-margin-top-4 u-margin-bottom-4'>
+        <section id='init' class='l-section u-color-bg-alternate u-margin-top-7 u-margin-bottom-4'>
             <div class='l-section__content u-padding-top-2 u-padding-bottom-5'>
                 <div class='l-module'>
-                    <h3 class='u-flex-full'>Our Initiatives</h3>
+                    <h3 class='u-flex-full u-type-center u-padding-bottom-0' style='border-bottom: 1px solid #dcdcdc;'>Our Initiatives</h3>
 
                     {% for init in initiatives %}
-                        <div class='l-module__initiative-list u-margin-top-2'>
+                        <div class='l-module__initiative-list u-margin-top-3'>
                             <a href='{{init.link}}'><img src='{{init.thumbnail.src|resize(500,300,"center")}}'></a>
                             <div>
                                 <a href='{{init.link}}'><h4>{{init.title}}</h4></a>
-                                <p>{{init.initiative_summary}}</p>
+                                <p>{{init.initiative_summary | excerpt(20)}}</p>
                                 <a class='o-button--link-secondary' href='{{init.link}}'>Learn More</a>
                             </div>
                         </div>
@@ -46,13 +46,13 @@
 
                     {% for study in post.get_field('studies') %}
                         <div class='l-module__initiative-study u-margin-top-1'>
-                            <h4 class='u-margin-top-none'><a href='{{study.link}}'>{{study.title}}</a></h4>
+                            <h4 class='u-margin-top-none'><a class='u-color-heading' href='{{study.link}}'>{{study.title}}</a></h4>
                             <p class='u-margin-top-none'><span class='o-label u-block u-margin-bottom-0'>Summary</span> {{study.summary}}</p>
                             <div>
                                 <span class='o-label'>Published</span>
                                 <p>{{study.published}}</p>
                             </div>
-                            <a class='o-button--link' href='{{study.link}}' target='_blank'>Link <span class='fa fa-link u-margin-left--1'></span></a>
+                            <a class='o-button--link' href='{{study.link}}' target='_blank'>Link</a>
                         </div>
                     {% endfor %}
                 </div>
