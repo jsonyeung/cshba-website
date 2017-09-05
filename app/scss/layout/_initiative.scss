@@ -1,3 +1,16 @@
+.l-initiative__bg {
+    @extend .l-section;
+    @extend .u-stroke-edge-1;
+    
+    padding: ms(8) 0;
+
+    background: darken(map-get($color, alternate), 5);
+
+    @include breakpoint(map-get($bp, med)) {
+        padding: ms(4) 0 ms(8);
+    }
+}   
+
 .l-initiative__share {
     width: 100%;
     max-width: map-get($module, container);

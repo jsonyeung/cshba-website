@@ -24,11 +24,6 @@
 
         <section id='instafeed' class="l-section l-homepage__instagram">
             <a href='http://instagram.com/{{post.get_field("instagram_username")}}' target='_blank' class='o-button--solid'>Follow Us On Instagram <span class='fa fa-instagram'></span></a>
-            <a href-'#'><img src='http://placehold.it/320x320'></a>
-            <a href-'#'><img src='http://placehold.it/320x320'></a>
-            <a href-'#'><img src='http://placehold.it/320x320'></a>
-            <a href-'#'><img src='http://placehold.it/320x320'></a>
-            <a href-'#'><img src='http://placehold.it/320x320'></a>
         </section> 
 
         <section class="l-section u-margin-top-6">
@@ -39,7 +34,7 @@
                     <a class='o-button--solid u-inline-block' href='{{site.link}}/about-us'>Learn Our Story</a>
                 </div>
                 <div class='l-block l-homepage__about-image'> 
-                    <img src='{{theme.link}}/images/homepage-about.jpg'>
+                    <img src='{{TimberImage(post.get_field('about_image')).src ?: theme.link ~ "/images/homepage-about.jpg" | resize(500,300) }}'>
                 </div>
             </div>
         </section>
@@ -88,11 +83,11 @@
             <div class='l-section__bg' style='background-image: url("{{theme.link}}/images/homepage-brush-2.png"); background-position: center;'></div>
             <div class="l-section__content u-flexbox-align-center">
                 <div class='l-block'> 
-                    <img src='{{theme.link}}/images/homepage-initiatives.jpg'>
+                    <img src='{{TimberImage(post.get_field('about_image')).src ?: theme.link ~ "/images/homepage-initiatives.jpg" | resize(500,300) }}'>
                 </div>
                 <div class='l-block u-margin-left-gutter u-margin-bottom-3 u-margin-top-3'>
-                    <h2 class='u-margin-top-none'><span class='u-block o-label u-color-secondary-accent-2 u-margin-bottom-0'>On The Initiative</span>{{post.get_field('initiative_title')}}</h2>
-                    <p>{{post.get_field('initiative_description')}}</p>
+                    <h2 class='u-margin-top-none'><span class='u-block o-label u-color-secondary-accent-2 u-margin-bottom-0'>On The Initiative</span>{{post.get_field('initiatives_title')}}</h2>
+                    <p>{{post.get_field('initiatives_description')}}</p>
                     <a class='o-button--solid u-inline-block' href='{{site.link}}/initiatives'>See Our Impact</a>
                 </div>
             </div>

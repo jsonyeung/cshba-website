@@ -15,14 +15,14 @@
             <li>
                 {% embed 'modules/social-media.twig' %}{% block class %}u-hide-on-small{% endblock %}{% endembed %}
             </li>
-            <li class='u-hide-on-med'><a href='{{site.link}}/donate' class='o-button--solid u-inline-block'>Donate</a></li>
+            <li class='u-hide-on-med'><a href='{{site.link}}/donate' class='o-button--solid u-inline-block'>Support</a></li>
             <li class='m-nav__hamburger u-margin-right-none'><span class='fa fa-bars'></span></li>
         </ul>
     </div>
 
     <div class='m-nav__menu--mobile'>
         <ul class='m-menu--vertical'>
-            <li class='u-padding-top-1 u-padding-bottom-1'><span><a href='{{site.link}}/donate' class='o-button--solid u-inline-block'>Donate</a></span></li>
+            <li class='u-padding-top-1 u-padding-bottom-1'><span><a href='{{site.link}}/donate' class='o-button--solid u-inline-block'>Support</a></span></li>
 
             {% for item in menu.items %}
                 <li><a href='{{item.link}}' target='{{item.target}}' class='o-label u-color-dark'>{{item.title}}</a></li> 

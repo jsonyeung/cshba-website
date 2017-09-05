@@ -7,14 +7,8 @@
     {% endembed %}
 
     {% include 'layout/nav.twig' with {'inverse': true} %}
-
-     <header class='l-about__header'>
-        <div class='l-header__bg' style='background-image: url("{{theme.link}}/images/about-header.png");'></div>
-        <div class='l-grid u-padding-top-7 u-padding-bottom-6 u-type-center'>
-            <h1 class='u-color-background u-inline-block u-type-contain-large'>{{post.get_field('intro_title')}}</h1>
-            <p class='u-type-subtitle u-type-contain u-margin-auto u-color-secondary'>{{post.get_field('intro_subtitle')}}</p>
-        </div>
-    </header>
+    
+    {% include 'layout/main-header.twig' %}
 
     <section class='l-about__vision'>
         <div class='l-section__content u-margin-none u-flex-justify-left' style='max-width:none'>

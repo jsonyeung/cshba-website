@@ -1,18 +1,3 @@
-.l-about__header {
-    @extend .l-header;
-
-    padding: ms(6) 0 ms(5);
-    margin: 0;
-
-    @include breakpoint(map-get($bp, med)) {
-        padding: ms(4) 0 ms(3);
-    }
-
-    .l-header__bg {
-        background-position: 50% center; 
-    }
-}
-
 .l-about__vision {
     @extend .l-section;
 

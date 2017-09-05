@@ -8,7 +8,7 @@
 
     {% include 'layout/nav.twig' with {'inverse': false} %}
 
-        <section class='l-section u-stroke-edge-1 u-color-bg-alternate u-padding-top-8 u-padding-bottom-8'>
+        <section class='l-initiative__bg'>
             <div class='l-section__content u-flex-justify-left'>
             </div>
         </section>
@@ -22,7 +22,7 @@
         <header class='l-header'>
             <div class='l-section__content'>
                 <div class='l-block u-type-contain-large u-padding-none'>
-                    <h1>{{post.title}}</h1>
+                    <h1 class='u-margin-top--1'>{{post.title}}</h1> 
                     <span class='o-label u-block u-margin-top-4 u-margin-bottom-2'>Summary</span>
                     <p class='u-type-subtitle--desc u-type-type-respond-2 u-inline-block u-type-contain-large u-color-dark'>{{post.get_field('initiative_summary')}}</p>
 

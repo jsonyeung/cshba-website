@@ -6,23 +6,19 @@
         {% endblock %} 
     {% endembed %}
 
-    {% include 'layout/nav.twig' with {'inverse': true} %}
+    {% include 'layout/nav.twig' with {'inverse': false} %}
 
       <body class='l-society__bg'> 
-
-      
-        <section class='l-section u-stroke-edge-1'>
+        <section class='l-section u-padding-top-8'>
             <div class='l-section__bg-container'>
                 <div class='l-section__bg' style='background-image: url("{{TimberImage(post.get_field('intro_image')).src ?: post.thumbnail.src}}"); background-size: cover; background-position: center;'></div>
-                <div class='l-section__bg' style='background: rgba(0,0,0,0.4);'></div>
             </div>
         </section>
 
         <header class='l-society__header'>
             <div class='l-header__content'>
                 <div class='l-block u-type-center'>
-                    <img class='u-image-no-shadow u-image-no-responsive' src='{{theme.link}}/images/society-label.svg'>
-                    <h1 class='u-margin-bottom-none u-color-primary'>{{post.title}}</h1>
+                    <h1 class='u-margin-bottom-none'>{{post.title}}</h1>
                     <p class='l-society__subtitle'>{{post.get_field('chinese_title')}}</p>
                 </div>
             </div>
@@ -30,29 +26,24 @@
  
         <section class='l-section'>
             <div class='l-section__content'>
-                <div class='l-module--1col'>
-                    <div>
+                <div class='l-module--2col u-flex-align-start'>
+                    <div class='l-society__intro'>
                         <p class='u-dropcap'>{{post.get_field('intro_description')}}</p>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <section class='l-section u-margin-top-2'> 
-            <div class='l-section__content'>
-                <div class='l-society__details'>
-                    {% for meta in post.get_field('meta') %}
-                        <div class='l-society__details-item'>
-                            <span class='o-label u-block u-margin-bottom-0'>{{meta.label}}</span>
-                            {% for val in meta.values %}
-                                {% if val.link %}
-                                    <a class='o-link u-margin-none' href='{{val.link}}' target='_blank'>{{val.value}}</a>
-                                {% else %}
-                                    <p class='u-margin-none'>{{val.value}}</p>
-                                {% endif %}
-                            {% endfor %}
-                        </div>
-                    {% endfor %}
+                    <div class='l-society__details'>
+                        {% for meta in post.get_field('meta') %}
+                            <div class='l-society__details-item'>
+                                <span class='o-label u-block u-margin-bottom-0'>{{meta.label}}</span>
+                                {% for val in meta.values %}
+                                    {% if val.link %}
+                                        <a class='o-link u-margin-none' href='{{val.link}}' target='_blank'>{{val.value}}</a>
+                                    {% else %}
+                                        <p class='u-margin-none'>{{val.value}}</p>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        {% endfor %}
+                    </div>
                 </div>
             </div>
         </section>

@@ -8,15 +8,7 @@
 
     {% include 'layout/nav.twig' with {'inverse': false} %}
 
-        <header class='l-header u-margin-bottom-6'>
-            <div class='l-header__bg' style='background-image:url("{{post.thumbnail.src}}"); background-position: center;'></div>
-            <div class='l-section__content u-padding-top-7 u-padding-bottom-5'>
-                <div class='u-type-center'>
-                    <h1 class='u-stroke-text u-type-contain-large'>{{post.get_field('intro_title') ?: post.title}}</h1>
-                    <p class='u-type-subtitle u-type-contain u-margin-auto'>{{post.get_field('intro_subtitle')}}</p>
-                </div>
-            </div>
-        </header> 
+    {% include 'layout/main-header.twig' %}
 
         {% if post.content %}
             <section class='l-section'>

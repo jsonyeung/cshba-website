@@ -6,34 +6,25 @@
         {% endblock %} 
     {% endembed %}
 
-    {% include 'layout/nav.twig' with {'inverse': false} %}
+    {% include 'layout/nav.twig' with {'inverse': true} %}
 
-        <header class='l-header--respond u-margin-bottom-7'>
-            <div class='l-header__bg' style='background-image:url("{{post.thumbnail.src}}"); background-position: center;'></div>
-            <div class='l-section__content u-padding-top-7 u-padding-bottom-6'>
-                <div class='u-type-center'>
-                    <h1 class='u-stroke-text u-type-contain-large'>{{post.get_field('intro_title') ?: wp_title}}</h1>
-                    <p class='u-type-subtitle u-type-contain u-color-dark u-margin-auto u-color-secondary'>{{post.get_field('intro_subtitle')}}</p>
-                </div>
-            </div>
-        </header> 
+    {% include 'layout/main-header.twig' %}
 
         {% include 'modules/content.twig' with {layouts:post.get_field('modular_layout')} %}
 
         <section id='soc' class='l-section u-color-bg-alternate u-margin-top-7 u-margin-bottom-neg-7'>
-            <div class='l-section__content u-padding-top-4 u-padding-bottom-4'>
-                <div class='l-module'>
-                    <h3 class='u-flex-full u-type-center u-padding-bottom-0' style='border-bottom: 1px solid #dcdcdc;'>Societies with heritage buildings</h3>
+            <div class='l-section__content u-padding-top-6 u-padding-bottom-6'>
+                <h3 class='u-flex-full u-type-center u-margin-top-none u-padding-bottom-0' style='border-bottom: 1px solid #dcdcdc;'>Societies with heritage buildings</h3>
+                <div class='l-module--3col'>
 
                     {% for society in societies %}
-                        <div class='l-module__society-list u-margin-top-2'>
-                            <a href='{{society.link}}'><img class='u-margin-bottom-2' src='{{society.thumbnail|resize(500,300,"center")}}'></a>
+                        <div class='l-module__society-list u-margin-top-3'> 
+                            <a href='{{society.link}}'><img class='u-margin-bottom-0' src='{{society.thumbnail|resize(500,300,"center")}}'></a>
                             <div>
                                 <a href='{{society.link}}'>
                                     <h4 class='u-margin-none u-color-primary'>{{society.title}}</h4>
-                                    <p class='o-label--secondary u-margin-top-none'>{{society.chinese_title}}</p>
+                                    <p class='o-label--secondary u-margin-top-none u-margin-bottom-0'>{{society.chinese_title}}</p>
                                 </a>
-                                <p>{{society.intro_description | excerpt(35) }}</p>
                                 <a class='o-button--link-secondary' href='{{society.link}}'>Explore Society</a>
                             </div>
                         </div>

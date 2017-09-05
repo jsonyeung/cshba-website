@@ -1,10 +1,10 @@
 .l-society__header {
     @extend .l-header;
 
-    padding: ms(7) 0 ms(2);
+    padding: ms(4) 0 ms(2);
 
     @include breakpoint(map-get($bp, med)) {
-        padding: ms(5) 0 ms(0);
+        padding: ms(2) 0 ms(0);
     }
 }
 
@@ -14,7 +14,7 @@
 }
 
 .l-society__subtitle {
-    @include ms-respond(font-size, 2);
+    @include ms-respond(font-size, 1);
     
     margin-top: ms(-4);
 
@@ -40,18 +40,32 @@
     }
 }
 
+.l-society__intro {
+    flex: 1 1 400px;
+}
+
 .l-society__details {
     @extend .l-module;
+
     display: flex; 
+    flex: 1 1 200px;
+    align-content: flex-start;
 
     border-bottom: 1px solid lightgrey;
-    margin-bottom: ms(4);
+    margin-bottom: ms(2);
+
+    @include breakpoint(map-get($bp, med)) {
+        flex: 1 1 100%;
+    }
 
     &-item {
         margin: ms(0) gutter()*2;
         margin-left: 0; 
          
         flex: 0 1 auto;
+
+        .o-label { color: map-get($color, heading); }
+        p { color: map-get($color, subtle); }
     }
 }
 

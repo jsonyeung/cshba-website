@@ -1,12 +1,12 @@
 .m-nav {
-    padding: ms(2) 0;
+    padding: ms(1) 0;
 
     width: 100%;
     position: absolute;
     z-index: 100;
 
-    margin-top: ms(1);
-
+    padding-top: ms(3);
+    
     @include breakpoint(map-get($bp, med)) {
         padding: ms(1) 0;
     }
@@ -37,8 +37,6 @@
         cursor: pointer;
     }
 }
-
-
 
 
 
@@ -85,7 +83,6 @@
         display: none !important;
     }
 } 
-
 
 
 

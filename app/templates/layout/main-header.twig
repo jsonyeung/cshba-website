@@ -1,0 +1,10 @@
+
+<header class='m-header'>
+    <div class='l-header__bg' style='background-image: url("{{TimberImage(post.thumbnail).src}}");'></div>
+    <div class='l-header__bg' style='background: rgba(0,0,0,0.3);'></div>
+
+    <div class='l-grid u-padding-top-6 u-padding-bottom-6'>
+        <h1 class='u-color-background u-inline-block u-type-contain-large'>{{post.get_field('intro_title')}}</h1>
+        <p class='u-type-subtitle u-type-contain u-margin-none u-color-secondary'>{{post.get_field('intro_subtitle')}}</p>
+    </div>
+</header>
