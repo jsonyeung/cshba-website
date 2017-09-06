@@ -14,26 +14,10 @@
     }
 }
 
-@keyframes slideIn {
-    from {
-        transform: translateY(20px);
-        opacity: 0;
-    }
-}
-
 .l-section, .l-header {
     position: relative;
     overflow: hidden;
     width: 100%;
-
-    h1 {
-        animation: slideIn 2s;
-        animation-fill-mode: both;
-    }
-    .l-grid > .u-type-subtitle {
-        animation: slideIn 3s 0.25s;
-        animation-fill-mode: both; 
-    }
 
     &__content {
         @extend .l-grid;
@@ -135,13 +119,17 @@
         padding-bottom: ms(5);
 
         display: flex;
-        flex-wrap: wrap;
+
+        @include breakpoint(1200px) {
+            flex-wrap: wrap;
+        }
 
         a { text-shadow: none; }
     }
 
     &__section {
         padding: ms(0) ms(3);   
+        max-width: 500px;
     }
 
     &__sub {

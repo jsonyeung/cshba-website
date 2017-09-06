@@ -1,10 +1,17 @@
 
+{% include 'layout/nav.twig' with {'inverse': post.get_field('intro_settings_inverse_navigation')} %}
+
 <header class='m-header'>
     <div class='l-header__bg' style='background-image: url("{{TimberImage(post.thumbnail).src}}");'></div>
-    <div class='l-header__bg' style='background: rgba(0,0,0,0.3);'></div>
+    <div class='l-header__bg' style='background: {{post.get_field('intro_settings_overlay_color')}}; opacity: 0.3;'></div>
 
-    <div class='l-grid u-padding-top-6 u-padding-bottom-6'>
-        <h1 class='u-color-background u-inline-block u-type-contain-large'>{{post.get_field('intro_title')}}</h1>
-        <p class='u-type-subtitle u-type-contain u-margin-none u-color-secondary'>{{post.get_field('intro_subtitle')}}</p>
+    <div class='l-header__content'>
+        <div class='l-block u-type-contain-larger u-padding-top-6 u-padding-bottom-6'>
+            <h1 class='u-inline-block u-type-contain-large' 
+                style='color: {{post.get_field('intro_settings_title_color')}}'>{{post.get_field('intro_title') ?: post.title}}</h1>
+
+            <p class='u-type-subtitle u-type-contain u-margin-none'
+               style='color: {{post.get_field('intro_settings_subtitle_color')}}'>{{post.get_field('intro_subtitle')}}</p>
+        </div>
     </div>
 </header>

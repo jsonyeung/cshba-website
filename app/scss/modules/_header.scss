@@ -1,16 +1,16 @@
 .m-header {
     @extend .l-header;
 
-    padding: ms(6) 0 ms(6);
+    padding: ms(7) 0 ms(6);
     margin-bottom: ms(6);
 
     @include breakpoint(map-get($bp, med)) {
-        padding: ms(4) 0;
+        padding: ms(4) 0 ms(3);
         margin-bottom: ms(4);
     }
 
     @include breakpoint(map-get($bp, small)) {
-        padding: ms(2) 0;
+        padding: ms(2) 0 ms(1);
         margin-bottom: ms(2);
     }
 

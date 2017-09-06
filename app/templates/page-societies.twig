@@ -6,30 +6,48 @@
         {% endblock %} 
     {% endembed %}
 
-    {% include 'layout/nav.twig' with {'inverse': true} %}
-
     {% include 'layout/main-header.twig' %}
 
         {% include 'modules/content.twig' with {layouts:post.get_field('modular_layout')} %}
 
-        <section id='soc' class='l-section u-color-bg-alternate u-margin-top-7 u-margin-bottom-neg-7'>
-            <div class='l-section__content u-padding-top-6 u-padding-bottom-6'>
-                <h3 class='u-flex-full u-type-center u-margin-top-none u-padding-bottom-0' style='border-bottom: 1px solid #dcdcdc;'>Societies with heritage buildings</h3>
-                <div class='l-module--3col'>
-
-                    {% for society in societies %}
-                        <div class='l-module__society-list u-margin-top-3'> 
-                            <a href='{{society.link}}'><img class='u-margin-bottom-0' src='{{society.thumbnail|resize(500,300,"center")}}'></a>
-                            <div>
-                                <a href='{{society.link}}'>
-                                    <h4 class='u-margin-none u-color-primary'>{{society.title}}</h4>
-                                    <p class='o-label--secondary u-margin-top-none u-margin-bottom-0'>{{society.chinese_title}}</p>
-                                </a>
-                                <a class='o-button--link-secondary' href='{{society.link}}'>Explore Society</a>
-                            </div>
-                        </div>
-                    {% endfor %}
+        <section id='soc' class='l-section u-color-bg-alternate u-margin-top-3 u-margin-bottom-neg-7'>
+            <div class='l-section__content u-padding-top-3 u-padding-bottom-6'>
+                <div class="l-module--1col u-flex-justify-left">
+                    <h2>Societies with Heritage Buildings</h2>
+                    <p class='u-type-respond-1' style='color:#383838;'>It has come to my attention that one of the more noticeable traits in my design work is my willingness to use what is perceived to be an excessive number of typefaces.</p>
                 </div>
+
+                <div class='l-module u-margin-top-0'>
+                    <ul class='l-society__filter'>
+                        <li class='o-label u-type-size--1 u-color-heading u-type-family-secondary'>Filter By</li>
+                        <li>Recently Added</li>
+                        <li>Alphabetical</li>
+                        <li>Date Built</li>
+                    </ul>
+                </div>
+
+                <div class='l-module u-margin-top-3 u-margin-bottom-2'>
+                    <span class='o-label u-block'>{{societies|length}} Buildings With Heritage Status</span>
+                </div>
+
+                {% for society in societies %}
+                    <div class='l-module__society-list'> 
+                        <div>
+                            <a href='{{society.link}}'><img src='{{society.thumbnail|resize(500,300)}}'></a>
+                        </div>
+                        <div>
+                            <a href='{{society.link}}'><h3 class='u-margin-none'>{{society.title}}</h3></a>
+                            <p class='u-block u-color-heading u-margin-top-none'>{{society.chinese_title}}</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit sunt a molestias! Aperiam eos possimus repudiandae exercitationem sapiente beatae aliquam officia! Voluptatem, corrupti. Repellendus, et eligendi cupiditate magnam excepturi quaerat.</p>
+
+                            <ul class='m-menu'>
+                                <li><a href='{{society.link}}' class='o-button--link-secondary'>Learn More</a></li>
+                                <li class='o-label u-block u-type-bold u-type-size--1 u-type-family-secondary'>Built on July 27, 2017</li>
+                            <ul>
+                        </div>
+                    </div>
+                {% endfor %}
+
             </div>
         </section>
 

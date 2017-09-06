@@ -1,0 +1,12 @@
+{% for society in societies %}
+<div class='l-module__society-list u-margin-top-3'> 
+    <a href='{{society.link}}'><img class='u-margin-bottom-0' src='{{society.thumbnail|resize(500,300,"center")}}'></a>
+    <div>
+        <a href='{{society.link}}'>
+            <h4 class='u-margin-none u-color-primary'>{{society.title}}</h4>
+            <p class='o-label--secondary u-margin-top-none u-margin-bottom-0'>{{society.chinese_title}}</p>
+        </a>
+        <a class='o-button--link-secondary' href='{{society.link}}'>Explore Society</a>
+    </div>
+</div>
+{% endfor %}

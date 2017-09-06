@@ -1,3 +1,50 @@
+// For Society Page
+
+.l-society__filter {
+    @extend .m-menu;
+
+    padding: ms(0) ms(2) !important;
+    
+    background: map-get($color, background);
+    border: 1px solid #E9E9E9;
+    
+    li {
+        margin-bottom: 0;
+        padding-right: ms(1);
+
+        border-right: 1px solid #E5E5E5;
+    }
+    li:last-child {
+        margin: 0;
+        padding: 0;
+        border: none;
+    }
+
+    .selected {
+        color: map-get($color, primary);
+    }
+
+    @include breakpoint(map-get($bp, med)) {
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: flex-start;
+    
+        width: 100%;
+    
+        li {
+            border: none;
+            margin: 0 0 ms(0);
+        }
+        li:first-child {
+            margin-bottom: ms(1);
+        }
+    }
+}
+
+
+
+// For inidivual page
+
 .l-society__header {
     @extend .l-header;
 

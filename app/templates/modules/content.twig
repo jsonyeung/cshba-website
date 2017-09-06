@@ -9,7 +9,7 @@
 
     <section class='l-section'>
         <div class='l-section__content'>
-            <div class='l-module--1col u-margin-bottom-0  {{layout.position == "left" ? "u-flex-justify-left"}} {{layout.position == "right" ? "u-flex-justify-right"}}'>
+            <div class='l-module--1col  {{layout.position == "left" ? "u-flex-justify-left"}} {{layout.position == "right" ? "u-flex-justify-right"}}'>
                 <div>
                     {{layout.content}}
                 </div>
@@ -21,7 +21,7 @@
 
     <section class='l-section'>
         <div class='l-section__content'>
-            <div class='l-module--1col-tip u-margin-top-0 u-margin-bottom-0'>
+            <div class='l-module--1col-tip'>
                 <div>
                     {{layout.content}}
                 </div>
@@ -78,9 +78,9 @@
     <section class='l-section'>
         <div class='l-section__content'>
             {% if not layout.heading is empty %}
-                <div class='l-module--3col'>
+                <div class='l-module'>
                     <div>
-                        <h3 class='u-flex-full'>{{layout.heading}}</h3> 
+                        <h3>{{layout.heading}}</h3> 
                     </div>
                 </div>
             {% endif %}

@@ -6,8 +6,6 @@
         {% endblock %} 
     {% endembed %}
 
-    {% include 'layout/nav.twig' with {'inverse': false} %}
-
     {% include 'layout/main-header.twig' %}
 
         {% include 'modules/content.twig' with {layouts:post.get_field('modular_layout')} %}

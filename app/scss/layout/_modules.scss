@@ -1,6 +1,6 @@
 $module: (
     container-large: 1200px,
-    container: 600px, 
+    container: 750px, 
 );
 
 .l-module {
@@ -14,6 +14,8 @@ $module: (
 
     ul, ol { padding-left: 0; }
     li { @extend p; }
+
+    & > div > *:first-child, & > div > *:last-child { margin-top: 0; }
 
     // 1 column
     &--1col {
@@ -74,7 +76,7 @@ $module: (
             width: 100%; 
             
             @include breakpoint(map-get($bp, med) min-width) {
-                width: 50% - gutter()*2;
+                width: 50% - gutter();
                 margin: 0 gutter();
 
                 &:nth-child(2n+1) { margin-left: 0; }
@@ -107,7 +109,7 @@ $module: (
     &--img {
         @extend .l-module;
         display: block;
-        margin: ms(1) 0;
+        margin: ms(2) 0;
 
 
         &-wide {
@@ -167,12 +169,40 @@ $module: (
 
 .l-module__society {
     &-list {
-        & > a {
-            display: block;
+        @extend .l-module--2col; 
+
+        margin-bottom: ms(4);
+
+        &:last-child {
+            margin: 0;
         }
 
-        & > div {
-            float: left;
+        @include breakpoint(map-get($bp, med)) {
+            & > div:first-child {
+                margin-bottom: ms(0);
+            }
+        }
+
+        p:not(a) {
+            color: #AFA5A5;
+        }
+
+        .m-menu {
+            border-top: 1px solid #AFA5A5;
+
+            li {
+                margin: 0;
+                padding: ms(-1) ms(0) 0;
+            }
+
+            li:first-child {
+                padding-left: 0;
+                border-right: 1px solid #AFA5A5;
+            }
+
+            li:last-child {
+                flex: 1;
+            }
         }
     }
 }
