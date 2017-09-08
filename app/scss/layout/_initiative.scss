@@ -1,35 +1,12 @@
-.l-initiative__bg {
-    @extend .l-section;
-    @extend .u-stroke-edge-1;
-    
-    padding: ms(8) 0;
+.l-initiative__header {
+    @extend .m-header;
 
-    background: darken(map-get($color, alternate), 5);
+    padding: ms(9) 0 0;
 
-    @include breakpoint(map-get($bp, med)) {
-        padding: ms(4) 0 ms(8);
+    @include breakpoint(map-get($bp, small)) {
+        padding: ms(7) 0 0;
     }
-}   
-
-.l-initiative__share {
-    width: 100%;
-    max-width: map-get($module, container);
-
-    margin-top: ms(4);
-
-    li { 
-        margin-bottom: 0;
-        margin-right: 1em; 
-    }
-    li:last-child { margin: 0; }
-
-    a { background: none !important; } 
-
-    @include breakpoint(map-get($bp, med) + 100 min-width) {
-        flex: 0 1;
-        margin-left: gutter()*2;
-    }
-}
+}     
 
 .l-initiative__related {
     @extend .l-module--3col;

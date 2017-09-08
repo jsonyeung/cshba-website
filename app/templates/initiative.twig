@@ -8,25 +8,25 @@
 
     {% include 'layout/nav.twig' with {'inverse': false} %}
 
-        <section class='l-initiative__bg'>
-            <div class='l-section__content u-flex-justify-left'>
-            </div>
-        </section>
+    <header class='l-initiative__header'>
+        <div class='l-header__bg' style='background-image: url("{{TimberImage(post.thumbnail).src}}"); background-position: top center; opacity: 0.4;'></div>
+        <div class='l-header__bg' style='background: #F2BC4D; opacity: 0.3;'></div>
 
-        <section class='l-section u-margin-top-neg-8 u-margin-bottom-2'>
-            <div class='l-section__bg-container'>
-                <div class='l-section__bg' style='background-image: url("{{post.thumbnail.src}}"); background-size: cover; background-position: center;'></div>
+        <div class="l-section__content">
+            <div class='l-module'>
+                <a href='{{ site.link }}/initiatives#init' class='o-button--solid-secondary u-inline-block'><span class='fa fa-long-arrow-left'></span> Back to Initiatives</a>
             </div>
-        </section> 
+        </div>
+    </header>
 
         <header class='l-header'>
             <div class='l-section__content'>
-                <div class='l-block u-type-contain-large u-padding-none'>
+                <div class='l-block u-type-contain-larger u-padding-none'>
                     <h1 class='u-margin-top--1'>{{post.title}}</h1> 
                     <span class='o-label u-block u-margin-top-4 u-margin-bottom-2'>Summary</span>
                     <p class='u-type-subtitle--desc u-type-type-respond-2 u-inline-block u-type-contain-large u-color-dark'>{{post.get_field('initiative_summary')}}</p>
 
-                    <div class='u-padding-top-1' style='border-top: 1px solid lightgrey;'>
+                    <div class='u-padding-top-1 u-padding-bottom-1' style='border-top: 1px solid lightgrey;'>
                         {% for meta in post.get_field('meta') %}
                             <div class='u-inline-block u-margin-right-1'>
                                 <span class='o-label u-block u-margin-bottom-0'>{{meta.label}}</span>
@@ -46,19 +46,10 @@
 
         <section class='l-section'>
             <div class='l-section__content u-position-relative'>
-                <div class='l-module--1col u-flex-justify-left' style='max-width:960px;'>
+                <div class='l-module--1col u-flex-justify-space-between'>
                     <div>{{post.content}}</div>
 
-                    <div class='l-initiative__share'>   
-                        <span class='o-label'>Share</span>
-                        <ul class='m-menu u-margin-top--1 u-margin-bottom-0'>
-                            <li><a href='http://www.facebook.com/sharer.php?u={{post.link}}' target='_blank' style='color:#3b5998;'><span class='fa fa-facebook'></span></a></li>
-                            <li><a href='https://twitter.com/share?url={{post.link}}&amp;text={{"Chinatown Society Heritage Building Association - CSHBA" | url_encode }}&amp;hashtags=chinatownvancouver' target='_blank' style='color:#55acee;'><span class='fa fa-twitter'></span></a></li>
-                            <li><a href='https://plus.google.com/share?url={{post.link}}' target='_blank' style='color:#dd4b39;'><span class='fa fa-google-plus'></span></a></li>
-                            <li><a href='mailto:?Subject={{wp_title}}&amp;Body={{post.link}}' style='color:#ACACAC'><span class='fa fa-envelope'></span></a></li>
-                        </ul>
-                        <a class='o-button--link-secondary u-type-respond--1' href='javascript:window.print();'><span class='fa fa-print'></span> Print this page</a>
-                    </div>
+                    {% include 'modules/share.twig' %}
                 </div>
             </div>
         </section>
@@ -67,7 +58,7 @@
         <section class='l-section u-margin-top-6 u-margin-bottom-neg-7 u-color-bg-alternate u-padding-top-5 u-padding-bottom-5'>
             <div class='l-section__content'>
                 <div class='l-module--3col'>
-                    <h4 class='u-margin-top-none u-margin-bottom-1'>Related Initiatives</h4>
+                    <h4 class='related u-margin-top-none u-margin-bottom-1'>Related Initiatives</h4>
                 </div>
                 <div class='l-initiative__related'>
                     {% for init in initiatives %}

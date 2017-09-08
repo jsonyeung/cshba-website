@@ -11,7 +11,6 @@
 
     @include breakpoint(map-get($bp, small)) {
         padding: ms(2) 0 ms(1);
-        margin-bottom: ms(2);
     }
 
     .l-header__bg {

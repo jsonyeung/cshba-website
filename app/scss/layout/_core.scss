@@ -52,23 +52,6 @@
         }
     }
 
-    &__bg-container {
-        max-width: 1400px;
-        height: 600px;
-
-        margin: auto;
-
-        position: relative;
-        z-index: 1;
-
-        @include breakpoint(map-get($bp, med) + 200) {
-            height: 400px;
-        }
-        @include breakpoint(map-get($bp, small)) {
-            height: 200px;
-        }
-    }
-
     &__bg-intro {
         display: flex;
         justify-content: center;
@@ -119,9 +102,11 @@
         padding-bottom: ms(5);
 
         display: flex;
+        justify-content: space-between;
 
         @include breakpoint(1200px) {
             flex-wrap: wrap;
+            justify-content: flex-start;        
         }
 
         a { text-shadow: none; }

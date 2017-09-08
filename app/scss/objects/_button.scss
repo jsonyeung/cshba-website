@@ -60,6 +60,19 @@
     }
 }
 
+.o-button--solid-secondary {
+    @extend .o-button;
+
+    border: none;
+    background: map-get($color, secondary);
+    color: map-get($color, secondary-accent-2);    
+
+    &:hover {
+        color: map-get($color, secondary-accent-2);
+        background: darken(map-get($color, secondary), 5);
+    }
+}
+
 .o-button--solid-white {
     @extend .o-button--solid;
 

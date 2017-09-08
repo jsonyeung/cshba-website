@@ -57,10 +57,10 @@ $steps: 4;
 // contain text to make reading easier
 
 .u-type-contain {
-    max-width: 750px;
+    max-width: 750px !important;
 
     &-large {
-        max-width: 960px;
+        max-width: 960px !important;
     }
 
     &-larger {

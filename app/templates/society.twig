@@ -9,24 +9,29 @@
     {% include 'layout/nav.twig' with {'inverse': false} %}
 
       <body class='l-society__bg'> 
-        <section class='l-section u-padding-top-8'>
-            <div class='l-section__bg-container'>
-                <div class='l-section__bg' style='background-image: url("{{TimberImage(post.get_field('intro_image')).src ?: post.thumbnail.src}}"); background-size: cover; background-position: center;'></div>
-            </div>
-        </section>
 
         <header class='l-society__header'>
+            <div class='l-section__bg' style='background-image: url("{{TimberImage(post.get_field('intro_image')).src ?: post.thumbnail.src}}"); background-size: cover; background-position: center; opacity: 0.4;'></div>
+            <div class='l-section__bg' style='background: white; z-index:-15;'></div>
             <div class='l-header__content'>
                 <div class='l-block u-type-center'>
                     <h1 class='u-margin-bottom-none'>{{post.title}}</h1>
                     <p class='l-society__subtitle'>{{post.get_field('chinese_title')}}</p>
+                </div>
+                <div class='l-module'>
+                    <a href='{{ site.link }}/societies#soc' class='o-button--solid-secondary u-inline-block'><span class='fa fa-long-arrow-left'></span> Back to Societies</a>
                 </div>
             </div>
         </header>
  
         <section class='l-section'>
             <div class='l-section__content'>
-                <div class='l-module--2col u-flex-align-start'>
+                <div class='l-module--1col u-flex-justify-left'>
+                    <p class='u-dropcap u-margin-top-none u-type-respond-1 u-color-heading u-type-contain-large' style='flex: 1 1 750px;'>{{post.get_field('intro_description')}}</p>
+                    
+                    {% include 'modules/share.twig' %}
+
+                    <!--
                     <div class='l-society__intro'>
                         <p class='u-dropcap'>{{post.get_field('intro_description')}}</p>
                     </div>
@@ -44,6 +49,7 @@
                             </div>
                         {% endfor %}
                     </div>
+                    -->
                 </div>
             </div>
         </section>

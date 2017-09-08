@@ -1,7 +1,20 @@
 @media print {
-    nav, footer { display: none; }
-    header { padding: ms(1) !important; }
-    header h1 { margin-top: 0 !important; }
+    // display none
+    nav, footer,
 
-    .l-section__bg-container, .l-initiative__share, .l-initiative__related { display: none; }
+    .l-initiative__header,
+    .l-initiative__related,
+
+    .m-share,
+
+    .o-button, 
+    .o-button--solid-secondary,
+
+    .related
+    { display: none !important; }
+
+    // other stuff
+    .l-society__header {
+        padding: ms(4) 0;
+    }
 }

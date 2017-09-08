@@ -46,12 +46,41 @@
 // For inidivual page
 
 .l-society__header {
-    @extend .l-header;
+    @extend .m-header;
+    @extend .u-stroke-edge-1;
 
-    padding: ms(4) 0 ms(2);
+    overflow: visible;
+
+    padding: ms(9) 0 0;
+    .l-module { 
+        padding-top: ms(8);  
+
+        position: relative;
+        z-index: 10;
+    }
 
     @include breakpoint(map-get($bp, med)) {
-        padding: ms(2) 0 ms(0);
+        padding: ms(7) 0 0;
+        .l-module { 
+            padding-top: ms(6);
+        }
+    }
+
+    h1 { 
+        @include ms-respond(font-size, 4);
+        color: map-get($color, primary); 
+    }
+
+    .o-button {
+        color: #A78C60;
+        background: #DBCFB6;
+    }
+
+    .l-section__bg:after {
+        @extend .l-section__bg;
+
+        content: '';
+        background: linear-gradient(to bottom, rgba(228,228,217,0.64) 0%,rgba(187,187,177,0.56) 55%,rgba(155,155,145,1) 100%);
     }
 }
 
@@ -61,13 +90,18 @@
 }
 
 .l-society__subtitle {
-    @include ms-respond(font-size, 1);
+    @include ms-respond(font-size, 2);
     
+    @include breakpoint(550px) {
+        font-size: ms(0);
+        letter-spacing: 5px;
+    }
+
     margin-top: ms(-4);
 
     letter-spacing: 10px;
     font-family: "Microsoft YaHei","微软雅黑","黑体","宋体";
-    color: map-get($color, subtle);
+    color: map-get($color, dark);
 
     display: flex;  
     flex-wrap: nowrap;
@@ -79,9 +113,9 @@
 
     &:after, &:before {
         content: '';
-        width: ms(0);
-        height: 1px;
-        background: currentColor;
+        width: ms(1);
+        height: 2px;
+        background: map-get($color, primary);
 
         margin: 0 ms(0);
     }
@@ -129,7 +163,7 @@
         line-height: 1;
     
         text-transform: uppercase;
-        text-shadow: 2px 2px 1px map-get($color, background),
+        text-shadow: 2px 2px 1px #f1f1eb,
         3px 3px 1px map-get($color, subtle);
     }
 }

@@ -1,0 +1,20 @@
+.m-share {
+    width: 100%;
+    max-width: 750px;
+
+    align-self: flex-start;
+    margin-bottom: ms(1);
+
+    li { 
+        margin-bottom: 0 !important;
+        margin-right: 1em; 
+    }
+    li:last-child { margin: 0; }
+
+    a { background: none !important; } 
+
+    @include breakpoint(map-get($bp, med) + 100 min-width) {
+        flex: 0 1;
+        margin-left: gutter()*2;
+    }
+} 
