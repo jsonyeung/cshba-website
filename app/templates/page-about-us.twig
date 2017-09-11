@@ -9,20 +9,16 @@
     {% include 'layout/main-header.twig' %}
 
     <section class='l-about__vision'>
-        <div class='l-section__content u-margin-none u-flex-justify-left' style='max-width:none'>
-            <div class='l-section__bg' style='background-image: url("{{theme.link}}/images/about-vision-bg.png");'></div>
-            <div class='l-about__vision-chinese'>
-                <p>
+        <div class='l-section__content'>
+            <div class='l-module--2col'>
+                <div class='l-about__vision-chinese'>
                     <img class='l-about__stamp-vision' src='{{theme.link}}/images/vision-stamp.svg' alt='stamp'>
-                    {{post.get_field('our_vision_chinese')}}
-                </p>
-            </div>
-        </div>
-
-        <div class="l-section__content u-flex-justify-right">
-            <div class='l-about__vision-english'>
-                <p class='u-type-respond-1'><span class='o-label u-color-primary u-block u-margin-bottom-0'>Our Vision</span> {{post.get_field('our_vision_english_meaning')}}</p>
-                <p>{{post.get_field('our_vision_english_description')}}</p>
+                    <p>{{post.get_field('our_vision_chinese')}}</p>
+                </div>
+                <div class='l-about__vision-english'>
+                    <p class='u-type-respond-1 u-color-heading'><span class='o-label u-color-primary u-block u-margin-bottom-0'>Our Vision</span> {{post.get_field('our_vision_english_meaning')}}</p>
+                    <p>{{post.get_field('our_vision_english_description')}}</p>
+                </div>
             </div>
         </div>
     </section>
@@ -48,11 +44,13 @@
     </section>
 
     <section class='l-about__mission'>
-        <div class='l-section__content u-flex-justify-left' style='max-width:1400px;'>
-            <div>
-                <p class='u-type-respond-2 u-type-bold u-type-contain'>{{post.get_field('our_mission_chinese')}}</p> 
+        <div class='l-section__bg' style='background-image:url("{{theme.link}}/images/about-mission-bg.jpg"); background-size: 100% auto;'></div>
+        <div class='l-section__content' style='max-width:1400px;'>
+            <div class='u-position-relative'>
+                <img class='l-about__stamp-mission' src='{{theme.link}}/images/mission-stamp.svg' alt='stamp'>            
+                <p class='u-type-respond-2 u-color-heading u-type-center u-type-bold u-type-contain'>{{post.get_field('our_mission_chinese')}}</p> 
                 <h3 class='o-label u-color-primary u-margin-bottom-1'>Our Mission</h3>
-                <p class='u-type-respond-1 u-type-contain'>{{post.get_field('our_mission_english_meaning')}}</p> 
+                <p class='u-type-respond-1 u-color-heading u-type-contain'>{{post.get_field('our_mission_english_meaning')}}</p> 
                 <p class='u-type-contain'>{{post.get_field('our_mission_english_description')}}</p> 
             </div> 
         </div>
@@ -70,7 +68,7 @@
                         <div class='director__image'>
                             <img src='{{TimberImage(director.image).src|resize(400,300,"center")}}'>
                         </div>
-                        <div>
+                        <div> 
                             <h4 class='u-margin-top-none'>{{director.name}} <span class='o-label--secondary u-color-primary u-block'>{{director.title}}</span></h4>
                             <ul class='m-menu u-flex-wrap'>
                                 {% for media in director.social_media %}

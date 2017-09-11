@@ -45,7 +45,7 @@ $module: (
             align-self: flex-end;
 
             margin-left: gutter();
-            padding: gutter();
+            padding: 0 gutter() ms(1);
 
             p {
                 color: map-get($color, subtle);

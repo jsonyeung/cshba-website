@@ -1,54 +1,35 @@
 .l-about__vision {
     @extend .l-section;
 
+    padding-top: ms(6);
+    padding-bottom: ms(6);
+
+    margin-top: -#{ms(6)};
+    
     overflow: visible;
 
-    .l-section__bg { 
-        background-position: bottom center;
-    }
+    background: map-get($color, alternate);
 
-    .l-section__content {
-        position: relative;
-        max-width: 1400px;
-    }
-
-    .l-module {
-        justify-content: space-between;
+    @include breakpoint(map-get($bp, med) min-width) {
+        padding: ms(8) 0;
     }
 
     &-chinese {
-        width: 70%; 
-        max-width: 700px;
-
-        padding: ms(5) 0 ms(7) 10%;
+        position: relative;  
 
         p { 
-            position: relative; 
             color: black; 
         }
 
         @include ms-respond(font-size, 2);
         font-weight: bold;
-
-        @include breakpoint(map-get($bp, large)) {
-            padding-left: 5%;
-        }
-        @include breakpoint(map-get($bp, med) + 200) {
-            padding-left: 0;
-            flex: 1 1 100%;
-        }
-        @include breakpoint(map-get($bp, small)) {
-            padding: ms(5) 0 ms(5);
-        }
     }
 
     &-english {
-        max-width: 600px;
-        
-        margin-top: -#{ms(9)}; 
+        margin-top: -#{ms(2)};
 
-        @include breakpoint(map-get($bp, large)) {
-            margin-top: -#{ms(5)};;
+        @include breakpoint(map-get($bp, med)) {
+            margin: 0;
         }
     }
 }
@@ -67,46 +48,50 @@
         @extend .l-about__stamp;
 
         position: absolute;
-        top: -3em;
+        top: -4em;
         left: -10%;
-    
-        @include breakpoint(map-get($bp, med) + 200) {
-            top: -4em;
-            left: -5%;
-        }
     }
     
     &-values {
         @extend .l-about__stamp;
 
         position: absolute;
-        top: 5%;
+        top: 10%;
         right: 10%;
 
         @include breakpoint(map-get($bp, med) + 200) {
             top: -1.5em;
         }
     }
+
+    &-mission {
+        @extend .l-about__stamp;
+
+        position: absolute;
+        top: -5em;
+        left: 50%;
+        transform: translateX(-50%)
+    }
 }
 
 .l-about__values {
     position: relative;
-
-    background: map-get($color, alternate);
 }
 
 .l-about__mission {
-    padding: ms(4) 0;
+    padding: ms(8) 0 ms(6);
+
+    position: relative;
 
     @include breakpoint(map-get($bp, med)) {
-        padding: ms(2) 0;
+        padding: ms(6) 0 ms(4);
     }
 
     .l-section__content {
         max-width: map-get($module, container-large);
 
         div {
-            max-width: 600px;
+            max-width: map-get($module, container);
         }
     }
 }
@@ -114,7 +99,6 @@
 .l-about__slider {
     @extend .l-homepage__slider;
 
-    margin: ms(3) 0;
     padding: ms(5) 0;
 
     @include breakpoint(map-get($bp, med) + 200) {
@@ -128,13 +112,13 @@
 }
 
 .l-about__directors {
-    margin: ms(3) 0 ms(2);
+    margin: 0 0 ms(6);
     padding: ms(4) 0;
 
     background: map-get($color, alternate);
 
     @include breakpoint(map-get($bp, large)) {
-        margin: ms(2) 0 ms(1);
+        margin: 0 0 ms(4);
     }
     
     @include breakpoint(map-get($bp, med)) {
@@ -170,7 +154,7 @@
 
         .director__image {
             margin-right: gutter()*2;
-            margin-bottom: ms(0);
+            margin-bottom: ms(-1);
             width: 100%;
 
             @include breakpoint(map-get($bp, small)) {

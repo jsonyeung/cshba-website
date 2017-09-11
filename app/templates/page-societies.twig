@@ -8,6 +8,23 @@
 
     {% include 'layout/main-header.twig' %}
 
+        <section class='l-section'>
+            <div class='l-section__content'>
+                <div class='l-module--1col u-flex-justify-space-between'>
+                    <div>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit dolorem reprehenderit deserunt adipisci saepe, cupiditate inventore pariatur obcaecati harum quis itaque quas, laborum temporibus alias dolores quasi recusandae, quo asperiores!</p>
+                    </div>
+                    <div class='m-table-of-contents'>
+                        <span class='o-label u-color-heading u-block u-margin-bottom-0'>Table of Contents</span>
+                        <ul class='m-menu--vertical'>
+                            <li><a href='#' class='o-link'>What Are Societies?</a></li>
+                            <li><a href='#' class='o-link'>What Are Societies?</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         {% include 'modules/content.twig' with {layouts:post.get_field('modular_layout')} %}
 
         <section id='soc' class='l-section u-color-bg-alternate u-margin-top-3 u-margin-bottom-neg-7'>

@@ -27,5 +27,21 @@
             color: map-get($color, background);
         }
     }
+}
 
+.o-form__email-sub-white {
+    @extend .o-form__email-sub;
+
+    input[type='email'], input[type='email']:hover, input[type='email']:focus {
+        border-color: white;
+        background: map-get($color, alternate);
+
+        &, &::placeholder { color: map-get($color, heading); } 
+    }
+ 
+    button[type='submit'], button[type='submit']:hover {
+        border-color: white;
+        background: white;
+        color: map-get($color, primary);
+    }   
 }

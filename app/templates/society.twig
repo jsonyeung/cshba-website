@@ -30,31 +30,41 @@
                     <p class='u-dropcap u-margin-top-none u-type-respond-1 u-color-heading u-type-contain-large' style='flex: 1 1 750px;'>{{post.get_field('intro_description')}}</p>
                     
                     {% include 'modules/share.twig' %}
-
-                    <!--
-                    <div class='l-society__intro'>
-                        <p class='u-dropcap'>{{post.get_field('intro_description')}}</p>
-                    </div>
-                    <div class='l-society__details'>
-                        {% for meta in post.get_field('meta') %}
-                            <div class='l-society__details-item'>
-                                <span class='o-label u-block u-margin-bottom-0'>{{meta.label}}</span>
-                                {% for val in meta.values %}
-                                    {% if val.link %}
-                                        <a class='o-link u-margin-none' href='{{val.link}}' target='_blank'>{{val.value}}</a>
-                                    {% else %}
-                                        <p class='u-margin-none'>{{val.value}}</p>
-                                    {% endif %}
-                                {% endfor %}
-                            </div>
-                        {% endfor %}
-                    </div>
-                    -->
                 </div>
             </div>
         </section>
 
+        {% if not post.get_field('meta') is empty %}
+            <section class='l-section'>
+                <div class='l-section__content'>
+                    <div class='l-society__details'>
+                        <div>
+                            <img src='{{post.thumbnail.src | resize(600,300)}}'>
+                        </div>
+                        <div>
+                            {% for meta in post.get_field('meta') %}
+                                <div class='l-society__details-item'>
+                                    <span class='o-label u-block u-margin-bottom-0'>{{meta.label}}</span>
+                                    {% for val in meta.values %}
+                                        {% if val.link %}
+                                            <a class='o-link u-color-primary u-margin-none' href='{{val.link}}' target='_blank'>{{val.value}}</a>
+                                        {% else %}
+                                            <p class='u-margin-none u-color-secondary-accent'>{{val.value}}</p>
+                                        {% endif %}
+                                    {% endfor %}
+                                </div>
+                            {% endfor %}                        
+                        </div>
+                    </div>
+                </div>
+            </section>
+        {% endif %}
+
         {% include 'modules/content.twig' %}
+
+
+
+        
 
         {% include 'layout/footer.twig' %}
 

@@ -126,17 +126,21 @@
 }
 
 .l-society__details {
-    @extend .l-module;
+    @extend .l-module--2col;
+    margin: ms(2) 0 ms(3);
 
-    display: flex; 
-    flex: 1 1 200px;
-    align-content: flex-start;
+    & > div:first-child {
+        width: 75%;
 
-    border-bottom: 1px solid lightgrey;
-    margin-bottom: ms(2);
+        @include breakpoint(map-get($bp, large)) { 
+            margin: 0 0 ms(1);
+            width: 100%; 
+        }
+    }
 
-    @include breakpoint(map-get($bp, med)) {
-        flex: 1 1 100%;
+    & > div:last-child {
+        flex: 1;
+        flex-basis: 200px;
     }
 
     &-item {
