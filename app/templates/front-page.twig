@@ -129,10 +129,10 @@
                 <div class='l-section__bg' style='z-index: 0; background-image: url("{{theme.link}}/images/bg-cta.jpg"); background-position: bottom center;'></div>
                 <div class='l-section__bg' style='z-index: 0; background: rgba(0,0,0,0.2);'></div>
                 <div class='l-block' style='z-index: 1;'>
-                    <h3 class='u-color-secondary u-type-contain u-margin-bottom-0'>Have any stories about the<br>culture and life of Chinatown?<br>We’d love to hear from you.</h3>
+                    <h3 class='u-color-secondary u-type-contain u-margin-bottom-0'>{{post.get_field('call_to_action_title')}}</h3>
                 </div>
                 <div class='l-block' style='z-index: 1;'>
-                    <p class='u-color-white'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo mollitia iure odio voluptatem recusandae excepturi.</p>
+                    <p class='u-color-white'>{{post.get_field('call_to_action_description')}}</p>
                     <form class='o-form__email-sub-white' action='https://vcshba.us16.list-manage.com/subscribe/post' method='POST'>
                         <input type="hidden" name="u" value="1b0bd2a4b553415a759806905">
                         <input type="hidden" name="id" value="7712166c20">

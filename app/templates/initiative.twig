@@ -32,9 +32,9 @@
                                 <span class='o-label u-block u-margin-bottom-0'>{{meta.label}}</span>
                                 {% for val in meta.values %}
                                     {% if val.link %}
-                                        <a class='o-link u-margin-none' href='{{val.link}}' target='_blank'>{{val.value}}</a>
+                                        <a class='o-link u-color-primary u-margin-none' href='{{val.link}}' target='_blank'>{{val.value}}</a>
                                     {% else %}
-                                        <p class='u-margin-none'>{{val.value}}</p>
+                                        <p class='u-margin-none u-color-secondary'>{{val.value}}</p>
                                     {% endif %}
                                 {% endfor %}
                             </div>

@@ -42,6 +42,11 @@
                             <img src='{{post.thumbnail.src | resize(600,300)}}'>
                         </div>
                         <div>
+                            <div class='l-society__details-item'>
+                                <span class='o-label u-block u-margin-bottom-0'>Date Built</span>
+                                <p class='u-margin-none u-color-secondary-accent'>{{post.get_field('built_on')}}</p>
+                            </div>
+
                             {% for meta in post.get_field('meta') %}
                                 <div class='l-society__details-item'>
                                     <span class='o-label u-block u-margin-bottom-0'>{{meta.label}}</span>

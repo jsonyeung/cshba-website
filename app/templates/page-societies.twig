@@ -8,39 +8,13 @@
 
     {% include 'layout/main-header.twig' %}
 
-        <section class='l-section'>
-            <div class='l-section__content'>
-                <div class='l-module--1col u-flex-justify-space-between'>
-                    <div>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit dolorem reprehenderit deserunt adipisci saepe, cupiditate inventore pariatur obcaecati harum quis itaque quas, laborum temporibus alias dolores quasi recusandae, quo asperiores!</p>
-                    </div>
-                    <div class='m-table-of-contents'>
-                        <span class='o-label u-color-heading u-block u-margin-bottom-0'>Table of Contents</span>
-                        <ul class='m-menu--vertical'>
-                            <li><a href='#' class='o-link'>What Are Societies?</a></li>
-                            <li><a href='#' class='o-link'>What Are Societies?</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         {% include 'modules/content.twig' with {layouts:post.get_field('modular_layout')} %}
 
         <section id='soc' class='l-section u-color-bg-alternate u-margin-top-3 u-margin-bottom-neg-7'>
             <div class='l-section__content u-padding-top-3 u-padding-bottom-6'>
                 <div class="l-module--1col u-flex-justify-left">
-                    <h2>Societies with Heritage Buildings</h2>
-                    <p class='u-type-respond-1' style='color:#383838;'>It has come to my attention that one of the more noticeable traits in my design work is my willingness to use what is perceived to be an excessive number of typefaces.</p>
-                </div>
-
-                <div class='l-module u-margin-top-0'>
-                    <ul class='l-society__filter'>
-                        <li class='o-label u-type-size--1 u-color-heading u-type-family-secondary'>Filter By</li>
-                        <li>Recently Added</li>
-                        <li>Alphabetical</li>
-                        <li>Date Built</li>
-                    </ul>
+                    <h2>{{post.get_field('society_title')}}</h2>
+                    <p class='u-type-respond-1 u-type-contain-large' style='color:#383838;'>{{post.get_field('society_description')}}</p>
                 </div>
 
                 <div class='l-module u-margin-top-3 u-margin-bottom-2'>
@@ -59,7 +33,7 @@
 
                             <ul class='m-menu'>
                                 <li><a href='{{society.link}}' class='o-button--link-secondary'>Learn More</a></li>
-                                <li class='o-label u-block u-type-bold u-type-size--1 u-type-family-secondary'>Built on July 27, 2017</li>
+                                <li class='o-label u-block u-type-bold u-type-size--1 u-type-family-secondary'>Built on {{society.built_on}}</li>
                             <ul>
                         </div>
                     </div>
